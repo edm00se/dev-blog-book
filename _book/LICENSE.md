@@ -1,0 +1,1 @@
+The work contained in [this blog](//edm00se.io/) and [its GitHub Repository](//github.com/edm00se/DevBlog/) is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/). You may use, alter, and redistribute the code herein (with citation), while expecting no warranty for its use.

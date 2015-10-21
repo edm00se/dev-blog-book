@@ -1,0 +1,16 @@
+{
+    "plugins": [
+				"anchors",
+				"github",
+				"include",
+				"include-codeblock",
+				"highlight",
+				"livereload",
+				"youtube"
+				],
+	"pluginsConfig": {
+		"github": {
+			"url": "https://github.com/edm00se"
+		}
+	}
+}

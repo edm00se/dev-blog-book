@@ -1,0 +1,21 @@
+{
+  "name": "devblog-book",
+  "version": "1.0.0",
+  "description": "a gitbook version of the highlights of my first year of my development blog",
+  "main": "",
+  "dependencies": {
+    "gitbook-plugin-youtube": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start": "gitbook serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/edm00se/dev-blog-book.git"
+  },
+  "author": "Eric McCormick",
+  "license": "CC-BY-4.0",
+  "homepage": "https://bitbucket.org/edm00se/dev-blog-book#readme"
+}
