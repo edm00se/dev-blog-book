@@ -1,14 +1,3 @@
----
-layout: post
-type: post
-title: "Fixing Dojo 1.6.1 in Domino 8.5.3"
-description: "fixing dojo 1.6.1 in Domino 8.5.3"
-category: xpages
-tags: [xpages, domino, javascript, dojo, grid, datagrid, enhanced]
-modified: 2014-09-03
-comments: true
-share: true
----
 #### CLARIFICATION
 This all stems form an issue with Dojo less than 1.6.2 in Chrome 29 and any browser that used the same child node reference. This post specifically covers how to fix this (as it occurs with Domino 8.5.3) and get one of the most popular web standards compliant browsers back in the game with Domino and the ExtLib/UP1 controls.
 
@@ -24,7 +13,7 @@ That being said, I still had the controls I wanted to play with, so I still trie
 
 ### Dojo 1.6.1
 Domino 8.5.3 has Dojo 1.6.1. The culprit in question, as I found out from attempting to use Chrome with the Enhanced Grid, the issue was with the child selector call.
-<a href="{{ site.url }}/images/post_images/dojoBeastInLair.png" data-toggle="tooltip" title="the beast in its lair"><img src="{{ site.url }}/images/post_images/dojoBeastInLair.png"></a>
+<a href="{{ book.site }}/images/post_images/dojoBeastInLair.png" data-toggle="tooltip" title="the beast in its lair"><img src="{{ book.site }}/images/post_images/dojoBeastInLair.png"></a>
 
 After finding what the issue was, followed by some intense Google searching, I had found [the fix for this in Dojo 1.6.2](http://github.com/dojo/dojo/commit/fc262d0d589c490cdd671791f1546a4665ed69c6#commitcomment-3954783). The fix was small enough, I thought, "why can't I implement this?" So I did.
 
@@ -44,18 +33,18 @@ You can see there are actually three files, one minified, one minified and gzip'
 
 #### 3. Apply Again
 Now that the original, un-compressed version has its updates, it's time for those minified and minified and gzip'd versions. If you're using an editor like [Notepad++](http://notepad-plus-plus.org/), you can use a plugin such as JSTool to perform the JSMin operation.
-<a href="{{ site.url }}/images/post_images/npppJSmin.png" data-toggle="tooltip" title="minifying with JSTool in Notepad++"><img src="{{ site.url }}/images/post_images/npppJSmin.png"></a>
+<a href="{{ book.site }}/images/post_images/npppJSmin.png" data-toggle="tooltip" title="minifying with JSTool in Notepad++"><img src="{{ book.site }}/images/post_images/npppJSmin.png"></a>
 
 Save that file over the dojo.js file. Now for the gzip'd version. With 7zip, you can perform a right-click on the dojo.js file and select 7zip > Add to Archive. For the settings, select the correct archive format, ensuring the .gz extension gets applied and overwrite the existing dojo.js.gz file.
-<a href="{{ site.url }}/images/post_images/gzipWith7zip.png" data-toggle="tooltip" title="gzip-ing with 7zip"><img src="{{ site.url }}/images/post_images/gzipWith7zip.png"></a>
+<a href="{{ book.site }}/images/post_images/gzipWith7zip.png" data-toggle="tooltip" title="gzip-ing with 7zip"><img src="{{ book.site }}/images/post_images/gzipWith7zip.png"></a>
 
 #### 4. Restart and Use
 Now you only need to restart the Domino server and you can start using it. Just restarting the http task doesn't quite do it, as Domino needs to fully re-register all its known libraries (not just re-initialize the handling of http connections). If you don't, but you set the library in the Xsp Properties, you will not be able to load your new version, as the selected library will return a runtime error, as the server hasn't registered it yet.
-<a href="{{ site.url }}/images/post_images/noDiceOnNewDojoLibraryYet.png" data-toggle="tooltip" title="no dice yet, restart the server"><img src="{{ site.url }}/images/post_images/noDiceOnNewDojoLibraryYet.png"></a>
+<a href="{{ book.site }}/images/post_images/noDiceOnNewDojoLibraryYet.png" data-toggle="tooltip" title="no dice yet, restart the server"><img src="{{ book.site }}/images/post_images/noDiceOnNewDojoLibraryYet.png"></a>
 
 To use it in an NSF, open the Xsp Properties file and specify your modified name in the Dojo version field. If you prefer the source, it's applied by _xsp.client.script.dojo.version=1.6.1.modified_ (or .source, whichever you call it). Note to leave off the _dojo-_ prefix.
-<a href="{{ site.url }}/images/post_images/useNewDojoLibraryInXspProperties.png" data-toggle="tooltip" title="specify the new dojo library in Xsp Properties"><img src="{{ site.url }}/images/post_images/useNewDojoLibraryInXspProperties.png"></a>
+<a href="{{ book.site }}/images/post_images/useNewDojoLibraryInXspProperties.png" data-toggle="tooltip" title="specify the new dojo library in Xsp Properties"><img src="{{ book.site }}/images/post_images/useNewDojoLibraryInXspProperties.png"></a>
 
 ### Rejoice
 You are now able to use the Dojo Enhanced DataGrid with the _dojox.grid.enhanced.plugins.Filter_!
-<a href="{{ site.url }}/images/post_images/dojoEnhancedGridFilteredResults.png" data-toggle="tooltip" title="winter is coming"><img src="{{ site.url }}/images/post_images/dojoEnhancedGridFilteredResults.png"></a>
+<a href="{{ book.site }}/images/post_images/dojoEnhancedGridFilteredResults.png" data-toggle="tooltip" title="winter is coming"><img src="{{ book.site }}/images/post_images/dojoEnhancedGridFilteredResults.png"></a>

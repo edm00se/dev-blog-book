@@ -1,35 +1,13 @@
----
-layout: post
-type: post
-title: "Building a Front-End, pt.1"
-description: "A Quick Review"
-category: xpages-servlets
-tags: [xpages, domino, javascript, servlet, angularjs]
-modified: 2015-06-16
-comments: true
-share: true
----
-
 ### A Quick Review
 I had some trepidation about this post; it revolves around the fact that I'm "completing" my blog series with multiple giant topics, on top of the one primary one I've focused on for the majority of this blog series. So, before we get started, I'm going to summarize a couple things. But first, a ToC:
 
-<!-- auto-magic TOC! -->
-<section>
-  <header data-toggle="tooltip" title="it's dangerous to go alone, take this">
-    <h2>Contents</h2>
-  </header>
-<div id="drawer" markdown="1">
-*  Auto generated table of contents
-{:toc}
-</div>
-</section>
-<br />
+<!-- toc -->
 
 ##### Servlets
-I've referred to this series as [#ASagaOfServlets](//twitter.com/search?q=%23ASagaOfServlets). While most Java servlets are intended for use over HTTP (at least from a JEE, web container standpoint), this is not exclusive; I've used HTTPServlet as analagous to Servlet (for better or for worse).
+I've referred to this series as [#ASagaOfServlets](http://twitter.com/search?q=%23ASagaOfServlets). While most Java servlets are intended for use over HTTP (at least from a JEE, web container standpoint), this is not exclusive; I've used HTTPServlet as analagous to Servlet (for better or for worse).
 
 ##### RESTful API
-A REST API is an architectural style of API. There is no concrete definition of what required for an API to be RESTful, but it's best if it follows a couple conventions ([previously covered]({{ site.url }}/xpages/rest-is-best/)); this generally boils down to:
+A REST API is an architectural style of API. There is no concrete definition of what required for an API to be RESTful, but it's best if it follows a couple conventions ([previously covered]({{ book.site }}/xpages/rest-is-best/)); this generally boils down to:
 
 * a resource based interface, following <span data-toggle="tooltip" title="Hypermedia as the Engine of Application State">HATEOAS</span>
 * be stateless (no server session required, the URI request gives all the server needs to know)
@@ -48,12 +26,12 @@ Where XPages fits in as a component in all of this can be a little tricky. Obvio
 Obviously, certain beginner XPages development approaches (those conducive to SSJS spaghetti code<sup>&#8482;</sup>) can be quite the antithesis of what the segregated stack approach gives us. This makes our XPages design elements, containing not just the markup and layout of elements (fields, labels, etc.), but also logic, `if(status.equals("certainStep")){ doSomethingUnique(); }`, and actions (since these X conditions are true, send an email to these 12 people). Combine this with the unique, [NoSQL database](https://en.wikipedia.org/wiki/NoSQL) handling via the _NotesDominoAPI_, it's my belief that XPages development is by default a full-stack application stack; for better or for worse.
 
 ###### Aside (talking crazy for a moment)
-Some of these concepts are central to what I've seen previewed of the [XPages (XSP) application runtime](//heidloff.net/nh/home.nsf/article.xsp?id=26.01.2015175730NHEMVZ.htm) and [Domino Data Service](//ryanjbaxter.com/2014/09/22/using-your-domino-data-in-apps-deployed-to-bluemix/) on Bluemix. That the data container being forced to be separate from the application layer isn't just a good idea with Bluemix (which enforces the segregation of concerns as does almost any other application stack, considering that nearly all out there aren't configured like an NSF), but means that the XPages runtime can hook into any database; something it's already capable of, but often not done. In fact, segregating the data NSF from the application NSF isn't a new concept either, but hey, it's my paragraph :grinning:. I'm also fairly certain that the segregation of the XSP runtime from the other, traditional NSF components may be the gateway for us to get an updated JVM, but maybe I'm just greedy.
+Some of these concepts are central to what I've seen previewed of the [XPages (XSP) application runtime](http://heidloff.net/nh/home.nsf/article.xsp?id=26.01.2015175730NHEMVZ.htm) and [Domino Data Service](http://ryanjbaxter.com/2014/09/22/using-your-domino-data-in-apps-deployed-to-bluemix/) on Bluemix. That the data container being forced to be separate from the application layer isn't just a good idea with Bluemix (which enforces the segregation of concerns as does almost any other application stack, considering that nearly all out there aren't configured like an NSF), but means that the XPages runtime can hook into any database; something it's already capable of, but often not done. In fact, segregating the data NSF from the application NSF isn't a new concept either, but hey, it's my paragraph :grinning:. I'm also fairly certain that the segregation of the XSP runtime from the other, traditional NSF components may be the gateway for us to get an updated JVM, but maybe I'm just greedy.
 
-Ultimately, the point I'm trying to make, is that we have a lot of options and decisions we can make with Domino/XPages, but with any ambiguity, there are potential pitfalls. One way this is changing, IMO, is [the bringing of the XSP(XPages) runtime to Bluemix](//www.slideshare.net/MartinDonnelly1/connected2015-domino-apps-for-bluemix/9). In case you missed it, [I've posted a couple early thoughts on Bluemix]({{ site.url }}/bluemix/bluemix-chalky-soup/), and I'm both impressed and excited for what it can and will bring to the table for my company and I.
+Ultimately, the point I'm trying to make, is that we have a lot of options and decisions we can make with Domino/XPages, but with any ambiguity, there are potential pitfalls. One way this is changing, IMO, is [the bringing of the XSP(XPages) runtime to Bluemix](//www.slideshare.net/MartinDonnelly1/connected2015-domino-apps-for-bluemix/9). In case you missed it, [I've posted a couple early thoughts on Bluemix]({{ book.site }}/bluemix/bluemix-chalky-soup/), and I'm both impressed and excited for what it can and will bring to the table for my company and I.
 
 ### Front-End Consumption
-Having shaped our back-end [earlier in this series]({{ site.url }}/xpages-servlets/servlets-handling-data-round-house-kick/) to adhere to a primarily RESTful API format, we can now consume that API by _some front-end_. In the [Notes in 9 173: Getting Started With (HTTP)Servlets](https://www.youtube.com/watch?v=stJ3Yc1BOnU&t=32m47s) video, I demonstrated this principle via the [Postman REST client](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en) (a Chrome extension). There are others out there and you could even [test from your command line via cURL](//www.codingpedia.org/ama/how-to-test-a-rest-api-from-command-line-with-curl/), if you're so inclined. What this demonstrates is that virtually _any_ front-end can consume the API, it just comes down to how you expose/provision that API and what you point to it.
+Having shaped our back-end [earlier in this series]({{ book.site }}/xpages-servlets/servlets-handling-data-round-house-kick/) to adhere to a primarily RESTful API format, we can now consume that API by _some front-end_. In the [Notes in 9 173: Getting Started With (HTTP)Servlets](https://www.youtube.com/watch?v=stJ3Yc1BOnU&t=32m47s) video, I demonstrated this principle via the [Postman REST client](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en) (a Chrome extension). There are others out there and you could even [test from your command line via cURL](http://www.codingpedia.org/ama/how-to-test-a-rest-api-from-command-line-with-curl/), if you're so inclined. What this demonstrates is that virtually _any_ front-end can consume the API, it just comes down to how you expose/provision that API and what you point to it.
 
 It also shows the method of data transfer. In order for a front-end to work with my RESTful API, it will need to:
 
@@ -71,7 +49,7 @@ Front-end development in this day and age focuses on JavaScript usage. Most peop
 Choosing a JavaScript framework can be a little daunting, if you're doing so for the first time. There's a long history of many web applications making use of jQuery or Dojo, both of which are libraries(/frameworks) that automate quite a bit, they're not of the MVC/MV* flavor I'm looking for. The fact remains, one can make a fully-formed application out of either, I just won't focus on them.
 
 [Aside]
-There are [jQuery UI](//jqueryui.com/) ([and mobile](//jquerymobile.com/)) and [Dojox MVC](//dojotoolkit.org/reference-guide/1.10/dojox/mvc.html), but I'm moving on for simplicity's sake.
+There are [jQuery UI](http://jqueryui.com/) ([and mobile](http://jquerymobile.com/)) and [Dojox MVC](http://dojotoolkit.org/reference-guide/1.10/dojox/mvc.html), but I'm moving on for simplicity's sake.
 [/Aside]
 
 ##### MVC/MV* Architecture
@@ -81,9 +59,9 @@ There are a lot of acronyms in framework architecture that get thrown around. He
 * MVVM - Model-View-ViewModel
 * MVW / MV* - Model-View-Whatever
 
-This list is far from all-inclusive, and is a bit of a side-topic to <span data-toggle="tooltip" title="there will be code soon, I swear!">what I want to focus on here</span>. Just [remember how a model, view, and controller]({{ site.url }}/xpages/unraveling-the-mvc-mysteries/) represent <span data-toggle="tooltip" title="mmm.. pie">different pieces of the application pie</span>, and all will be good.
+This list is far from all-inclusive, and is a bit of a side-topic to <span data-toggle="tooltip" title="there will be code soon, I swear!">what I want to focus on here</span>. Just [remember how a model, view, and controller]({{ book.site }}/xpages/unraveling-the-mvc-mysteries/) represent <span data-toggle="tooltip" title="mmm.. pie">different pieces of the application pie</span>, and all will be good.
 
-If you want to read up more on the theory of why you would want an MVC/* framework, I recommend checking out [this answer on Quora](//www.quora.com/When-does-it-make-sense-to-use-an-MVC-framework-for-JavaScript) on the subject. It's a good read which espouses the need for the a framework but as they point out, no one solution (e.g.- Backbone in their example) is an end-all, be-all.
+If you want to read up more on the theory of why you would want an MVC/* framework, I recommend checking out [this answer on Quora](http://www.quora.com/When-does-it-make-sense-to-use-an-MVC-framework-for-JavaScript) on the subject. It's a good read which espouses the need for the a framework but as they point out, no one solution (e.g.- Backbone in their example) is an end-all, be-all.
 
 ###### FWIW
 AngularJS (as you can probably have guessed is the front-end framework I'm using) considers itself to be <s>an MV*/MVW framework</s>
@@ -140,9 +118,9 @@ For now, I'm rocking the 1.x line, specifically staying in 1.3.x for my current 
 
 So, all those naysayers, I say pick a framework. I'm going with AngularJS and it's been <span data-toggle="tooltip" title="do other people use this phrase? anyone?">pretty pimp</span> so far.
 
-<a href="//www.bennadel.com/blog/2439-my-experience-with-angularjs-the-super-heroic-javascript-mvw-framework.htm" data-toggle="tooltip" title="my feelings about AngularJS over time"><img src="//www.bennadel.com/resources/uploads/2013/feelings_about_angularjs_over_time.png" class="img-responsive center-block" /></a>
+<a href="http://www.bennadel.com/blog/2439-my-experience-with-angularjs-the-super-heroic-javascript-mvw-framework.htm" data-toggle="tooltip" title="my feelings about AngularJS over time"><img src="http://www.bennadel.com/resources/uploads/2013/feelings_about_angularjs_over_time.png" class="img-responsive center-block" /></a>
 
 ### Tomorrow
-[Come back tomorrow for the conclusion of this epic journey]({{ site.url }}/xpages-servlets/building-a-front-end-pt2-an-app-with-angular).
+[Come back tomorrow for the conclusion of this epic journey]({{ book.site }}/xpages-servlets/building-a-front-end-pt2-an-app-with-angular).
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/1P3P2L0Q25Y?start=28" frameborder="0" allowfullscreen></iframe>
+{% youtube %}https://www.youtube.com/watch?v=1P3P2L0Q25Y?start=28{% endyoutube %}

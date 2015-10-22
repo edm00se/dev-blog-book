@@ -1,0 +1,853 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Servlet Handling of Requests | Dev|Blog: The First Year</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.4.3">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-anchors/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../_posts/2015-03-10-interlude-and-announcement.html" />
+    
+    
+    <link rel="prev" href="../_posts/2015-02-19-servlet-implementation.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="1.4" data-basepath=".." data-revision="Wed Oct 21 2015 22:47:55 GMT-0500 (CDT)">
+    
+
+<div class="book-summary">
+    <div class="book-search" role="search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Intro
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="_posts/SagaIntro.html">
+            
+                
+                    <a href="../_posts/SagaIntro.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        A Saga of Servlets
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="_posts/2015-02-09-a-quick-note-on-JARs.html">
+            
+                
+                    <a href="../_posts/2015-02-09-a-quick-note-on-JARs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        A Quick Note on JARs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="_posts/2015-02-16-servlet-intro-and-flavors.html">
+            
+                
+                    <a href="../_posts/2015-02-16-servlet-intro-and-flavors.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Servlet Intro and Flavors
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="_posts/2015-02-19-servlet-implementation.html">
+            
+                
+                    <a href="../_posts/2015-02-19-servlet-implementation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Basic Servlet Implementation
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="_posts/2015-02-25-servlet-handling-requests.html">
+            
+                
+                    <a href="../_posts/2015-02-25-servlet-handling-requests.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        Servlet Handling of Requests
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="_posts/2015-03-10-interlude-and-announcement.html">
+            
+                
+                    <a href="../_posts/2015-03-10-interlude-and-announcement.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        Interlude and Announcement
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="_posts/2015-03-19-servlets-handling-data-round-house-kick.html">
+            
+                
+                    <a href="../_posts/2015-03-19-servlets-handling-data-round-house-kick.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Servlet Handling Data, A Round House Kick
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="_posts/2015-06-16-building-a-front-end-pt1-a-quick-review.html">
+            
+                
+                    <a href="../_posts/2015-06-16-building-a-front-end-pt1-a-quick-review.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        Building a Front-End pt.1 Plus a Quick Review
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="_posts/2015-06-17-building-a-front-end-pt2-an-app-with-angular.html">
+            
+                
+                    <a href="../_posts/2015-06-17-building-a-front-end-pt2-an-app-with-angular.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        Building a Front-End pt.2: An App with AngularJS
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="_posts/2015-06-22-servlet-series-review.html">
+            
+                
+                    <a href="../_posts/2015-06-22-servlet-series-review.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.</b>
+                        
+                        Series Review
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="_posts/Supporting.html">
+            
+                
+                    <a href="../_posts/Supporting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Supporting
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="_posts/2014-08-18-rest-consumption-server-side.html">
+            
+                
+                    <a href="../_posts/2014-08-18-rest-consumption-server-side.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        RESTful API Consumption on the Server (Java)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="_posts/2014-08-19-server-rest-with-authentication.html">
+            
+                
+                    <a href="../_posts/2014-08-19-server-rest-with-authentication.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Server REST Consumption with Authentication
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="_posts/2014-08-25-custom-JSON-with-Java-sized-XAgent.html">
+            
+                
+                    <a href="../_posts/2014-08-25-custom-JSON-with-Java-sized-XAgent.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Custom JSON with Java-ized XAgent
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="_posts/2014-10-24-application-logic.html">
+            
+                
+                    <a href="../_posts/2014-10-24-application-logic.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Application Logic
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="_posts/2014-09-16-unraveling-the-mvc-mysteries.html">
+            
+                
+                    <a href="../_posts/2014-09-16-unraveling-the-mvc-mysteries.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Unraveling the M-V-C Mysteries
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="_posts/2014-09-18-rest-is-best.html">
+            
+                
+                    <a href="../_posts/2014-09-18-rest-is-best.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        REST is Best
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="_posts/2015-08-31-something-i-overheard-at-mwlug.html">
+            
+                
+                    <a href="../_posts/2015-08-31-something-i-overheard-at-mwlug.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        More on HTTP and AJAX Requests
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="_posts/2014-09-29-what-is-an-spa.html">
+            
+                
+                    <a href="../_posts/2014-09-29-what-is-an-spa.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        What is a Single Page Application(SPA)?
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="_posts/Related.html">
+            
+                
+                    <a href="../_posts/Related.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Related
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="_posts/2015-05-05-replacing-an-xagent.html">
+            
+                
+                    <a href="../_posts/2015-05-05-replacing-an-xagent.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        &quot;Replacing&quot; an XAgent
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="_posts/2015-07-14-alternate-front-end-development.html">
+            
+                
+                    <a href="../_posts/2015-07-14-alternate-front-end-development.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Alternate Front-End Development: Mocking Your Domino Back-end
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="_posts/Java.html">
+            
+                
+                    <a href="../_posts/Java.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Java
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="_posts/2015-01-09-when-you-need-a-comparator.html">
+            
+                
+                    <a href="../_posts/2015-01-09-when-you-need-a-comparator.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        When You Need a Comparator
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="_posts/2015-01-23-building-java-objects-from-json.html">
+            
+                
+                    <a href="../_posts/2015-01-23-building-java-objects-from-json.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        Building Java Objects from JSON
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="_posts/JavaScript.html">
+            
+                
+                    <a href="../_posts/JavaScript.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        JavaScript
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="_posts/2014-08-12-consistent-multivalue-formatting.html">
+            
+                
+                    <a href="../_posts/2014-08-12-consistent-multivalue-formatting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        Consistent Multi-Value Formatting in SSJS for Domino/XPages
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="_posts/2014-09-03-fixing-dojo-161-in-domino-853.html">
+            
+                
+                    <a href="../_posts/2014-09-03-fixing-dojo-161-in-domino-853.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        Fixing an Older Version of Dojo (1.6.1)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="_posts/2014-08-14-cal-picker-improver-dojo-only.html">
+            
+                
+                    <a href="../_posts/2014-08-14-cal-picker-improver-dojo-only.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        An Dojo Implementation of the Calendar Picker Script
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="_posts/Other.html">
+            
+                
+                    <a href="../_posts/Other.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Other
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="_posts/2015-03-23-brief-intro-to-nginx.html">
+            
+                
+                    <a href="../_posts/2015-03-23-brief-intro-to-nginx.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        A Brief Introduction to Nginx
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="_posts/2015-07-07-self-hosting-scm-server.html">
+            
+                
+                    <a href="../_posts/2015-07-07-self-hosting-scm-server.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        Self-Hosting SCM Server
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="_posts/2014-08-11-redmine-coderay-domino-syntax-highlighting.html">
+            
+                
+                    <a href="../_posts/2014-08-11-redmine-coderay-domino-syntax-highlighting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        Domino/XPages Design Element Syntax Highlighting on Redmine
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Dev|Blog: The First Year</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h3 id="previously-on-asagaofservlets-http-twitter-com-search-q-23asagaofservlets"><a name="previously-on-asagaofservlets-http-twitter-com-search-q-23asagaofservlets" class="plugin-anchor" href="#previously-on-asagaofservlets-http-twitter-com-search-q-23asagaofservlets"><span class="fa fa-link"></span></a>Previously, on <a href="http://twitter.com/search?q=%23ASagaOfServlets" target="_blank">#ASagaOfServlets</a></h3>
+<p>So far in <a href="https://edm00se.io/servlet-series/" target="_blank">this series</a> I&apos;ve covered some <a href="https://edm00se.io/xpages-servlets/servlet-intro-and-flavors" target="_blank">basics</a> on servlets, implementing our methods along with a showing of the <a href="https://edm00se.io/xpages-servlets/servlet-intro-and-flavors/#flavors-of-servlets" target="_blank">&quot;flavors&quot;</a> of servlets, and how to implement these servlets <a href="https://edm00se.io/xpages-servlets/servlet-implementation/" target="_blank">via a ServletFactory</a>. This has been the ground work for everything that comes next.</p>
+<h3 id="what-to-do-with-my-servlet"><a name="what-to-do-with-my-servlet" class="plugin-anchor" href="#what-to-do-with-my-servlet"><span class="fa fa-link"></span></a>What to Do With My Servlet?</h3>
+<p>A servlet can be just about anything. It can receive a payload of data (or just handle a simple network GET request) and process and return almost anything. Ultimately, I want to provide RESTful API interaction to the front-end side of my application, by:</p>
+<ul>
+<li>abstracting the CRUD operations, in order to</li>
+<li>validate received data changes (not committing changes in case of failure, throwing an error, with messages, to the user)</li>
+<li>and provide a layer of business logic for those interactions, enforcing a set of rules by which all data objects will adhere to (I have previously described this as &quot;loose schema&quot;, which is a misnomer, as the entire purpose of a schema is to provide <a href="http://en.wikipedia.org/wiki/Database_schema" target="_blank"><em>strict</em> provisioning</a> at the db level; aka- integrity constraints)</li>
+</ul>
+<h3 id="receiving-requests"><a name="receiving-requests" class="plugin-anchor" href="#receiving-requests"><span class="fa fa-link"></span></a>Receiving Requests</h3>
+<p>As I&apos;ve mentioned above, I&apos;ve referenced a pattern of /collection/{:id} for an endpoint. The basic premise is that you provide the base endpoint of .../collection (usually shown as the plural version, so for a collection of users, it would be /user<strong>s</strong>) which at the base level gives the full collection, but when is followed by a route parameter of an ID (for example, a 32-character length hexadecimal value,&lt; like our Notes Document UNIDs), it will handle requests specific to that document. This effectively makes our servlet at one endpoint a two-part affair. Here&apos;s the approach I&apos;ll be using, with strictly <em>application/json</em> content type.</p>
+<h4 id="formatting-and-documentation"><a name="formatting-and-documentation" class="plugin-anchor" href="#formatting-and-documentation"><span class="fa fa-link"></span></a>Formatting and Documentation</h4>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Methods Allowed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.../collection</td>
+<td>GET</td>
+</tr>
+<tr>
+<td>.../collection/{:id}</td>
+<td>GET, POST, PUT, DELETE</td>
+</tr>
+</tbody>
+</table>
+<p>One major benefit of using a REST API framework in Java is the ability to automate your documentation. Documentation is one of the most important aspects of REST APIs (especially in publicly accessible ones), as if those who will consume them don&apos;t know how to interact with them, they won&apos;t be worth anything. Usually documentation includes the endpoints, allowed methods, and request and response structure.</p>
+<h4 id="route-matching"><a name="route-matching" class="plugin-anchor" href="#route-matching"><span class="fa fa-link"></span></a>Route Matching</h4>
+<p>We&apos;ll be handling multiple routed paths off a single collection endpoint (the collection and the <code>collection/{:id}</code>). The approach I&apos;ll be implementing in the route matching will make use of regular expressions. This involves defining a pattern and testing that against the requested path for a match. This will make use of <em>java.util.regex.Pattern</em> and <em>java.util.regex.Matcher</em>, respectively.</p>
+<p>Since we will get a true match with <em><a href="http://docs.oracle.com/javase/6/docs/api/java/util/regex/Matcher.html#find()" target="_blank">Matcher.find()</a></em> from a partial subset, it&apos;s important to test in a descending order from the more complex endpoint down to the simplest; the raw collection. It probably ought to look something like this:</p>
+<pre><code class="lang-java"><span class="hljs-comment">// in a method to parse route params</span>
+
+<span class="hljs-comment">// Accommodate two requests, one for all resources, another for a specific resource</span>
+<span class="hljs-keyword">private</span> Pattern regExAllPattern = Pattern.compile(<span class="hljs-string">&quot;/collection&quot;</span>);
+<span class="hljs-comment">// a UNID is 32-char hex, /collection/{:unid}</span>
+<span class="hljs-comment">// UNID ref: http://www-01.ibm.com/support/docview.wss?uid=swg21112556</span>
+<span class="hljs-keyword">private</span> Pattern regExIdPattern = Pattern.compile(<span class="hljs-string">&quot;/collection/([0-9a-fA-F]{32})&quot;</span>);
+
+<span class="hljs-comment">// regex parse pathInfo</span>
+Matcher matcher;
+
+<span class="hljs-comment">// Check for ID case first, since the All pattern would also match</span>
+matcher = regExIdPattern.matcher(pathInfo);
+<span class="hljs-keyword">if</span> (matcher.find()) {
+    unid = Integer.parseInt(matcher.group(<span class="hljs-number">1</span>));
+    System.out.println(<span class="hljs-string">&quot;do something with this document, the id is: &quot;</span>+unid);
+}
+
+matcher = regExAllPattern.matcher(pathInfo);
+<span class="hljs-keyword">if</span> (matcher.find()) {
+    System.out.println(<span class="hljs-string">&quot;do something with the collection&quot;</span>);
+}
+
+<span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> ServletException(<span class="hljs-string">&quot;Invalid URI&quot;</span>);
+</code></pre>
+<p><br></p>
+<p>[EDIT]</p>
+<p>It was brought to my attention that route matching is easier via @ annotations, as one might use via an approach <a href="jersey.java.net">with Jersey</a>. I absolutely agree, but up until now, for this series, I&apos;ve taken a framework-free approach to generating and implementing servlets. I&apos;ll just say that there&apos;s a very good reason that such frameworks are out there, and even implementing just the pieces for the @ annotations could be effort well spent. I fully welcome any response piece on this topic, as I&apos;m not experienced with Jersey (my preference to RegEx matching comes from my NodeJS/Express API experience).</p>
+<p>[/EDIT]</p>
+<h4 id="route-parameters"><a name="route-parameters" class="plugin-anchor" href="#route-parameters"><span class="fa fa-link"></span></a>Route Parameters</h4>
+<p>Now that we&apos;ve handled the route, it&apos;s time to handle any route parameters. Route parameters can be a little confusing, seeing how they look just like another route, but they can also be useful. Strictly speaking, the <code>/{:id}</code> is a form of route parameter, but they can also be nested (sequential?) to provide more echelons in a hierarchy. I previously built a single-purpose NodeJS/Express app that provided an API to handles requests to our IBM i for DB2 access; the specifics of that project were to have a three-level deep hierarchy of required information. This is generally a bit deeper than most people will go with route parameters, but it serves to illustrate the concept. My requests look like this:</p>
+<pre><code class="lang-javascript">.../api/{:firstLevelParam}/{:secondLevelParam}/{:thirdLevelParam}
+</code></pre>
+<p>Route parameters are a way of handling required, hierarchically defining values in a request. They&apos;re not the only way and many people don&apos;t like them, but I&apos;m a fan (for such hierarchical requirements). To parse them out, we need a handle on the <em>HttpServletRequest</em>&apos;s <em>pathInfo</em> property. We then split it off the <em>/</em> character to have a collection, in this case a <em>List&lt;String&gt;</em> of all the route path elements. Since the first three are related to the structure of the servlet, we need to start checking at the 4th (3rd position).</p>
+<pre><code class="lang-java">String reqPath = req.getPathInfo();
+out.println(<span class="hljs-string">&quot;pathInfo: &quot;</span> + reqPath);
+List&lt;String&gt; routeParm = Arrays.asList(reqPath.split(<span class="hljs-string">&quot;/(.*?)&quot;</span>));
+<span class="hljs-keyword">if</span>(routeParm.size() &gt; <span class="hljs-number">3</span>) {
+    <span class="hljs-comment">// /nsf/xsp/servletname is the base, so the fourth is the first routeParm</span>
+    <span class="hljs-keyword">for</span>( <span class="hljs-keyword">int</span> i=<span class="hljs-number">3</span>; i&lt;routeParm.size(); i++ ) {
+        out.println( <span class="hljs-string">&quot;routeParm: &quot;</span> + routeParm.get(i) );
+    }
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// didn&apos;t have any route parameters after the base</span>
+    out.println(<span class="hljs-string">&quot;routeParm: &quot;</span> + <span class="hljs-string">&quot;none&quot;</span>);
+}
+</code></pre>
+<p><br></p>
+<h4 id="query-parameters"><a name="query-parameters" class="plugin-anchor" href="#query-parameters"><span class="fa fa-link"></span></a>Query Parameters</h4>
+<p>Query parameters should be familiar to every XPages developer. <s>In fact, it&apos;s so normal that I&apos;ll just mentioned that you may wish to use a _VariableResolver_ to populate your _Map&lt;String, String&gt;_ as opposed to performing a _split_ on the [_queryString_][2] of the *HttpServletRequest*.</s></p>
+<p>[Edit]</p>
+<p>Thanks to <a href="twitter.com/Gidgerby">Jesse Gallagher</a> for catching something here. You can resolve <em>param</em>, but it would be better to use something else as it behaves as a <em>Map&lt;String,String&gt;</em>, <strong>not</strong> a <em>Map&lt;String,String[]&gt;</em>. If you&apos;re performing an <em>HttpServletRequest.getQueryString()</em>,  you will get a <em>java.lang.String</em> back, with which contains your results. You can manually pull this apart, but you should really use the <a href="docs.oracle.com/javaee/6/api/javax/servlet/ServletRequest.html#getParameterMap("><strong><em>getParameterMap</em></strong> method</a>) on your <em>HttpServletRequest</em> (the method is inherited from <em>ServletRequest</em>) as this <em>does return</em> a <em>Map&lt;String,String[]&gt;</em>, ensuring you get keyed values for each of multiple values per key. I&apos;ve used the method elsewhere, I&apos;m not sure what my brain was thinking up above, but I suspect it was a lack of caffeine :coffee:.</p>
+<pre><code class="lang-java">Map&lt;String, String[]&gt; param = (Map&lt;String, String[]&gt;) req.getParameterMap();
+</code></pre>
+<p>[/Edit]</p>
+<h3 id="restful-apis"><a name="restful-apis" class="plugin-anchor" href="#restful-apis"><span class="fa fa-link"></span></a>RESTful APIs?</h3>
+<p>How is this all REST? How is it an API? APIs, for those living under a rock, are an Application Programming Interface; the Notes/Domino API is how we interact with, reference, and use Notes/Domino entities. Providing access to invoke calls and operations over a REST API means that we have logic build into our network calls to our endpoint. REST is an approach, it has to do with stateless data requests, uses the HTTP VERBs, and is generally descriptive in format. There&apos;s not a governing true specification, just some basic rules. If you want to read more on REST in general, I recommend <a href="scotch.io/bar-talk/designing-a-restful-web-api">this scotch.io post</a>.</p>
+<h3 id="next-time"><a name="next-time" class="plugin-anchor" href="#next-time"><span class="fa fa-link"></span></a>Next Time</h3>
+<p>Up next will be a bit more code heavy, as I&apos;ll be walking the life cycle of data reception and response handling. It will cover an endpoint governing a certain data type, provide a collection at the collection level, establish a data model that both our responses will use and the ingested data types will instantiate, and provide CRUD operations against a given document (the data object instance). It will be a fast-paced post, but it should be worth the read.</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../_posts/2015-02-19-servlet-implementation.html" class="navigation navigation-prev " aria-label="Previous page: Basic Servlet Implementation"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../_posts/2015-03-10-interlude-and-announcement.html" class="navigation navigation-next " aria-label="Next page: Interlude and Announcement"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-github/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

@@ -1,4 +1,9 @@
-{
+{	
+	"title": "Dev|Blog: The First Year",
+	"description": "A compendium of the first year's worth of my devleopment blog's content.",
+	"language": "en",
+	"direction": "ltr",
+	"gitbook": "2.x.x",
     "plugins": [
 				"anchors",
 				"github",
@@ -6,11 +11,25 @@
 				"include-codeblock",
 				"highlight",
 				"livereload",
+				"toc",
 				"youtube"
 				],
 	"pluginsConfig": {
 		"github": {
 			"url": "https://github.com/edm00se"
-		}
-	}
+		},
+		"toc": {
+            "addClass": true,
+            "className": "toc"
+        }
+	},
+	"variables": {
+        "site": "https://edm00se.io",
+        "username": "edm00se",
+        "name": "Eric McCormick",
+        "urls.profile": "https://github.com/edm00se",
+        "urls.avatar": "https://avatars3.githubusercontent.com/u/622118?v=3&s=460",
+        "accounts.twitter": "edm00se",
+        "accounts.github": "edm00se"
+    }
 }

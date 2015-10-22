@@ -1,17 +1,5 @@
----
-layout: post
-type: post
-title: "Interlude for Servlets"
-description: “a 4-piece arrangement“
-category: admin
-tags: [admin]
-modified: 2015-03-10
-comments: true
-share: true
----
-
 ### An Interlude for Servlets
-My [series on servlets]( {{ site.url }}/servlet-series ) is in a temporary interlude. Don't worry, I've been working on it, the only problem is the issue I ran into. I was forced to re-evaluate some of the assumptions I had made previously and, to be quite honest, I'm glad I ran into that issue now, as opposed to <span data-toggle="tooltip" title="when I would feel more like a monkey that bangs on a keyboard all day">much later</span>. Suffice it to say, there is much more to come and I am excited to bring my next post, but I <span data-toggle="tooltip" title="woops">won't publish it [<s>again</s>](//twitter.com/edm00se/status/571629407695069184)</span> until it's ready.
+My [series on servlets]( {{ book.site }}/servlet-series ) is in a temporary interlude. Don't worry, I've been working on it, the only problem is the issue I ran into. I was forced to re-evaluate some of the assumptions I had made previously and, to be quite honest, I'm glad I ran into that issue now, as opposed to <span data-toggle="tooltip" title="when I would feel more like a monkey that bangs on a keyboard all day">much later</span>. Suffice it to say, there is much more to come and I am excited to bring my next post, but I won't publish it [again](//twitter.com/edm00se/status/571629407695069184) until it's ready.
 
 <blockquote class="twitter-tweet" lang="en"><p>For those who caught my blog post malfunction while I was 😴&#10;<a href="http://t.co/qbroT2qpCK">http://t.co/qbroT2qpCK</a></p>&mdash; Eric McCormick (@edm00se) <a href="https://twitter.com/edm00se/status/571667777800417280">February 28, 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -38,8 +26,8 @@ Reminder note: as [Mark Leusink](//linqed.eu/2014/06/25/considering-a-domino-upg
 ### An Announcement
 Speaking of my blog, I am migrating to a new domain name. Don't worry, all your existing bookmarks and feed links will work, as it will be the same blog hosted on [GitHub Pages](https://pages.github.com/). My link references will be updating and the Disqus comments migrating. From here on out, I can save myself a few characters here and there:
 
-{:.h3}
-**[edm00se.io](//edm00se.io/)**<br />
+
+#### **[edm00se.io](//edm00se.io/)**<br />
 
 ### A Second Announcement
 Recording has begun! I'm hoping that my efforts will be fruitful to people in the <s>years?</s> months to come, but I also know that many people learn better by seeing instead of reading. My blog can get a bit wordy at times, something I try to keep at bay, but in preparation for the end stages of my servlet series, I have recorded the first few pieces of the companion Notes in 9 episode to-be. It was suggested by some previously and is something I plan on delivering in conjunction with the end of my series.

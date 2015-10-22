@@ -1,15 +1,3 @@
----
-layout: post
-type: post
-title: "Self-Hosting SCM Server Options"
-description: "a quick comparison and few observations"
-category: scm
-tags: [source control, redmine, gitlab, gogs, github, bitbucket]
-modified: 2015-07-07
-comments: true
-share: true
----
-
 ### Intro
 Source Control has become a rallying point of sorts for me in the last few years. It has saved my bacon on a few occassions and source control in general (and git, specifically) is near and dear to me. I'm always on the quest for the best application development workflow, which can sometimes be difficult to achieve, depending on varying development team sizes.
 

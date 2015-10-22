@@ -1,15 +1,3 @@
----
-layout: post
-type: post
-title: "From XAgents to Servlets"
-description: "adopt the industry practice, don't forget what you've learned"
-category: xpages-servlets
-tags: [xpages, domino, java, servlet]
-modified: 2015-05-05
-comments: true
-share: true
----
-
 ### For Starters
 ¡Feliz Cinco de Mayo!
 
@@ -44,11 +32,11 @@ The caveat to using an _HttpServlet_ is the need for reliable _sessionAsSigner_ 
 
 When you do have to use an _XAgent_, I recommend having a single line of invocation in your before/after ...RenderResponse. This should invoke the fully qualified package.class.Method with a parameter being passed as a handle to _sessionAsSigner_. This keeps things clean and simple, and your class will be easily maintained in a consistent fashion to any _HttpServlet_ you create. For example:
 
-{% highlight xml %}
+```xml
 <xp:this.afterRenderResponse>
 	<![CDATA[#{javascript:com.eric.test.DataProvider.GetAllDataAsJson(sessionAsSigner);}]]>
 </xp:this.afterRenderResponse>
-{% endhighlight %}
+```
 
 ### Why Should I Care?
 While we may be using a uniquely abstracted variant of an _HttpServlet_, by building our logic as an _HttpServlet_ as opposed to an equivalent _XAgent_ (especially in Domino/XPage's SSJS), we create our data service in an industry normal fashion. If this on top of the performance increase doesn't sell it for you, I'm not sure what will.
@@ -56,4 +44,4 @@ While we may be using a uniquely abstracted variant of an _HttpServlet_, by buil
 ### Summary
 If we want to be more of a Java EE developer, which is the industry equivalent norm for an XPages developer (by my interpretation), then we should ebmrace the more industry norm practices. In this case, it also means we drop some of the unnecessary JSF "baggage" from the process of merely handling a data response.
 
-The final part of this series will cover some of the client-side application in using the the _HttpServlet_ we set up in the [Round House <s>Kick</s> Tour of data handling]({{ site.url }}/xpages-servlets/servlets-handling-data-round-house-kick/). It may come soon, if I can keep my spawning of non-series post ideas in check.
+The final part of this series will cover some of the client-side application in using the the _HttpServlet_ we set up in the [Round House <s>Kick</s> Tour of data handling]({{ book.site }}/xpages-servlets/servlets-handling-data-round-house-kick/). It may come soon, if I can keep my spawning of non-series post ideas in check.

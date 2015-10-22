@@ -2,8 +2,8 @@
 
 Out of a perverse desire to try out gitbook for my own, I've decided to make a somewhat massochistic attempt to create a gitbook out of some posts excerpted from my blog.
 
-* [Intro](_posts/SagaIntro.md)
-* [A Saga of Servlets](/README.md)
+* [Intro](/README.md)
+* [A Saga of Servlets](_posts/SagaIntro.md)
     * [A Quick Note on JARs](_posts/2015-02-09-a-quick-note-on-JARs.md)
     * [Servlet Intro and Flavors](_posts/2015-02-16-servlet-intro-and-flavors.md)
     * [Basic Servlet Implementation](_posts/2015-02-19-servlet-implementation.md)
@@ -16,7 +16,7 @@ Out of a perverse desire to try out gitbook for my own, I've decided to make a s
 * [Supporting](_posts/Supporting.md)
     * [RESTful API Consumption on the Server (Java)](_posts/2014-08-18-rest-consumption-server-side.md)
     * [Server REST Consumption with Authentication](_posts/2014-08-19-server-rest-with-authentication.md)
-    * [Custom JSOn with Java-ized XAgent](_posts/2014-08-25-custom-JSON-with-Java-sized-XAgent.md)
+    * [Custom JSON with Java-ized XAgent](_posts/2014-08-25-custom-JSON-with-Java-sized-XAgent.md)
 * [Application Logic](_posts/2014-10-24-application-logic.md)
 	* [Unraveling the M-V-C Mysteries](_posts/2014-09-16-unraveling-the-mvc-mysteries.md)
 	* [REST is Best](_posts/2014-09-18-rest-is-best.md)

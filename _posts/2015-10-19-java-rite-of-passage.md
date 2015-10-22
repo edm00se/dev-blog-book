@@ -1,15 +1,3 @@
----
-layout: post
-type: post
-title: "A Java Rite of Passage"
-description: "aka- I learn best by doing"
-category: xpages
-tags: [xpages, bluemix, xpages-servlets, java, github]
-modified: 2015-10-19
-comments: true
-share: true
----
-
 ### Intro
 The last couple of weeks has been a roller coaster of fun in regards to a work application and in regards to my extracurricular development activities. Suffice it to say, things are much improved and what follows is what I hope something that others can learn from, though [a simple Google search](https://www.google.com/?gws_rd=ssl#q=xpages+java+static+method) makes me realize that I'm not only not the first, but bound to not be the last, to make the same mistake in Java development. Rest assured, should you work through an issue like this, you'll probably never forget it, even if reading about it on someone else's blog didn't cause it to sink in fully.
 
@@ -21,7 +9,7 @@ What wound up tripping me up was that I was attempting to access my data NSF in 
 #### Static vs Instance Methods
 When using a static method, it is attached to the Class it is defined in, not any given instance. For convenience sake, this can be handy as you can invoke it directly by `MyClass.getSomethingStatically()` as opposed to access/create an instance of the Class in order to get the properties, a la `MyClass a = new MyClass(); a.getSomeInstanceProperty();`. Eclipse based editors make it really easy to add the _static_ modifier/key word to a method that you've typed in as if it were static.
 
-<a href="{{ site.url }}/images/post_images/easyToMakeStatic.png" data-toggle="tooltip" title="why do you make it so easy!?"><img src="{{ site.url }}/images/post_images/easyToMakeStatic.png" class="img-responsive center-block" /></a>
+<a href="{{ book.site }}/images/post_images/easyToMakeStatic.png" data-toggle="tooltip" title="why do you make it so easy!?"><img src="{{ book.site }}/images/post_images/easyToMakeStatic.png" class="img-responsive center-block" /></a>
 
 Per the [Understanding Class Members tutorial from the Oracle Java SE docs](https://docs.oracle.com/javase/tutorial/java/javaOO/classvars.html),
 

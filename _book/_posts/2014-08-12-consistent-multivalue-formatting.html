@@ -1,0 +1,797 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Consistent Multi-Value Formatting in SSJS for Domino/XPages | Dev|Blog: The First Year</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.4.3">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-anchors/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../_posts/2014-09-03-fixing-dojo-161-in-domino-853.html" />
+    
+    
+    <link rel="prev" href="../_posts/JavaScript.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="6.1" data-basepath=".." data-revision="Wed Oct 21 2015 22:47:55 GMT-0500 (CDT)">
+    
+
+<div class="book-summary">
+    <div class="book-search" role="search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Intro
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="_posts/SagaIntro.html">
+            
+                
+                    <a href="../_posts/SagaIntro.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        A Saga of Servlets
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="_posts/2015-02-09-a-quick-note-on-JARs.html">
+            
+                
+                    <a href="../_posts/2015-02-09-a-quick-note-on-JARs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        A Quick Note on JARs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="_posts/2015-02-16-servlet-intro-and-flavors.html">
+            
+                
+                    <a href="../_posts/2015-02-16-servlet-intro-and-flavors.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Servlet Intro and Flavors
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="_posts/2015-02-19-servlet-implementation.html">
+            
+                
+                    <a href="../_posts/2015-02-19-servlet-implementation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Basic Servlet Implementation
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="_posts/2015-02-25-servlet-handling-requests.html">
+            
+                
+                    <a href="../_posts/2015-02-25-servlet-handling-requests.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        Servlet Handling of Requests
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="_posts/2015-03-10-interlude-and-announcement.html">
+            
+                
+                    <a href="../_posts/2015-03-10-interlude-and-announcement.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        Interlude and Announcement
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="_posts/2015-03-19-servlets-handling-data-round-house-kick.html">
+            
+                
+                    <a href="../_posts/2015-03-19-servlets-handling-data-round-house-kick.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Servlet Handling Data, A Round House Kick
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="_posts/2015-06-16-building-a-front-end-pt1-a-quick-review.html">
+            
+                
+                    <a href="../_posts/2015-06-16-building-a-front-end-pt1-a-quick-review.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        Building a Front-End pt.1 Plus a Quick Review
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="_posts/2015-06-17-building-a-front-end-pt2-an-app-with-angular.html">
+            
+                
+                    <a href="../_posts/2015-06-17-building-a-front-end-pt2-an-app-with-angular.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        Building a Front-End pt.2: An App with AngularJS
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="_posts/2015-06-22-servlet-series-review.html">
+            
+                
+                    <a href="../_posts/2015-06-22-servlet-series-review.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.</b>
+                        
+                        Series Review
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="_posts/Supporting.html">
+            
+                
+                    <a href="../_posts/Supporting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Supporting
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="_posts/2014-08-18-rest-consumption-server-side.html">
+            
+                
+                    <a href="../_posts/2014-08-18-rest-consumption-server-side.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        RESTful API Consumption on the Server (Java)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="_posts/2014-08-19-server-rest-with-authentication.html">
+            
+                
+                    <a href="../_posts/2014-08-19-server-rest-with-authentication.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Server REST Consumption with Authentication
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="_posts/2014-08-25-custom-JSON-with-Java-sized-XAgent.html">
+            
+                
+                    <a href="../_posts/2014-08-25-custom-JSON-with-Java-sized-XAgent.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Custom JSON with Java-ized XAgent
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="_posts/2014-10-24-application-logic.html">
+            
+                
+                    <a href="../_posts/2014-10-24-application-logic.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Application Logic
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="_posts/2014-09-16-unraveling-the-mvc-mysteries.html">
+            
+                
+                    <a href="../_posts/2014-09-16-unraveling-the-mvc-mysteries.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Unraveling the M-V-C Mysteries
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="_posts/2014-09-18-rest-is-best.html">
+            
+                
+                    <a href="../_posts/2014-09-18-rest-is-best.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        REST is Best
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="_posts/2015-08-31-something-i-overheard-at-mwlug.html">
+            
+                
+                    <a href="../_posts/2015-08-31-something-i-overheard-at-mwlug.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        More on HTTP and AJAX Requests
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="_posts/2014-09-29-what-is-an-spa.html">
+            
+                
+                    <a href="../_posts/2014-09-29-what-is-an-spa.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        What is a Single Page Application(SPA)?
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="_posts/Related.html">
+            
+                
+                    <a href="../_posts/Related.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Related
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="_posts/2015-05-05-replacing-an-xagent.html">
+            
+                
+                    <a href="../_posts/2015-05-05-replacing-an-xagent.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        &quot;Replacing&quot; an XAgent
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="_posts/2015-07-14-alternate-front-end-development.html">
+            
+                
+                    <a href="../_posts/2015-07-14-alternate-front-end-development.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Alternate Front-End Development: Mocking Your Domino Back-end
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="_posts/Java.html">
+            
+                
+                    <a href="../_posts/Java.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Java
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="_posts/2015-01-09-when-you-need-a-comparator.html">
+            
+                
+                    <a href="../_posts/2015-01-09-when-you-need-a-comparator.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        When You Need a Comparator
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="_posts/2015-01-23-building-java-objects-from-json.html">
+            
+                
+                    <a href="../_posts/2015-01-23-building-java-objects-from-json.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        Building Java Objects from JSON
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="_posts/JavaScript.html">
+            
+                
+                    <a href="../_posts/JavaScript.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        JavaScript
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="6.1" data-path="_posts/2014-08-12-consistent-multivalue-formatting.html">
+            
+                
+                    <a href="../_posts/2014-08-12-consistent-multivalue-formatting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        Consistent Multi-Value Formatting in SSJS for Domino/XPages
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="_posts/2014-09-03-fixing-dojo-161-in-domino-853.html">
+            
+                
+                    <a href="../_posts/2014-09-03-fixing-dojo-161-in-domino-853.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        Fixing an Older Version of Dojo (1.6.1)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="_posts/2014-08-14-cal-picker-improver-dojo-only.html">
+            
+                
+                    <a href="../_posts/2014-08-14-cal-picker-improver-dojo-only.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        An Dojo Implementation of the Calendar Picker Script
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="_posts/Other.html">
+            
+                
+                    <a href="../_posts/Other.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Other
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="_posts/2015-03-23-brief-intro-to-nginx.html">
+            
+                
+                    <a href="../_posts/2015-03-23-brief-intro-to-nginx.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        A Brief Introduction to Nginx
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="_posts/2015-07-07-self-hosting-scm-server.html">
+            
+                
+                    <a href="../_posts/2015-07-07-self-hosting-scm-server.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        Self-Hosting SCM Server
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="_posts/2014-08-11-redmine-coderay-domino-syntax-highlighting.html">
+            
+                
+                    <a href="../_posts/2014-08-11-redmine-coderay-domino-syntax-highlighting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        Domino/XPages Design Element Syntax Highlighting on Redmine
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Dev|Blog: The First Year</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h3 id="consistent-multi-value-formatting"><a name="consistent-multi-value-formatting" class="plugin-anchor" href="#consistent-multi-value-formatting"><span class="fa fa-link"></span></a>Consistent Multi-Value Formatting</h3>
+<p>The Notes/Domino API is, to be polite, nuanced. It produces interesting results when a sane person might expect a more reasoned approach. For example, one of the staples of Notes/Domino API is the ability to have multi-value fields. Approaching Domino/XPages as a novice a couple years ago, I found it odd that performing a (NotesDocument)getItemValue on a field with multiple values checked in the field properties of the Form, from which the given document was computed (making it effectively a programmatic schema), would still yield a <em>java.lang.String</em> (or its respective object type) when a single value. When the field has multiple values, it returns a <em>java.util.Vector</em> containing the respective objects for its values. To account for this sort of situation, a developer then needs to account for the different types of returned values. This makes an otherwise simple call a bit tedious.</p>
+<p>Unbeknownst to me, Mark Leusink must have felt the same, as he posted a helper function to convert any value to an <em>Array</em> in his <a href="http://openntf.org/XSnippets.nsf/snippet.xsp?id=convert-any-value-to-an-array" target="_blank">$U.toArray XSnippet from December 2, 2011</a>. Since I didn&apos;t find XSnippets (somehow, I&apos;m not certain how), I created my own version working directly with <em>java.util.Vector</em> s. I believe there is still merit to this, as when it performs the typeof, if it&apos;s already a <em>java.util.Vector</em>, it does no conversion, as opposed to invoking an additional <em>toArray()</em> call. My version also makes use of a switch block, which means that it handles unexpected results, in my opinion, somewhat gracefully. Have a look.</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> util = {
+    <span class="hljs-comment">/**
+     * @author Eric McCormick
+     * src: http://edm00se.github.io/DevBlog/xpages/consistent-multivalue-formatting/
+     * @param java.util.Object to examine
+     * @return java.util.Vector of values from originating Object
+     **/</span>
+    asVec: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">obj</span>)</span>{
+        <span class="hljs-keyword">switch</span>(<span class="hljs-keyword">typeof</span> obj){
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;java.util.Vector&quot;</span>: <span class="hljs-comment">//it&apos;s already a Vector, just return it</span>
+                <span class="hljs-keyword">return</span> obj;
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;java.util.ArrayList&quot;</span>: <span class="hljs-comment">//it&apos;s an ArrayList, return it as a Vector</span>
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;Array&quot;</span>: <span class="hljs-comment">//it&apos;s an Array prototype, return it as a Vector</span>
+                <span class="hljs-keyword">var</span> x:java.util.Vector = <span class="hljs-keyword">new</span> java.util.Vector();
+                <span class="hljs-keyword">var</span> s = obj.size()||obj.length;
+                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i&lt;s; i++){
+                    x.add(obj[i]);
+                }
+                <span class="hljs-keyword">return</span> x;
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;java.lang.String&quot;</span>:
+            <span class="hljs-keyword">default</span>: <span class="hljs-comment">//it&apos;s most likely a String, return it as a Vector</span>
+                <span class="hljs-keyword">var</span> x:java.util.Vector = <span class="hljs-keyword">new</span> java.util.Vector();
+                x.add(obj);
+                <span class="hljs-keyword">return</span> x;
+                <span class="hljs-keyword">break</span>;
+        }
+    }
+};
+</code></pre>
+<p>The first case executes and, knowing that it&apos;s in the end format, merely returns it immediately. The second and third case are handled the same, regardless of the differences between a <em>java.util.ArrayList</em> and <em>Array</em>, their values are still accessible via bracket notation, making the operations performed, with the exception of <em>.size()</em> versus <em>.length</em> call, the same.</p>
+<p>Lastly, the <em>java.lang.String</em>, or unexpected results, are wrapped into a <em>java.util.Vector</em> and returned. The bottom line is, no matter what happens, you get back exactly what you expect.</p>
+<p>To me, this embodies what we strive for as developers; the need to write functional code which, <a href="http://techcrunch.com/2009/08/21/do-one-thing-and-do-it-well-40-years-of-unix/" target="_blank">as with the Unix philosophy</a>, does &quot;one thing and does it well&quot;. The building blocks of our applications need to be sound, consistent, and perform well under pressure. This builds out a temporary variable <em>only if necessary</em> and provides the functionality I had expected in the first place. It&apos;s easily built into a helper function library, which is exactly how I use it. Your mileage may vary, but I&apos;m a fan. If anyone has a better way of doing things, I wouldn&apos;t mind hearing it.</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../_posts/JavaScript.html" class="navigation navigation-prev " aria-label="Previous page: JavaScript"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../_posts/2014-09-03-fixing-dojo-161-in-domino-853.html" class="navigation navigation-next " aria-label="Next page: Fixing an Older Version of Dojo (1.6.1)"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-github/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

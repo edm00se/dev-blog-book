@@ -1,17 +1,5 @@
----
-layout: post
-type: post
-title: "Building Java Objects From JSON"
-description: "a better way"
-category: java
-tags: [xpages, domino, java, json, gson]
-modified: 2015-01-23
-comments: true
-share: true
----
-
 ### Intro
-<span data-toggle="tooltip" title="JavaScript Object Notation">JSON</span>, <a href="{{ site.url }}/json-with-java-in-xpages">as previously mentioned</a>, is a data format which has been exploding in web development since it was [first introduced in the early 2000s](//en.wikipedia.org/wiki/JSON#History). And whether or not you as a developer prefer XML (it's okay, they're just formats), there are some [good reasons](//blog.mongolab.com/2011/03/why-is-json-so-popular-developers-want-out-of-the-syntax-business/) to use JSON data. Ultimately, I don't really care about the "XML vs JSON" _debate_, because some services use XML and some use JSON, neither are going away anytime soon, and XML is [more flexible than most people give it credit for](//stackoverflow.com/questions/2673367/how-does-json-compare-to-xml-in-terms-of-file-size-and-serialisation-deserialisa/2677498#2677498).
+<span data-toggle="tooltip" title="JavaScript Object Notation">JSON</span>, <a href="{{ book.site }}/json-with-java-in-xpages">as previously mentioned</a>, is a data format which has been exploding in web development since it was [first introduced in the early 2000s](//en.wikipedia.org/wiki/JSON#History). And whether or not you as a developer prefer XML (it's okay, they're just formats), there are some [good reasons](//blog.mongolab.com/2011/03/why-is-json-so-popular-developers-want-out-of-the-syntax-business/) to use JSON data. Ultimately, I don't really care about the "XML vs JSON" _debate_, because some services use XML and some use JSON, neither are going away anytime soon, and XML is [more flexible than most people give it credit for](//stackoverflow.com/questions/2673367/how-does-json-compare-to-xml-in-terms-of-file-size-and-serialisation-deserialisa/2677498#2677498).
 
 _Note: I **am** more of a JSON fan, but that should be immaterial to relevance. The biggest argument I see in favor of JSON as opposed to XML is [file size](//bit.ly/1CtEpDS)._
 
@@ -27,13 +15,42 @@ This is in contrast to the provided [_com.ibm.commons.util.io.json_ package](//p
 Part of the reason _com.ibm.commons.util.io.json_ is popular (aside that it comes with the server, a big plus) is that it maps well to how we think. Streaming in elements into an object tends to make sense to us, but there's another way. Here's what I'll refer to as the "old" way (it works, it's valid, but not ideal as I'll show).
 
 
-{% gist 828fd9635b18efcbb0d9 OldWayCreateJsonWithCommonsLib.java %} <br />
+```java
+//...
+private void buildJsonData() {
+	JsonJavaObject myData = new JsonJavaObject();
+	myData.putJsonProperty("hello", "world");
+	JsonJavaArray dataAr = new JsonJavaArray();
+		for( int i=0; i<5; i++ ) {
+				JsonJavaObject subObject = new JsonJavaObject();
+				subObject.putJsonProperty("_id",i+1);
+				subObject.putJsonProperty("someOtherKey", "someOtherValue");
+			}
+	myData.putArray("data", dataAr);
+	myData.putJsonProperty("error", false);
+}
+//...
+```
+<br />
 
 
 This will generate a resulting JSON string with an object, represented as such:
 
 
-{% gist 828fd9635b18efcbb0d9 outputToJson.json %} <br />
+```javascript
+{
+	"hello": "world",
+	"dataAr": [
+				{ "_id": 1, "someOtherKey": "someOtherValue" },
+				{ "_id": 2, "someOtherKey": "someOtherValue" },
+				{ "_id": 3, "someOtherKey": "someOtherValue" },
+				{ "_id": 4, "someOtherKey": "someOtherValue" },
+				{ "_id": 5, "someOtherKey": "someOtherValue" }
+		],
+	"error": false
+}
+```
+<br />
 
 
 It may not be very exciting, but it sure gets the job done. Here's what I'm excited about.
@@ -50,7 +67,63 @@ Using [_JsonParser_](//public.dhe.ibm.com/software/dw/lotus/Domino-Designer/Java
 The Gson approach is to take in a class definition (or type) as the second parameter in their [_fromJson_](//google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html#fromJson(com.google.gson.JsonElement, java.lang.Class)) method, immediately mapping your object to a well structured object that you can invoke for its properties. Here's a quick demonstration.
 
 
-{% gist 828fd9635b18efcbb0d9 newWayCreateJsonWithJson.java %} <br />
+```java
+...
+  /*
+   * the main data object, we've read the API docs and know what to expect ;-)
+   * assuming that the previously output JSON data is what we're pulling off of
+   */
+  class SomeNiftyDataObject {
+    private String hello;
+    private List<SomeNiftySubObject> dataAr = new ArrayList<SomeNiftySubObject>();
+    private boolean error;
+      
+      /*
+       * the sub-object, in the dataAr
+       * since we need to define the sub-object's
+       * structure as well
+       */
+      class SomeNiftySubObject {
+        private String _id;
+        private String someOtherKey;
+        
+        /*
+         * Getter / Setter pairs
+         */
+        public String get_id() { return _id; }
+        public String getSomeOtherKey() { return someOtherKey; }
+        
+        public void set_id( String id ) { this._id = id; }
+        public void setSomeOtherKey( String someOtherKey ) { this.someOtherKey = someOtherKey; }
+      }
+    
+    /*
+     * Getter / Setter pairs
+     */
+     public String getHello() { return hello; }
+     public List<SomeNiftySubObject> getDataAr() { return dataAr; }
+     public boolean getError() { return error; }
+     
+     public void setHello( String hello ) { this.hello = hello; }
+     public void setDataAr( List<SomeNiftySubObject> dataAr ) { this.dataAr = dataAr; }
+     public void setError( boolean error ) { this.error = error; }
+    
+  }
+  
+...
+  /*
+   * we're building data, from a received set of JSON, into 
+   * a Java object, so we can do normal Java things with it
+   */
+  private void buildMyNewJsonData () {
+    // assuming that the JSON of the data is set in a string called rawData
+    Gson g = new Gson();
+    SomeNiftyDataObject nwData = g.fromJson( rawData, SomeNiftyDataObject.class );
+    //SomeNiftyDataObject is now instantiated with the data set according to our class above!
+  }
+...
+```
+<br />
 
 
 ### Why The "New" Way?
