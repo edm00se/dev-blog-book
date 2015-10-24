@@ -1,7 +1,7 @@
 {
   "name": "devblog-book",
   "version": "1.0.0",
-  "description": "a gitbook version of the highlights of my first year of my development blog",
+  "description": "a gitbook version of the highlights of the first year of my development blog",
   "main": "",
   "dependencies": {
     "gitbook-plugin-youtube": "^1.1.0"
