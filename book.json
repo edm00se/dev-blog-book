@@ -18,13 +18,13 @@
 	"pluginsConfig": {
 		"addcssjs": {
 				"css": [
-					"https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify-emoticons.min.css",
-					"https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.css",
-					"styles.css"
+					"css/emojify-emoticons.min.css",
+					"css/emojify.min.css",
+					"css/styles.css"
 				],
 				"js": [
-					"https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.js",
-					"scripts.js"
+					"js/emojify.min.js",
+					"js/scripts.js"
 				]
 			},
 		"github": {
