@@ -8,7 +8,7 @@
         <title>Application Logic | Dev|Blog: The First Year</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.4.3">
+        <meta name="generator" content="GitBook 2.5.1">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -28,6 +28,14 @@
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
         
     
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
     
 
         
@@ -39,18 +47,15 @@
     <link rel="prev" href="../_posts/2014-08-25-custom-JSON-with-Java-sized-XAgent.html" />
     
 
-        
+        <script type="text/javascript" src="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.js"></script><script type="text/javascript" src="../scripts.js"></script><link rel="stylesheet" type="text/css" href="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.css"><link rel="stylesheet" type="text/css" href="../styles.css">
     </head>
     <body>
         
         
-    <div class="book" data-level="3" data-basepath=".." data-revision="Wed Oct 21 2015 22:47:55 GMT-0500 (CDT)">
+    <div class="book" data-level="3" data-chapter-title="Application Logic" data-filepath="_posts/2014-10-24-application-logic.md" data-basepath=".." data-revision="Tue Oct 27 2015 21:11:26 GMT-0500 (CDT)">
     
 
 <div class="book-summary">
-    <div class="book-search" role="search">
-        <input type="text" placeholder="Type to search" class="form-control" />
-    </div>
     <nav role="navigation">
         <ul class="summary">
             
@@ -630,80 +635,7 @@
         <div class="body-inner">
             <div class="book-header" role="navigation">
     <!-- Actions Left -->
-    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
-    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
     
-    <div id="font-settings-wrapper" class="dropdown pull-left">
-        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
-        </a>
-        <div class="dropdown-menu font-settings">
-    <div class="dropdown-caret">
-        <span class="caret-outer"></span>
-        <span class="caret-inner"></span>
-    </div>
-
-    <div class="buttons">
-        <button type="button" id="reduce-font-size" class="button size-2">A</button>
-        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
-    </div>
-
-    <div class="buttons font-family-list">
-        <button type="button" data-font="0" class="button">Serif</button>
-        <button type="button" data-font="1" class="button">Sans</button>
-    </div>
-
-    <div class="buttons color-theme-list">
-        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
-        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
-        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
-    </div>
-</div>
-
-    </div>
-
-    <!-- Actions Right -->
-    
-    <div class="dropdown pull-right">
-        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
-        </a>
-        <div class="dropdown-menu font-settings dropdown-left">
-            <div class="dropdown-caret">
-                <span class="caret-outer"></span>
-                <span class="caret-inner"></span>
-            </div>
-            <div class="buttons">
-                <button type="button" data-sharing="twitter" class="button">
-                    Share on Twitter
-                </button>
-                <button type="button" data-sharing="google-plus" class="button">
-                    Share on Google
-                </button>
-                <button type="button" data-sharing="facebook" class="button">
-                    Share on Facebook
-                </button>
-                <button type="button" data-sharing="weibo" class="button">
-                    Share on Weibo
-                </button>
-                <button type="button" data-sharing="instapaper" class="button">
-                    Share on Instapaper
-                </button>
-            </div>
-        </div>
-    </div>
-    
-
-    
-    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
-    
-    
-    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
-    
-    
-    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
-    
-    
-    
-
 
     <!-- Title -->
     <h1>
@@ -718,40 +650,23 @@
                 
                     <section class="normal" id="section-">
                     
-                        <hr>
-<p>layout: post
-type: post
-title: Application Logic
-description: where to keep it and why that matters
-category: xpages
-tags:</p>
-<ul>
-<li>xpages</li>
-<li>javascript</li>
-<li>mvc</li>
-<li>rest</li>
-<li>angular
-modified: 2014-10-24T00:00:00.000Z
-comments: true
-share: true
----### Application Logic
-All applications require a certain logic. Even the most simple application, which is ultimately access to a data store, must have some definition of how it performs when certain events happen (what to do on a save event, what to validate and how). So, ultimately, the relevant question is to the effect of &quot;where does my application reside?&quot; Developing Domino/XPages applications, it manifests primarily in how you handle your server logic, interface logic, and the display layer of XPages and Custom Controls. I know it&apos;s an intuitive concept, but they don&apos;t all have to be mixed into one blended mess.</li>
-</ul>
-<h3 id="the-spaghetti-code-sup-8482-sup-situation"><a name="the-spaghetti-code-sup-8482-sup-situation" class="plugin-anchor" href="#the-spaghetti-code-sup-8482-sup-situation"><span class="fa fa-link"></span></a>The Spaghetti Code<sup>&#x2122;</sup> Situation</h3>
-<p>If you&apos;re suffering the effects of having to support applications which implement less-than-awesome &quot;code patterns&quot;, then you&apos;ll be well aware of the fact that the applications logic, if handled poorly, gets strewn about through all the various and potential bindings for your controls. Should it be defined in-line with every control what specific (non-default) formatting of date you want across </p>
+                        <h3 id="application-logic"><a name="application-logic" class="plugin-anchor" href="#application-logic"><span class="fa fa-link"></span></a>Application Logic</h3>
+<p>All applications require a certain logic. Even the most simple application, which is ultimately access to a data store, must have some definition of how it performs when certain events happen (what to do on a save event, what to validate and how). So, ultimately, the relevant question is to the effect of &quot;where does my application reside?&quot; Developing Domino/XPages applications, it manifests primarily in how you handle your server logic, interface logic, and the display layer of XPages and Custom Controls. I know it&apos;s an intuitive concept, but they don&apos;t all have to be mixed into one blended mess.</p>
+<h3 id="the-spaghetti-code-situation"><a name="the-spaghetti-code-situation" class="plugin-anchor" href="#the-spaghetti-code-situation"><span class="fa fa-link"></span></a>The Spaghetti Code<sup>&#x2122;</sup> Situation</h3>
+<p>If you&apos;re suffering the effects of having to support applications which implement less-than-awesome &quot;code patterns&quot;, then you&apos;ll be well aware of the fact that the applications logic, if handled poorly, gets strewn about through all the various and potential bindings for your controls. Should it be defined in-line with every control what specific (non-default) formatting of date you want across multiple input fields and multiple design elements, you can mistakenly (more easily) wind up with several permutations, should you have to enter the patterns at different times. <sub>Note: hopefully you&apos;ll at least put the pattern into a config object for consistent referencing :wink:.</sub></p>
 <p>So, your application logic is already residing, in part, in the client-side; assuming that you do any client-side executions. If your application is truly a collection of web forms with the only events being navigation, open, and save events, then you probably don&apos;t need this approach. If you do anything more while the browser has a page loaded, then you&apos;ll want to adopt a more unified approach, at least for larger applications.</p>
 <h3 id="controller-classes-are-on-the-server-already"><a name="controller-classes-are-on-the-server-already" class="plugin-anchor" href="#controller-classes-are-on-the-server-already"><span class="fa fa-link"></span></a>Controller Classes Are On The Server... Already!</h3>
 <p>I know that&apos;s a rather obvious statement, but if you&apos;re sticking to a development pattern that at least includes Controller classes, then you&apos;ve got your work flow actions and validation requirements are all available to you on the server. Say you want to provide your DB&apos;s CRUD operations with server-side actions and validation (to keep from cramming malformed data into your DB) via a RESTful servlet, you&apos;ll want these all in place.</p>
-<p>This sort of implementation also lends itself to, not just validation, but &apos;scrubbing&apos; of all input data. For example, say you want to use a &quot;Rich Text Editor&quot;-like component, such as <a href="github.com/fraywing/textAngular">textAngular</a> (in contrast to implementing workarounds for the <em>xp:inputRichText</em> control; keeps markup but limits to text-only), you can ensure that all input text is properly escaped, immediately prior to your save operations. Major actions, such as sending notification emails, applying advanced permissions (Readers/Authors), and other, more intensive, operations should all occur on the server. This decreases the work load on your client/browser and keeps it nice and tidy.</p>
-<h3 id="client-side-logic"><a name="client-side-logic" class="plugin-anchor" href="#client-side-logic"><span class="fa fa-link"></span></a>Client-Side Logic</h3>
-<p>For a given page at a given state of work flow,  you likely only need a smaller set of logic. The goal is to provide consistent and well formatted data back to the server. So long as your client-side controllers (a la <a href="docs.angularjs.org/api/ng/directive/ngController">AngularJS controller modules</a>) know how to act at <em>that point in the larger work flow</em>, you&apos;ve achieved your objective in enforcing well formatted data. It&apos;s this subset of information that makes for the &quot;extra work&quot; that some developers complain about, but I will always hold to the fact that it may require a <em>different</em> set of work, and that your focus as a developer <em>only changes</em> for the implementation. It&apos;s my belief that done properly, it&apos;s the same amount of &quot;work&quot;.</p>
+<p>This sort of implementation also lends itself to, not just validation, but &apos;scrubbing&apos; of all input data. For example, say you want to use a &quot;Rich Text Editor&quot;-like component, such as <a href="http://github.com/fraywing/textAngular/" target="_blank">textAngular</a> (in contrast to implementing workarounds for the <em>xp:inputRichText</em> control; keeps markup but limits to text-only), you can ensure that all input text is properly escaped, immediately prior to your save operations. Major actions, such as sending notification emails, applying advanced permissions (Readers/Authors), and other, more intensive, operations should all occur on the server. This decreases the work load on your client/browser and keeps it nice and tidy.</p>
+<h3 id="clientside-logic"><a name="clientside-logic" class="plugin-anchor" href="#clientside-logic"><span class="fa fa-link"></span></a>Client-Side Logic</h3>
+<p>For a given page at a given state of work flow,  you likely only need a smaller set of logic. The goal is to provide consistent and well formatted data back to the server. So long as your client-side controllers (a la <a href="http://docs.angularjs.org/api/ng/directive/ngController" target="_blank">AngularJS controller modules</a>) know how to act at <em>that point in the larger work flow</em>, you&apos;ve achieved your objective in enforcing well formatted data. It&apos;s this subset of information that makes for the &quot;extra work&quot; that some developers complain about, but I will always hold to the fact that it may require a <em>different</em> set of work, and that your focus as a developer <em>only changes</em> for the implementation. It&apos;s my belief that done properly, it&apos;s the same amount of &quot;work&quot;.</p>
 <h3 id="full-stack-approach"><a name="full-stack-approach" class="plugin-anchor" href="#full-stack-approach"><span class="fa fa-link"></span></a>Full Stack Approach</h3>
-<p>So if the work&apos;s the same, what should we do differently? As a reader of my existing posts, you&apos;re likely aware that I&apos;m a big fan of <a href="https://edm00se.io/xpages/unraveling-the-mvc-mysteries" target="_blank">M-V-C development patterns</a>. I&apos;m not only a big fan of M-V-C when it comes to the multiple aspects of an application, but also across the layers a web application operates on. The JavaScript that&apos;s used with the interface layer, that runs in the user&apos;s browser, should really just be concerned with how that user interfaces with the page they&apos;re given and be independent of the server-side logic which governs things like notifications. This forced segregation helps with the <a href="xomino.com/2014/03/04/why-using-xpages-partial-refresh-is-sometimes-easy-for-developers-and-bad-for-users/&quot;"><em>partialRefresh hell</em></a> which is too easy for a fresh XPages developer to (overly) rely on.</p>
+<p>So if the work&apos;s the same, what should we do differently? As a reader of my existing posts, you&apos;re likely aware that I&apos;m a big fan of <a href="https://edm00se.io/xpages/unraveling-the-mvc-mysteries" target="_blank">M-V-C development patterns</a>. I&apos;m not only a big fan of M-V-C when it comes to the multiple aspects of an application, but also across the layers a web application operates on. The JavaScript that&apos;s used with the interface layer, that runs in the user&apos;s browser, should really just be concerned with how that user interfaces with the page they&apos;re given and be independent of the server-side logic which governs things like notifications. This forced segregation helps with the <a href="http://xomino.com/2014/03/04/why-using-xpages-partial-refresh-is-sometimes-easy-for-developers-and-bad-for-users/&quot;" target="_blank"><em>partialRefresh hell</em></a> which is too easy for a fresh XPages developer to (overly) rely on.</p>
 <h3 id="structure-is-sanity"><a name="structure-is-sanity" class="plugin-anchor" href="#structure-is-sanity"><span class="fa fa-link"></span></a>Structure is Sanity</h3>
-<p>Cross-system integration is increasingly a component of my work at my day job and keeps bringing me back to the fact that more organized code, segregated to the layers of application architecture, according to an M-V-C approach, is the way to go. My goal is to have our applications semi-independent of our database storage and db operations. This is primarily because I&apos;m no longer the lone web developer in my day job, but one who&apos;s working with a developer who has a drastically different experience and existing skill set. I&apos;m currently bringing him up to speed on what Domino and XPages are, but as a beginner to the XPages platform (a la myself three years ago), it&apos;s easy to blur the lines between database and application layer. This is not a major sin, but in an environment of interconnected systems, it&apos;s at least worth <a href="www.google.com/search">persuing</a>.</p>
+<p>Cross-system integration is increasingly a component of my work at my day job and keeps bringing me back to the fact that more organized code, segregated to the layers of application architecture, according to an M-V-C approach, is the way to go. My goal is to have our applications semi-independent of our database storage and db operations. This is primarily because I&apos;m no longer the lone web developer in my day job, but one who&apos;s working with a developer who has a drastically different experience and existing skill set. I&apos;m currently bringing him up to speed on what Domino and XPages are, but as a beginner to the XPages platform (a la myself three years ago), it&apos;s easy to blur the lines between database and application layer. This is not a major sin, but in an environment of interconnected systems, it&apos;s at least worth <a href="http://www.google.com/search?q=site%3Aedm00se.io%2F%20spaghetti%20code&amp;rct=j" target="_blank">persuing</a>.</p>
 <h3 id="put-your-code-where-your-mouth-is"><a name="put-your-code-where-your-mouth-is" class="plugin-anchor" href="#put-your-code-where-your-mouth-is"><span class="fa fa-link"></span></a>Put Your Code Where Your Mouth Is</h3>
 <p>Some of my in-progress efforts will help to quantify this identification of an <em>allotment of development work</em>, for comparison between beginner (&quot;traditional&quot;?) XPages development with SSJS libraries to contain relevant control and validation mechanisms and otherwise &quot;vanilla&quot; <em>xp:</em> control elements, Java bean backed XPages with controller classes, and a client (AngularJS) app with RESTful servlet implementation (utilizing those controller classes). I want to show off a more complete spectrum, highlighting the benefits of the theory <s>I&apos;ve talked about</s> I hope I&apos;m done talking about, so I can <em>just show you</em>. While this is all relatively not complex, with the example I have in mind, it is taking some time, which I seem to have increasingly less of. In the end, I&apos;ll get there, so while my blog may be quiet until I have something to share, rest assured that it is on its way.</p>
-<p>For more on application structuring, I recommend <a href="www.youtube.com/watch">the recording of Jesse&apos;s MWLUG 2014 session on the subject</a>; he also writes on his blog about the intricacies of <a href="frostillic.us/blog/posts/D815DC7ED059395885257D6B00001006">how to use his Frostillic.us framework</a>. This is also (I hope) the last time I need to cite Jesse&apos;s efforts and can begin to cite my own efforts as I progress in my examples.</p>
+<p>For more on application structuring, I recommend <a href="http://www.youtube.com/watch?v=KJvydKVsqXk" target="_blank">the recording of Jesse&apos;s MWLUG 2014 session on the subject</a>; he also writes on his blog about the intricacies of <a href="http://frostillic.us/blog/posts/D815DC7ED059395885257D6B00001006" target="_blank">how to use his Frostillic.us framework</a>. This is also (I hope) the last time I need to cite Jesse&apos;s efforts and can begin to cite my own efforts as I progress in my examples.</p>
 <p class="text-center"><a href="https://edm00se.io/images/post_images/app_logic_nightmares.jpg" data-toggle="tooltip" title="keep sane and structure your code!" target="_blank"><img src="https://edm00se.io/images/post_images/app_logic_nightmares.jpg" alt="keep sane and structure your code!"></a></p>
                     
                     </section>
@@ -781,9 +696,25 @@ All applications require a certain logic. Even the most simple application, whic
     <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"}};
+    var config = {"addcssjs":{"css":["https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify-emoticons.min.css","https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.css","styles.css"],"js":["https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.js","scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"},"anchors":{},"include":{},"include-codeblock":{},"highlight":{},"livereload":{},"youtube":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>
