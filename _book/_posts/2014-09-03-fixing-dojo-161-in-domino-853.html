@@ -8,7 +8,7 @@
         <title>Fixing an Older Version of Dojo (1.6.1) | Dev|Blog: The First Year</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.5.1">
+        <meta name="generator" content="GitBook 2.4.3">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -25,15 +25,11 @@
         
     
         
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-image-captions/image-captions.css">
+        
+    
+        
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
         
     
     
@@ -47,15 +43,18 @@
     <link rel="prev" href="../_posts/2014-08-12-consistent-multivalue-formatting.html" />
     
 
-        <script type="text/javascript" src="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.js"></script><script type="text/javascript" src="../scripts.js"></script><link rel="stylesheet" type="text/css" href="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.css"><link rel="stylesheet" type="text/css" href="../styles.css">
+        <script type="text/javascript" src="../js/emojify.min.js"></script><script type="text/javascript" src="../js/scripts.js"></script><link rel="stylesheet" type="text/css" href="../css/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../css/emojify.min.css"><link rel="stylesheet" type="text/css" href="../css/styles.css">
     </head>
     <body>
         
         
-    <div class="book" data-level="6.2" data-chapter-title="Fixing an Older Version of Dojo (1.6.1)" data-filepath="_posts/2014-09-03-fixing-dojo-161-in-domino-853.md" data-basepath=".." data-revision="Tue Oct 27 2015 21:11:26 GMT-0500 (CDT)">
+    <div class="book" data-level="6.2" data-basepath=".." data-revision="Fri Nov 06 2015 20:36:46 GMT-0600 (CST)">
     
 
 <div class="book-summary">
+    <div class="book-search" role="search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
     <nav role="navigation">
         <ul class="summary">
             
@@ -635,7 +634,80 @@
         <div class="body-inner">
             <div class="book-header" role="navigation">
     <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
     
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
 
     <!-- Title -->
     <h1>
@@ -652,14 +724,14 @@
                     
                         <h4 id="clarification"><a name="clarification" class="plugin-anchor" href="#clarification"><span class="fa fa-link"></span></a>CLARIFICATION</h4>
 <p>This all stems form an issue with Dojo less than 1.6.2 in Chrome 29 and any browser that used the same child node reference. This post specifically covers how to fix this (as it occurs with Domino 8.5.3) and get one of the most popular web standards compliant browsers back in the game with Domino and the ExtLib/UP1 controls.</p>
-<h3 id="fixing-dojo-161-in-domino-853"><a name="fixing-dojo-161-in-domino-853" class="plugin-anchor" href="#fixing-dojo-161-in-domino-853"><span class="fa fa-link"></span></a>Fixing Dojo 1.6.1 in Domino 8.5.3</h3>
+<h3 id="fixing-dojo-1-6-1-in-domino-8-5-3"><a name="fixing-dojo-1-6-1-in-domino-8-5-3" class="plugin-anchor" href="#fixing-dojo-1-6-1-in-domino-8-5-3"><span class="fa fa-link"></span></a>Fixing Dojo 1.6.1 in Domino 8.5.3</h3>
 <p>I ran into a situation recently that required a bit of determination to fix. The BLUF: my implementation of the <a href="http://xcellerant.net/2013/05/01/dojo-data-grid-part-14-enhanced-filtering-with-no-coding/comment-page-1/#comment-2498" target="_blank">Dojo Enhanced DataGrid was breaking when applying the dojox.grid.enhanced.plugins.Filter</a> due to an issue with the Dojo queries <a href="http://dojotoolkit.org/reference-guide/1.6/dojo/query.html#queries-rooted-at-a-given-element" target="_blank">of elements rooted at the specified element</a>. For example:</p>
 <p><pre><code> dojo.query(&apos;&gt; *&apos;, dojo.byId(&apos;container&apos;)) </code></pre>
 Thankfully, that <a href="http://xcellerant.net/2013/05/01/dojo-data-grid-part-14-enhanced-filtering-with-no-coding/comment-page-1/#comment-6210" target="_blank">doesn&apos;t keep a good developer down</a>.</p>
-<h3 id="domino-9-853-up1-and-my-woes"><a name="domino-9-853-up1-and-my-woes" class="plugin-anchor" href="#domino-9-853-up1-and-my-woes"><span class="fa fa-link"></span></a>Domino 9, 8.5.3 UP1, and my Woes</h3>
+<h3 id="domino-9-8-5-3-up1-and-my-woes"><a name="domino-9-8-5-3-up1-and-my-woes" class="plugin-anchor" href="#domino-9-8-5-3-up1-and-my-woes"><span class="fa fa-link"></span></a>Domino 9, 8.5.3 UP1, and my Woes</h3>
 <p>IBM Domino 9 brings a great many changes to the Domino server and has been fairly well received. Stuck, for now, with 8.5.3, I was at least able to get Upgrade Pack 1 applied, giving me the basic level of the majority of the same new controls.</p>
 <p>That being said, I still had the controls I wanted to play with, so I still tried the &quot;play at home&quot; version of <a href="http://twitter.com/Balassaitis" target="_blank">Brad Balassaitis</a>&apos; excellent series on <a href="http://xcellerant.net/dojo-grids-in-xpages/" target="_blank">Dojo Grids in XPages</a>. When I hit <a href="http://xcellerant.net/dojo-data-grid-part-14-enhanced-filtering-with-no-coding" target="_blank">Part 14: Enhanced Filtering with No Coding</a>, I found that the Filtering plugin would cause my control to break in a rather unexpected fashion.</p>
-<h3 id="dojo-161"><a name="dojo-161" class="plugin-anchor" href="#dojo-161"><span class="fa fa-link"></span></a>Dojo 1.6.1</h3>
+<h3 id="dojo-1-6-1"><a name="dojo-1-6-1" class="plugin-anchor" href="#dojo-1-6-1"><span class="fa fa-link"></span></a>Dojo 1.6.1</h3>
 <p>Domino 8.5.3 has Dojo 1.6.1. The culprit in question, as I found out from attempting to use Chrome with the Enhanced Grid, the issue was with the child selector call.
 <a href="https://edm00se.io/images/post_images/dojoBeastInLair.png" data-toggle="tooltip" title="the beast in its lair" target="_blank"><img src="https://edm00se.io/images/post_images/dojoBeastInLair.png"></a></p>
 <p>After finding what the issue was, followed by some intense Google searching, I had found <a href="http://github.com/dojo/dojo/commit/fc262d0d589c490cdd671791f1546a4665ed69c6#commitcomment-3954783" target="_blank">the fix for this in Dojo 1.6.2</a>. The fix was small enough, I thought, &quot;why can&apos;t I implement this?&quot; So I did.</p>
@@ -716,25 +788,9 @@ Thankfully, that <a href="http://xcellerant.net/2013/05/01/dojo-data-grid-part-1
     <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"addcssjs":{"css":["https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify-emoticons.min.css","https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.css","styles.css"],"js":["https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.js","scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"},"anchors":{},"include":{},"include-codeblock":{},"highlight":{},"livereload":{},"youtube":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"addcssjs":{"css":["css/emojify-emoticons.min.css","css/emojify.min.css","css/styles.css"],"js":["js/emojify.min.js","js/scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"}};
     gitbook.start(config);
 });
 </script>

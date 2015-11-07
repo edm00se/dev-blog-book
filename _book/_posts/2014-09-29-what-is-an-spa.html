@@ -8,7 +8,7 @@
         <title>What is a Single Page Application(SPA)? | Dev|Blog: The First Year</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.5.1">
+        <meta name="generator" content="GitBook 2.4.3">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -25,15 +25,11 @@
         
     
         
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-image-captions/image-captions.css">
+        
+    
+        
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
         
     
     
@@ -47,15 +43,18 @@
     <link rel="prev" href="../_posts/2015-08-31-something-i-overheard-at-mwlug.html" />
     
 
-        <script type="text/javascript" src="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.js"></script><script type="text/javascript" src="../scripts.js"></script><link rel="stylesheet" type="text/css" href="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.css"><link rel="stylesheet" type="text/css" href="../styles.css">
+        <script type="text/javascript" src="../js/emojify.min.js"></script><script type="text/javascript" src="../js/scripts.js"></script><link rel="stylesheet" type="text/css" href="../css/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../css/emojify.min.css"><link rel="stylesheet" type="text/css" href="../css/styles.css">
     </head>
     <body>
         
         
-    <div class="book" data-level="3.4" data-chapter-title="What is a Single Page Application(SPA)?" data-filepath="_posts/2014-09-29-what-is-an-spa.md" data-basepath=".." data-revision="Tue Oct 27 2015 21:11:26 GMT-0500 (CDT)">
+    <div class="book" data-level="3.4" data-basepath=".." data-revision="Fri Nov 06 2015 20:36:46 GMT-0600 (CST)">
     
 
 <div class="book-summary">
+    <div class="book-search" role="search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
     <nav role="navigation">
         <ul class="summary">
             
@@ -635,7 +634,80 @@
         <div class="body-inner">
             <div class="book-header" role="navigation">
     <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
     
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
 
     <!-- Title -->
     <h1>
@@ -669,7 +741,7 @@
 <li>an application strategy that requires &quot;less work&quot; (it just shifts where your attention goes)</li>
 </ul>
 <h3 id="a-brief-anatomy"><a name="a-brief-anatomy" class="plugin-anchor" href="#a-brief-anatomy"><span class="fa fa-link"></span></a>A Brief Anatomy</h3>
-<p>As you probably know by now, I&apos;m a big fan of <a href="http://angularjs.org/" target="_blank">AngularJS&lt;/a&gt;. It makes a lot of the client-side application development easier than you might think. The example file is the app/index.html file from the <a href="http://github.com/angular/angular-seed" target="_blank">angular-seed project on GitHub</a>.</a></p>
+<p>As you probably know by now, I&apos;m a big fan of <a href="https://angularjs.org" target="_blank">AngularJS</a>. It makes a lot of the client-side application development easier than you might think. The example file is the app/index.html file from the <a href="https://github.com/angular/angular-seed" target="_blank">angular-seed project on GitHub</a>.</p>
 <script src="http://gist-it.sudarmuthu.com/github/angular/angular-seed/blob/master/app/index.html"></script>
 
 <p>The general progression is:</p>
@@ -688,11 +760,11 @@
 <h3 id="the-biggest-pieces"><a name="the-biggest-pieces" class="plugin-anchor" href="#the-biggest-pieces"><span class="fa fa-link"></span></a>The Biggest Pieces</h3>
 <p>How a page loads in the web browser is the ultimate destination and, by proxy, make or break end point for any web application. The user&apos;s experience is truest and only <em>real</em> common denominator for how a user interacts with the server. The server can perform amazingly and do great things, but if the application is consumed in a browser that is old or outdated (looking at you, old versions of IE and the users that run them), or the loading of that page is just ridiculously network call heavy (when it could be avoided), then the user suffers, which means the application suffers.</p>
 <p>A lot of front-end developers spend quite a bit of time on the below topics. Basically, if you open up and make use of the <a href="chrome.google.com/webstore/detail/pagespeed-insights-by-goo/gplegfbjlmmehdoakndmohflojccocli">Page Speed Insights extension for Chrome&lt;/a&gt; or <a href="addons.mozilla.org/en-US/firefox/addon/apptelemetry">app.telemetry for Firefox</a>, you can find a number of good statistics and recommendations for how to speed up your web app and &quot;milk it for what it&apos;s worth&quot;. When I first saw this done, it felt like someone was attempting to divine the aether of the Internet, but there&apos;s a lot to be said for end user performance.</a></p>
-<p>IBM has thankfully thought of some of these concepts and the XSP properties let us set a few things to help with UX, including runtime optimized JS and CSS, compressing resources files (CSS and Dojo), and <a href="per.lausten.dk/blog/2012/02/xpages-2-very-easy-performance-optimization-tricks.html">other tasty tidbits&lt;/a&gt; that I&apos;m sure other people know more about than I. In fact, one of the easiest ways to improve a partial refresh in XPages is to better manage <a href="hasselba.ch/blog">how much you refresh</a> to make for a better <em>partialRefresh</em> experience.</a></p>
+<p>IBM has thankfully thought of some of these concepts and the XSP properties let us set a few things to help with UX, including runtime optimized JS and CSS, compressing resources files (CSS and Dojo), and <a href="http://per.lausten.dk/blog/2012/02/xpages-2-very-easy-performance-optimization-tricks.html" target="_blank">other tasty tidbits</a> that I&apos;m sure other people know more about than I. In fact, one of the easiest ways to improve a partial refresh in XPages is to better manage <a href="http://hasselba.ch/blog/?p=1389" target="_blank">how much you refresh</a> to make for a better <em>partialRefresh</em> experience.</p>
 <h5 id="resource-aggregation"><a name="resource-aggregation" class="plugin-anchor" href="#resource-aggregation"><span class="fa fa-link"></span></a>Resource Aggregation</h5>
 <p>This is definitely one where IBM has tried to give us something that the front-end world has been big on, of late.  combination of (as much/many) static resources as possible, along with gzipping for even lighter footprint while in transmission, gives the browser a bit of a faster load. With gzip&apos;d content, it still takes a decompression on the browser&apos;s part once that&apos;s done, but hey, I&apos;ve been focusing on network requests/responses. In XSP Properties, just set <em>xsp.resources.aggregate</em> to true in Domino 8.5.3 and up.</p>
 <h5 id="cache-control"><a name="cache-control" class="plugin-anchor" href="#cache-control"><span class="fa fa-link"></span></a>Cache Control</h5>
-<p>Something I haven&apos;t figured out how to do yet in Domino is to regulate the content cache for certain resources. I&apos;m interested in particular in things like CSS and images. As I try to make life easier on myself, I tend to host most of the elements I&apos;m interested in caching (ideally for about 30 days) reside in my ..\Domino\data\domino\html\ path, for what I don&apos;t use from a <a href="en.wikipedia.org/wiki/Content_delivery_network">CDN</a> (and CDN fall-back copies). I also don&apos;t know how this interacts with the resource aggregation property (<em>xsp.resources.aggregate</em> see above). I&apos;m also uncertain about how the use of the <em>xsp.expires.global</em> property compares against server hosted resources (..\Domino\data\domino\html).</p>
+<p>Something I haven&apos;t figured out how to do yet in Domino is to regulate the content cache for certain resources. I&apos;m interested in particular in things like CSS and images. As I try to make life easier on myself, I tend to host most of the elements I&apos;m interested in caching (ideally for about 30 days) reside in my ..\Domino\data\domino\html\ path, for what I don&apos;t use from a <a href="http://en.wikipedia.org/wiki/Content_delivery_network" target="_blank">CDN</a> (and CDN fall-back copies). I also don&apos;t know how this interacts with the resource aggregation property (<em>xsp.resources.aggregate</em> see above). I&apos;m also uncertain about how the use of the <em>xsp.expires.global</em> property compares against server hosted resources (..\Domino\data\domino\html).</p>
 <h5 id="lazy-loading"><a name="lazy-loading" class="plugin-anchor" href="#lazy-loading"><span class="fa fa-link"></span></a>Lazy Loading</h5>
 <p>I&apos;ve <a href="https://edm00se.io/xpages/rest-is-best/#rest-is-lean" target="_blank">previously talked&lt;/a&gt; about how I have a dislike for (at least 1.6&apos;s and/or older versions of) Dojo&apos;s lazy loading of button styles. Aside: I also think that not using <em>dijit.form.Button</em> would take care of that, but that&apos;s not my call, sadly. I also mentioned how some of this <a href="https://edm00se.io/xpages/rest-is-best/#comment-1605659445" target="_blank">has improved with Dojo&apos;s AMD</a> over time and multiple releases. The fact of the matter is: I want to control what and how much is transported over the network connection at any given request; and <a href="https://edm00se.io/xpages/rest-is-best/#comment-1599645245" target="_blank">I&apos;m not alone</a>.</a></p>
 <p>This is such a big topic to me, because I spend a lot of my time and development effort building, extending, and maintaining a (very) large application for my company. This application, which has turned into more of a platform, spans every individual location of ours across the country. This application calls home to our corporate servers making line quality a bit of a topic as well. Server locations, </p>
@@ -735,25 +807,9 @@
     <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"addcssjs":{"css":["https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify-emoticons.min.css","https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.css","styles.css"],"js":["https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.js","scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"},"anchors":{},"include":{},"include-codeblock":{},"highlight":{},"livereload":{},"youtube":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"addcssjs":{"css":["css/emojify-emoticons.min.css","css/emojify.min.css","css/styles.css"],"js":["js/emojify.min.js","js/scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"}};
     gitbook.start(config);
 });
 </script>

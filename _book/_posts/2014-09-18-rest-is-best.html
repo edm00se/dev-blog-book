@@ -8,7 +8,7 @@
         <title>REST is Best | Dev|Blog: The First Year</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.5.1">
+        <meta name="generator" content="GitBook 2.4.3">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -25,15 +25,11 @@
         
     
         
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-image-captions/image-captions.css">
+        
+    
+        
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
         
     
     
@@ -47,15 +43,18 @@
     <link rel="prev" href="../_posts/2014-09-16-unraveling-the-mvc-mysteries.html" />
     
 
-        <script type="text/javascript" src="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.js"></script><script type="text/javascript" src="../scripts.js"></script><link rel="stylesheet" type="text/css" href="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.css"><link rel="stylesheet" type="text/css" href="../styles.css">
+        <script type="text/javascript" src="../js/emojify.min.js"></script><script type="text/javascript" src="../js/scripts.js"></script><link rel="stylesheet" type="text/css" href="../css/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../css/emojify.min.css"><link rel="stylesheet" type="text/css" href="../css/styles.css">
     </head>
     <body>
         
         
-    <div class="book" data-level="3.2" data-chapter-title="REST is Best" data-filepath="_posts/2014-09-18-rest-is-best.md" data-basepath=".." data-revision="Tue Oct 27 2015 21:11:26 GMT-0500 (CDT)">
+    <div class="book" data-level="3.2" data-basepath=".." data-revision="Fri Nov 06 2015 20:36:46 GMT-0600 (CST)">
     
 
 <div class="book-summary">
+    <div class="book-search" role="search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
     <nav role="navigation">
         <ul class="summary">
             
@@ -635,7 +634,80 @@
         <div class="body-inner">
             <div class="book-header" role="navigation">
     <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
     
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
 
     <!-- Title -->
     <h1>
@@ -661,23 +733,23 @@
 <p>XPages does this by that dojo xhrPost call to call out where (the <em>partialRefresh</em> id) to inject/replace the newly returned data. This happens to be (usually) HTML, a Dojo data store (in the event of an <em>xp:restService</em> control, depending on your properties), and more (like if you refresh an <em>xp:scriptBlock</em>). This works, but when you keep your application logic on the server (and I suggest you do), that means you&apos;re often sending increasing amounts of information back and forth, in a partial(Refresh) capacity.</p>
 <h3 id="rest-is-lean"><a name="rest-is-lean" class="plugin-anchor" href="#rest-is-lean"><span class="fa fa-link"></span></a>REST is Lean</h3>
 <p>Having recently read Paul Akers&apos; book, <a href="http://2secondlean.com/" target="_blank"><em>2 Second Lean</em></a>, and having seen him speak in-person, I can honestly say that when I look at a process, I think &quot;I see waste&quot; and I want to eliminate it. This is a part of what we do as developers, and I&apos;m sure is intuitive to you, but we must always strive for the path of least resistance in our applications. It makes for better application structure and better user experiences.</p>
-<p>Without the need for an in-memory session on the server, we no longer require a session <a href="http://en.wikipedia.org/wiki/State_(computer_science)#Program_state" data-toggle="tooltip" tilte="wait, I live in Wisconsin" target="_blank">&quot;state&quot;&lt;/a&gt;. To get the data we need, we have to formulate what to request in the client, using the browser&apos;s JavaScript, and then execute the call and handle its receipt. Many of the modern JavaScript frameworks out there, like my beloved <a href="http://angularjs.org/" data-toggle="tooltip" title="call me!" target="_blank">AngularJS</a>, automate this process. To do so, they use a combination of http event handlers (<a href="http://docs.angularjs.org/api/ng/service/$http" target="_blank">$http</a> in Angular) and callback functions. In the XPages world, think of the CSJS event functions for <em>onComplete</em> and <em>onError</em> (etc.) which we use in <em>xp:eventHandler</em> tags.</a></p>
+<p>Without the need for an in-memory session on the server, we no longer require a session <a href="http://en.wikipedia.org/wiki/State_(computer_science" target="_blank">&quot;state&quot;</a>#Program<em>state). To get the data we need, we have to formulate what to request in the client, using the browser&apos;s JavaScript, and then execute the call and handle its receipt. Many of the modern JavaScript frameworks out there, like my beloved <a href="https://angularjs.org" target="_blank">AngularJS</a>, automate this process. To do so, they use a combination of http event handlers (<a href="https://docs.angularjs.org/api/ng/service/$http" target="_blank">$http</a> in Angular) and callback functions. In the XPages world, think of the CSJS event functions for _onComplete</em> and <em>onError</em> (etc.) which we use in <em>xp:eventHandler</em> tags.</p>
 <p>Let&apos;s compare a simple thing in XPages. Using the stock xp:viewPanel, xp:pager, with the <em>partialRefresh</em> option, this is a fairly normal way for an XPage developer to put a View into an XPage. This is also my hallmark argument against this variety of implementation, for such a simple task. Here&apos;s what happens when I hit &quot;Next&quot; in the pager:</p>
-<p><a href="https://edm00se.io/images/post_images/aPartialRefreshCall_ViewAndPager.png" data-toggle="tooltip" title="a stock partial refresh from a view pager" target="_blank"><img src="https://edm00se.io/images/post_images/aPartialRefreshCall_ViewAndPager.png" alt="a stock partial refresh from a view pager"></a></p>
+<figure><img src="https://edm00se.io/images/post_images/aPartialRefreshCall_ViewAndPager.png" alt="a stock partial refresh from a view pager"><figcaption>Figure: a stock partial refresh from a view pager</figcaption></figure>
 <p>When we execute these AJAX calls, it takes time and processing effort (both for the server and the client/browser). Here&apos;s what I mean:</p>
-<p><a href="https://edm00se.io/images/post_images/aPartialRefreshCall_timeAndMoney.png" data-toggle="tooltip" title="a stock partial refresh from a view pager network transfer time" target="_blank"><img src="https://edm00se.io/images/post_images/aPartialRefreshCall_timeAndMoney.png" alt="a stock partial refresh from a view pager network transfer time"></a></p>
+<figure><img src="https://edm00se.io/images/post_images/aPartialRefreshCall_timeAndMoney.png" alt="a stock partial refresh from a view pager network transfer time"><figcaption>Figure: a stock partial refresh from a view pager network transfer time</figcaption></figure>
 <p>The above doesn&apos;t show a whole lot of time elapsing, only about 38ms. It also shows a hover state being fetched; I didn&apos;t even plan on that (and is an argument against Dojo, IMO; I mean, lazy loading images for button styles?!?). I can also tell you that that server is having a good day and isn&apos;t refreshing anything more than the <em>xp:viewPanel</em> for this page (so less intense computations). The application above has been re-developed, as a case study (with which I&apos;ve been able to sell to my management and direct my development efforts accordingly), into a Bootstrap 3 with AngularJS application. Here&apos;s what happens when I perform the same paging task in the Angular version of this app. Apologies for the reduction in quality with the gif and redaction of company-specific information.</p>
-<p><a href="https://edm00se.io/images/post_images/angular_ngrepeat_noNetworkCalls_scrubbed.gif" data-toggle="tooltip" title="paging with Angular" target="_blank"><img src="https://edm00se.io/images/post_images/angular_ngrepeat_noNetworkCalls_scrubbed.gif" alt="paging with Angular"></a></p>
+<figure><img src="https://edm00se.io/images/post_images/angular_ngrepeat_noNetworkCalls_scrubbed.gif" alt="paging with Angular"><figcaption>Figure: paging with Angular</figcaption></figure>
 <p>No network requests during paging, it&apos;s that cool. What&apos;s happening? It&apos;s behaving as a modern web application; a single page app, in fact, but I&apos;ll get to some of those specifics in a moment. Here&apos;s the same page again, with live full-text searching, across all fields (keys, as in JSON key: value pair, you can also filter by key) in the data array.</p>
-<p><a href="https://edm00se.io/images/post_images/angular_ngrepeat_liveSearch_scrubbed.gif" data-toggle="tooltip" title="searching a data array in Angular" target="_blank"><img src="https://edm00se.io/images/post_images/angular_ngrepeat_liveSearch_scrubbed.gif" alt="searching a data array in Angular"></a></p>
+<figure><img src="https://edm00se.io/images/post_images/angular_ngrepeat_liveSearch_scrubbed.gif" alt="searching a data array in Angular"><figcaption>Figure: searching a data array in Angular</figcaption></figure>
 <p>So why is REST lean? REST means a less cluttered network request, performed less frequently. This also comes down to your implementation of it, which is why I&apos;m showing off Angular, which plays to a RESTful API&apos;s strengths. The idea is to invoke <em>just what you need</em> from the server, at the state of what you&apos;re looking for, <a href="http://en.wikipedia.org/wiki/HATEOAS" target="_blank">HATEOAS style</a>. You still have to load a page with a JavaScript library to know what to invoke, but you should reduce as much as possible afterwards.</p>
 <h3 id="spas-and-application-structure"><a name="spas-and-application-structure" class="plugin-anchor" href="#spas-and-application-structure"><span class="fa fa-link"></span></a>SPAs and Application Structure</h3>
-<p>You knew I was going to bring up application structure, didn&apos;t you? The dichotomy of the server-side application logic and the client-side application logic must be apparent now. It&apos;s precisely why, when <a href="http://twitter.com/markyroden" target="_blank">Mark Roden&lt;/a&gt; gave his <a href="http://xomino.com/2014/09/02/mwlug-2014-slide-deck-write-once-run-anywhere-angular-js-in-xpages/" target="_blank">Write Once, Run Anywhere: Angular.js in XPages</a> session at MWLUG, he admitted (begrudgingly, I might add) that to properly build a larger application, a developer would want to enforce application and work flow validation on the server; aka- <a href="http://twitter.com/tsamples" data-toggle="tooltip" title="probably true" target="_blank">&quot;everybody needs a Toby&quot;</a>. This would be done by writing a custom servlet or REST implementation, which would validate before directly committing into a Domino document. If your application is simple and your field data is strictly textual and you trust your users to not put bogus data into their network POST or PUT operations, DDS is great.</a></p>
+<p>You knew I was going to bring up application structure, didn&apos;t you? The dichotomy of the server-side application logic and the client-side application logic must be apparent now. It&apos;s precisely why, when <a href="https://twitter.com/markyroden" target="_blank">Mark Roden</a> gave his <a href="http://xomino.com/2014/09/02/mwlug-2014-slide-deck-write-once-run-anywhere-angular-js-in-xpages/" target="_blank">Write Once, Run Anywhere: Angular.js in XPages</a> session at MWLUG, he admitted (begrudgingly, I might add) that to properly build a larger application, a developer would want to enforce application and work flow validation on the server; aka- <a href="http://twitter.com/tsamples" data-toggle="tooltip" title="probably true" target="_blank">&quot;everybody needs a Toby&quot;</a>. This would be done by writing a custom servlet or REST implementation, which would validate before directly committing into a Domino document. If your application is simple and your field data is strictly textual and you trust your users to not put bogus data into their network POST or PUT operations, DDS is great.</p>
 <h3 id="domino-data-services"><a name="domino-data-services" class="plugin-anchor" href="#domino-data-services"><span class="fa fa-link"></span></a>Domino Data Services</h3>
 <p>This is the biggest downside of the Domino Data Service in my opinion. The Domino Data Service gives us the ability to perform the CRUD operations against Domino Documents and Views, but there&apos;s no computeWithForm, which would give us as least a way of invoking an agent on save. But, it&apos;s better than nothing. So, would a developer benefit from structuring their application with data models and controller classes? Absolutely! In fact, you might think there was a reason I wrote <a href="https://edm00se.io/xpages/unraveling-the-mvc-mysteries/" title="Unraveling the MVC Mysteries" data-toggle="tooltip" target="_blank">that long winded post last</a> before this one ;-).</p>
 <h3 id="summarizing"><a name="summarizing" class="plugin-anchor" href="#summarizing"><span class="fa fa-link"></span></a>Summarizing</h3>
 <p>As you can see, M-V-C is a thing. It&apos;s great idea for your server-side application logic and there are a great many awesome M-V-C client-side frameworks (like Angular) that can help you expedite your front-end logic. So please, let&apos;s build better apps. REST can get us there with lighter weight network requests and in-browser processing of data and application logic. We can reduce our network calls, sizes of data transferred, and made our performance response time nearly negligible (limited only to the time it takes the client-side JS code to perform the rebuild of the HTML and the initial page load).</p>
-<p><a href="https://edm00se.io/images/post_images/keanu_front-back-segregation.jpg" data-toggle="tooltip" title="make a better Domino app!" target="_blank"><img src="https://edm00se.io/images/post_images/keanu_front-back-segregation.jpg" alt="make a better Domino app!"></a></p>
+<figure><img src="https://edm00se.io/images/post_images/keanu_front-back-segregation.jpg" alt="make a better Domino app!"><figcaption>Figure: make a better Domino app!</figcaption></figure>
 <p>No silly Keanu, it just might keep us sane.</p>
 
                     
@@ -708,25 +780,9 @@
     <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"addcssjs":{"css":["https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify-emoticons.min.css","https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.css","styles.css"],"js":["https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.js","scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"},"anchors":{},"include":{},"include-codeblock":{},"highlight":{},"livereload":{},"youtube":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"addcssjs":{"css":["css/emojify-emoticons.min.css","css/emojify.min.css","css/styles.css"],"js":["js/emojify.min.js","js/scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"}};
     gitbook.start(config);
 });
 </script>

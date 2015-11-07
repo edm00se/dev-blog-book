@@ -23,7 +23,6 @@ In order to access a server hosted within a vm (guest), for development purposes
 #### Commands for Windows
 More information on the implementation of nginx in Windows can be found on [the corresponding docs page](//nginx.org/en/docs/windows.html). Here's the basic breakdown of commands, form within the nginx install directory:
 
-{:.table .table-bordered .table-striped}
 | Command         |                                                                                      |
 |-----------------|--------------------------------------------------------------------------------------|
 | start nginx     | starts the process                                                                   |

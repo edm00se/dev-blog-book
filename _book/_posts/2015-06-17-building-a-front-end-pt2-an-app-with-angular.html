@@ -8,7 +8,7 @@
         <title>Building a Front-End pt.2: An App with AngularJS | Dev|Blog: The First Year</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.5.1">
+        <meta name="generator" content="GitBook 2.4.3">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -25,15 +25,11 @@
         
     
         
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-image-captions/image-captions.css">
+        
+    
+        
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
         
     
     
@@ -47,15 +43,18 @@
     <link rel="prev" href="../_posts/2015-06-16-building-a-front-end-pt1-a-quick-review.html" />
     
 
-        <script type="text/javascript" src="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.js"></script><script type="text/javascript" src="../scripts.js"></script><link rel="stylesheet" type="text/css" href="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.css"><link rel="stylesheet" type="text/css" href="../styles.css">
+        <script type="text/javascript" src="../js/emojify.min.js"></script><script type="text/javascript" src="../js/scripts.js"></script><link rel="stylesheet" type="text/css" href="../css/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../css/emojify.min.css"><link rel="stylesheet" type="text/css" href="../css/styles.css">
     </head>
     <body>
         
         
-    <div class="book" data-level="1.8" data-chapter-title="Building a Front-End pt.2: An App with AngularJS" data-filepath="_posts/2015-06-17-building-a-front-end-pt2-an-app-with-angular.md" data-basepath=".." data-revision="Tue Oct 27 2015 21:11:26 GMT-0500 (CDT)">
+    <div class="book" data-level="1.8" data-basepath=".." data-revision="Fri Nov 06 2015 20:36:46 GMT-0600 (CST)">
     
 
 <div class="book-summary">
+    <div class="book-search" role="search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
     <nav role="navigation">
         <ul class="summary">
             
@@ -635,7 +634,80 @@
         <div class="body-inner">
             <div class="book-header" role="navigation">
     <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
     
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
 
     <!-- Title -->
     <h1>
@@ -876,9 +948,9 @@ For obvious reasons, much more like a form.</p>
 </code></pre>
 <p><br></p>
 <h3 id="angularjs-app"><a name="angularjs-app" class="plugin-anchor" href="#angularjs-app"><span class="fa fa-link"></span></a>AngularJS App</h3>
-<h5 id="0--structure"><a name="0--structure" class="plugin-anchor" href="#0--structure"><span class="fa fa-link"></span></a>0 - Structure</h5>
+<h5 id="0-structure"><a name="0-structure" class="plugin-anchor" href="#0-structure"><span class="fa fa-link"></span></a>0 - Structure</h5>
 <p>My app will consist of a few parts. I&apos;ve broken them apart here into sections, for ease of reading. I&apos;ve also taken the approach for my app.js of chain-loading each section off the main module definition, decreasing the number of handles for the same object.</p>
-<h5 id="1--config"><a name="1--config" class="plugin-anchor" href="#1--config"><span class="fa fa-link"></span></a>1 - Config</h5>
+<h5 id="1-config"><a name="1-config" class="plugin-anchor" href="#1-config"><span class="fa fa-link"></span></a>1 - Config</h5>
 <p>I&apos;ll first need to configure any routing rules for my HTML partials and resolving URL route parameters as their respective variables; this will happen <a href="docs.angularjs.org/guide/module">in the config</a>; the definition is for an Angular &quot;module&quot;. Any 3rd party assets get plugged in here, as part of the dependency injection, such as <a href="github.com/angular-ui/ui-router">ui-router</a>.</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// a self-invoking, anonymouse function to keep application code variables scoped anonymously</span>
 (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
@@ -910,7 +982,7 @@ For obvious reasons, much more like a form.</p>
 })();
 </code></pre>
 <p><br></p>
-<h5 id="2--servicesfactories"><a name="2--servicesfactories" class="plugin-anchor" href="#2--servicesfactories"><span class="fa fa-link"></span></a>2 - Services/Factories</h5>
+<h5 id="2-services-factories"><a name="2-services-factories" class="plugin-anchor" href="#2-services-factories"><span class="fa fa-link"></span></a>2 - Services/Factories</h5>
 <p>Any <a href="docs.angularjs.org/guide/services">services or factories (or providers)</a> get defined here.</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">//...config...</span>
 <span class="hljs-comment">/*
@@ -936,7 +1008,7 @@ For obvious reasons, much more like a form.</p>
 <span class="hljs-comment">//...controllers,filters,directives...</span>
 </code></pre>
 <p><br></p>
-<h5 id="3--controllers"><a name="3--controllers" class="plugin-anchor" href="#3--controllers"><span class="fa fa-link"></span></a>3 - Controllers</h5>
+<h5 id="3-controllers"><a name="3-controllers" class="plugin-anchor" href="#3-controllers"><span class="fa fa-link"></span></a>3 - Controllers</h5>
 <p><a href="docs.angularjs.org/guide/controller">Controllers</a> are a binding of functional behavior to sections of the HTML. I have two controllers, each with different scopes. Mine are for my navigation handling and the primary application regarding houses.</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">//...config,factories...</span>
 <span class="hljs-comment">/*
@@ -1075,7 +1147,7 @@ For obvious reasons, much more like a form.</p>
 <span class="hljs-comment">//...filters,directives...</span>
 </code></pre>
 <p><br></p>
-<h5 id="4--filters"><a name="4--filters" class="plugin-anchor" href="#4--filters"><span class="fa fa-link"></span></a>4 - Filters</h5>
+<h5 id="4-filters"><a name="4-filters" class="plugin-anchor" href="#4-filters"><span class="fa fa-link"></span></a>4 - Filters</h5>
 <p>Everyone tends to like directives in AngularJS (I do too), but one of my favorite aspects of AngularJS is the <a href="docs.angularjs.org/guide/filter">out-of-the-box Filters</a> that we get for free. This is an entire subject on its own IMO, but for now, you can see my &quot;startFrom&quot; custom filter; part of my custom paging mechanism for the House Collection.</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">//...config,factories,controllers...</span>
 <span class="hljs-comment">/*
@@ -1093,7 +1165,7 @@ For obvious reasons, much more like a form.</p>
 <span class="hljs-comment">//...directives...</span>
 </code></pre>
 <p><br></p>
-<h5 id="5--directives"><a name="5--directives" class="plugin-anchor" href="#5--directives"><span class="fa fa-link"></span></a>5 - Directives</h5>
+<h5 id="5-directives"><a name="5-directives" class="plugin-anchor" href="#5-directives"><span class="fa fa-link"></span></a>5 - Directives</h5>
 <p><a href="docs.angularjs.org/guide/directive">Directives</a> are the higher level &quot;do something&quot; definitions. Most of the AngularJS attributes or tags you write into HTML are directives. As with Filters, you can write your own Directives all you like, but some of the most useful ones come <span data-toggle="tooltip" title="out-of-the-box">OoB</span>.</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">//...config,factories,controllers,filters</span>
 <span class="hljs-comment">/*
@@ -1168,25 +1240,9 @@ For obvious reasons, much more like a form.</p>
     <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"addcssjs":{"css":["https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify-emoticons.min.css","https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.css","styles.css"],"js":["https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.js","scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"},"anchors":{},"include":{},"include-codeblock":{},"highlight":{},"livereload":{},"youtube":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"addcssjs":{"css":["css/emojify-emoticons.min.css","css/emojify.min.css","css/styles.css"],"js":["js/emojify.min.js","js/scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"}};
     gitbook.start(config);
 });
 </script>

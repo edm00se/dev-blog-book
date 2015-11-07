@@ -8,7 +8,7 @@
         <title>Unraveling the M-V-C Mysteries | Dev|Blog: The First Year</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.5.1">
+        <meta name="generator" content="GitBook 2.4.3">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -25,15 +25,11 @@
         
     
         
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-image-captions/image-captions.css">
+        
+    
+        
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
         
     
     
@@ -47,15 +43,18 @@
     <link rel="prev" href="../_posts/2014-10-24-application-logic.html" />
     
 
-        <script type="text/javascript" src="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.js"></script><script type="text/javascript" src="../scripts.js"></script><link rel="stylesheet" type="text/css" href="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.css"><link rel="stylesheet" type="text/css" href="../styles.css">
+        <script type="text/javascript" src="../js/emojify.min.js"></script><script type="text/javascript" src="../js/scripts.js"></script><link rel="stylesheet" type="text/css" href="../css/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../css/emojify.min.css"><link rel="stylesheet" type="text/css" href="../css/styles.css">
     </head>
     <body>
         
         
-    <div class="book" data-level="3.1" data-chapter-title="Unraveling the M-V-C Mysteries" data-filepath="_posts/2014-09-16-unraveling-the-mvc-mysteries.md" data-basepath=".." data-revision="Tue Oct 27 2015 21:11:26 GMT-0500 (CDT)">
+    <div class="book" data-level="3.1" data-basepath=".." data-revision="Fri Nov 06 2015 20:36:46 GMT-0600 (CST)">
     
 
 <div class="book-summary">
+    <div class="book-search" role="search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
     <nav role="navigation">
         <ul class="summary">
             
@@ -635,7 +634,80 @@
         <div class="body-inner">
             <div class="book-header" role="navigation">
     <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
     
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
 
     <!-- Title -->
     <h1>
@@ -652,8 +724,8 @@
                     
                         <h4 id="intro"><a name="intro" class="plugin-anchor" href="#intro"><span class="fa fa-link"></span></a>Intro</h4>
 <p>I&apos;m sorry for the long post, but I can assure you that this is the shortest version of this post I drafted (over multiple days). M-V-C is a big topic, and I hope I&apos;ve parsed out the reasoning in favor of its adoption.</p>
-<h3 id="drink-the-koolaid"><a name="drink-the-koolaid" class="plugin-anchor" href="#drink-the-koolaid"><span class="fa fa-link"></span></a>Drink the Kool-Aid<sup>&#xAE;</sup></h3>
-<p>At MWLUG, <a href="http://twitter.com/Gidgerby" target="_blank">Jesse Gallagher&lt;/a&gt; showed off what I believe to be the gold standard form of XPages development; <a href="http://www.youtube.com/watch?v=KJvydKVsqXk" target="_blank">recording on YouTube</a>. Jesse showed off his Frostillic.us framework (an evolved version of his <a href="http://github.com/jesse-gallagher/XPages-Scaffolding" target="_blank">XPages Scaffolding</a>), which addresses much of what I talk about. Jesse is most of the way through <a href="http://frostillic.us/f.nsf/posts/building-an-app-with-the-frostillic.us-framework--part-1" target="_blank">a blog series</a> on how to use said framework, which is definitely worth the read. I&apos;m not trying to man-crush on Jesse, but the next conference I see him at, I will do my best to buy him a beer.</a></p>
+<h3 id="drink-the-kool-aid-sup-reg-sup"><a name="drink-the-kool-aid-sup-reg-sup" class="plugin-anchor" href="#drink-the-kool-aid-sup-reg-sup"><span class="fa fa-link"></span></a>Drink the Kool-Aid<sup>&#xAE;</sup></h3>
+<p>At MWLUG, <a href="https://twitter.com/Gidgerby" target="_blank">Jesse Gallagher</a> showed off what I believe to be the gold standard form of XPages development; <a href="https://www.youtube.com/watch?v=KJvydKVsqXk" target="_blank">recording on YouTube</a>. Jesse showed off his Frostillic.us framework (an evolved version of his <a href="https://github.com/jesse-gallagher/XPages-Scaffolding" target="_blank">XPages Scaffolding</a>), which addresses much of what I talk about. Jesse is most of the way through <a href="https://frostillic.us/f.nsf/posts/building-an-app-with-the-frostillic.us-framework--part-1" target="_blank">a blog series</a> on how to use said framework, which is definitely worth the read. I&apos;m not trying to man-crush on Jesse, but the next conference I see him at, I will do my best to buy him a beer.</p>
 <h3 id="a-brief-history"><a name="a-brief-history" class="plugin-anchor" href="#a-brief-history"><span class="fa fa-link"></span></a>A Brief History</h3>
 <p>XPages is an IBM proprietary abstraction layer for Java Server Faces. Java Server Faces has evolved over the years since its creation in 2004, but when IBM began adopting the XFaces (eventually renamed to XPages) platform, it initially began about 2005; <a href="http://en.wikipedia.org/wiki/XPages#History" target="_blank">according to Wikipedia.org</a>. While some of the later features of the 2.x line have been back-ported, we&apos;re definitely dealing with a unique platform.</p>
 <h5 id="jsf-as-the-foundation"><a name="jsf-as-the-foundation" class="plugin-anchor" href="#jsf-as-the-foundation"><span class="fa fa-link"></span></a>JSF as the Foundation</h5>
@@ -662,21 +734,21 @@
 <li>create a way of handling application and UI logic, with managed state</li>
 <li>provide JSP custom tag library, for expressing design within a JSP page (which evolved into Facelets with JSF 2.x)</li>
 </ul>
-<p>So, JSF, which is geared to Java Enterprise Edition developers, is meant to abstract the handling of managed states and design elements to speed up application interface development. This is, ultimately, what XPages does; this shouldn&apos;t be surprising, as it&apos;s an <a href="http://en.wikipedia.org/wiki/Abstraction_(computer_science)" target="_blank">abstraction layer</a>, not a replacement.</p>
+<p>So, JSF, which is geared to Java Enterprise Edition developers, is meant to abstract the handling of managed states and design elements to speed up application interface development. This is, ultimately, what XPages does; this shouldn&apos;t be surprising, as it&apos;s an <a href="http://en.wikipedia.org/wiki/Abstraction_(computer_science" target="_blank">abstraction layer</a>), not a replacement.</p>
 <h5 id="ajax-and-xhrs-in-xpages"><a name="ajax-and-xhrs-in-xpages" class="plugin-anchor" href="#ajax-and-xhrs-in-xpages"><span class="fa fa-link"></span></a>AJAX and XHRs in XPages</h5>
-<p>&lt;voice of David Attenborough&gt;
-When &quot;Web 2.0&quot; was still just a catch phrase (<a href="http://en.wikipedia.org/wiki/Web_2.0" target="_blank">prior to around 1999&lt;/a&gt;) the web cried out in anguish. Then, a champion appeared, <a href="http://en.wikipedia.org/wiki/Ajax_(programming)" target="_blank">AJAX</a> (Asynchronous JavaScript + XML). AJAX introduced us to the XMLHttpRequest (XHR) and brought in the ability for a programmatic, asynchronous loading of content, based on the user&apos;s interaction. The web rejoiced and new development patterns were introduced.
-&lt;/voice of David Attenborough&gt;</a></p>
+<p>&lt;Voice of David Attenborough&gt;
+When &quot;Web 2.0&quot; was still just a catch phrase (<a href="http://en.wikipedia.org/wiki/Web_2.0" target="_blank">prior to around 1999</a>) the web cried out in anguish. Then, a champion appeared, <a href="http://en.wikipedia.org/wiki/Ajax_(programming" target="_blank">AJAX</a>) (Asynchronous JavaScript + XML). AJAX introduced us to the XMLHttpRequest (XHR) and brought in the ability for a programmatic, asynchronous loading of content, based on the user&apos;s interaction. The web rejoiced and new development patterns were introduced.
+&lt;/voice of David Attenborough&gt;</p>
 <p>XPages makes use of XHRs with every partialRefresh event, usually in the form of a POST. AJAX/XHRs are great, with state-ful scenarios, as you&apos;re getting &quot;just a piece&quot; of the whole.</p>
 <p>Here&apos;s an example, taken from the always excellent OpenNTF.org site. Inside a project page, there are the tabs for the content pane. Selecting a tab fires a <a href="http://dojotoolkit.org/reference-guide/1.6/dojo/xhrPost.html" target="_blank">dojo XHR POST</a> to the server, which then loads the content for the element to be changed, and the client-side XSP object loads it into the DOM (at the ID specified). XPages does this with HTML generated from the server session Domino has established for the user&apos;s interaction. You can view these interactions from most web browsers, just open up the developer tools for your browser (shown is Chrome&apos;s DevTools) and look for network events.</p>
-<p><a href="https://edm00se.io/images/post_images/XPagesPartialRefreshPost.png" data-toggle="tooltip" title="sample XPages partialRefresh call" target="_blank"><img src="https://edm00se.io/images/post_images/XPagesPartialRefreshPost.png" class="img-responsive" alt="sample XPages partialRefresh call">&lt;/a&gt;
+<p><img src="https://edm00se.io/images/post_images/XPagesPartialRefreshPost.png" alt="XPages partial refresh POST">
 <br>
-<a href="https://edm00se.io/images/post_images/XPagesPartialRefreshPost_results.png" data-toggle="tooltip" title="sample XPages partialRefresh call response" target="_blank"><img src="https://edm00se.io/images/post_images/XPagesPartialRefreshPost_results.png" class="img-responsive" alt="sample XPages partialRefresh call response"></a></a></p>
+<img src="https://edm00se.io/images/post_images/XPagesPartialRefreshPost_results.png" alt="XPages partialRefresh call response"></p>
 <h5 id="why-xhrs"><a name="why-xhrs" class="plugin-anchor" href="#why-xhrs"><span class="fa fa-link"></span></a>Why XHRs?</h5>
 <p>These XMLHttpRequests occur a lot, especially in <em>partialRefresh</em> (refreshMode=&quot;partial&quot;) heavy applications. This increases the reliance on the managed state aspect of your XPage&apos;d application and your user&apos;s in-memory session (on the server). This makes XPages quite state-ful, IMO. It&apos;s also easy, especially in complex, <em>partialRefresh</em> heavy applications, to overdo what your <em>partialRefresh</em> requires. Many in the community talk about the performance hit of <em>partialRefresh</em> es that don&apos;t use <em>partial execution</em> (execMode=&quot;partial&quot;, which only evaluates what resides inside the <em>execId</em>, for the server&apos;s computation). To help automatically remove some of this bloat, <a href="http://hasselba.ch/blog/?p=1383" target="_blank">Sven Hasselbach shared a client-side JavaScript snippet</a> which assists in the reduction of the traffic. To me, this is great (good developers are lazy, right?), but still doesn&apos;t quite get us to the fundamental issues that many novices make in XPages development.</p>
 <h3 id="stop-using-your-xpage-for-application-logic"><a name="stop-using-your-xpage-for-application-logic" class="plugin-anchor" href="#stop-using-your-xpage-for-application-logic"><span class="fa fa-link"></span></a>Stop Using Your XPage for Application Logic</h3>
 <p>Yes, you read that correctly. Ideally, your XPage&apos;d content should be strictly presentation layer code. The more we jam into our XPage, be it execution blocks or SSJS libraries, the more must be computed. When we run a build on an application, it builds out your design elements to a more XSP engine friendly format, but leaving that code block in the design element makes for <em>spaghetti code</em><sup>&#x2122;</sup>, which is far less maintainable in very large applications. Being accustomed to supporting large scale applications, I&apos;m used to performing more searching of design elements to find what to fix, than implementing an actual fix, and that&apos;s just silly. Domino SSJS libraries are worse as, when they become large, <a href="http://www.linkedin.com/groups/What-are-top-XPages-performance-3707727.S.230901244#commentID_130809429" target="_blank">suffer the effect of being run-time executed code&lt;/a&gt;. Think of a very large string being parsed on-demand. There is plenty of discussion and approaches on the subject, but ultimately, in large applications, it works, but <a href="http://www.linkedin.com/groups/What-are-top-XPages-performance-3707727.S.230901244#commentID_130816718" target="_blank">it&apos;s inefficient</a>.</a></p>
-<h3 id="mvc-is-the-way"><a name="mvc-is-the-way" class="plugin-anchor" href="#mvc-is-the-way"><span class="fa fa-link"></span></a>M-V-C is the Way</h3>
+<h3 id="m-v-c-is-the-way"><a name="m-v-c-is-the-way" class="plugin-anchor" href="#m-v-c-is-the-way"><span class="fa fa-link"></span></a>M-V-C is the Way</h3>
 <p>So, be it an XPages &quot;client&quot; / <em>purely</em> presentation layer approach or <a href="http://xomino.com/2014/09/02/mwlug-2014-slide-deck-write-once-run-anywhere-angular-js-in-xpages/" target="_blank">a(n arguably) more modern approach&lt;/a&gt;, we <em>need</em> to separate our application logic from our presentation layer. The bottom line is to write applications which are not state-ful, <em>except in the presentation layer</em>. In other words, <a href="http://www.linkedin.com/groups/What-are-top-XPages-performance-3707727.S.230901244#commentID_130816718" target="_blank">&quot;I stand with Jesse&quot;</a>.</a></p>
 <h5 id="what-to-focus-on"><a name="what-to-focus-on" class="plugin-anchor" href="#what-to-focus-on"><span class="fa fa-link"></span></a>What to Focus On</h5>
 <ul>
@@ -722,25 +794,9 @@ When &quot;Web 2.0&quot; was still just a catch phrase (<a href="http://en.wikip
     <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"addcssjs":{"css":["https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify-emoticons.min.css","https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.css","styles.css"],"js":["https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.js","scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"},"anchors":{},"include":{},"include-codeblock":{},"highlight":{},"livereload":{},"youtube":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"addcssjs":{"css":["css/emojify-emoticons.min.css","css/emojify.min.css","css/styles.css"],"js":["js/emojify.min.js","js/scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"}};
     gitbook.start(config);
 });
 </script>

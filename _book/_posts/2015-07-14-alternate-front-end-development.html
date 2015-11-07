@@ -8,7 +8,7 @@
         <title>Alternate Front-End Development: Mocking Your Domino Back-end | Dev|Blog: The First Year</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.5.1">
+        <meta name="generator" content="GitBook 2.4.3">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -25,15 +25,11 @@
         
     
         
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-image-captions/image-captions.css">
+        
+    
+        
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
         
     
     
@@ -47,15 +43,18 @@
     <link rel="prev" href="../_posts/2015-05-05-replacing-an-xagent.html" />
     
 
-        <script type="text/javascript" src="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.js"></script><script type="text/javascript" src="../scripts.js"></script><link rel="stylesheet" type="text/css" href="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.css"><link rel="stylesheet" type="text/css" href="../styles.css">
+        <script type="text/javascript" src="../js/emojify.min.js"></script><script type="text/javascript" src="../js/scripts.js"></script><link rel="stylesheet" type="text/css" href="../css/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../css/emojify.min.css"><link rel="stylesheet" type="text/css" href="../css/styles.css">
     </head>
     <body>
         
         
-    <div class="book" data-level="4.2" data-chapter-title="Alternate Front-End Development: Mocking Your Domino Back-end" data-filepath="_posts/2015-07-14-alternate-front-end-development.md" data-basepath=".." data-revision="Tue Oct 27 2015 21:11:26 GMT-0500 (CDT)">
+    <div class="book" data-level="4.2" data-basepath=".." data-revision="Fri Nov 06 2015 20:36:46 GMT-0600 (CST)">
     
 
 <div class="book-summary">
+    <div class="book-search" role="search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
     <nav role="navigation">
         <ul class="summary">
             
@@ -635,7 +634,80 @@
         <div class="body-inner">
             <div class="book-header" role="navigation">
     <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
     
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
 
     <!-- Title -->
     <h1>
@@ -673,7 +745,7 @@ This topic is so awesome I turned it into <a href="https://edm00se.io/self-promo
 <li>make applications more easily outsourced</li>
 </ul>
 <p>That last one is probably foreign to a lot of people, but as <span data-toggle="tooltip" title="up from one!">one of two web developers on my company&apos;s organic staff</span> (and the only Domino/XPages developer), this means I want to unify efforts across our application platforms and also make things easier to plug a contract developer into. It speeds up their efforts, makes it easier to plug into source control (for not just tracking, but also support purposes), and <span data-toggle="tooltip" title="I hope!">overall will aid my sanity</span>.</p>
-<h3 id="a-segregated-approach-for-the-frontend"><a name="a-segregated-approach-for-the-frontend" class="plugin-anchor" href="#a-segregated-approach-for-the-frontend"><span class="fa fa-link"></span></a>A Segregated Approach for the Front-End</h3>
+<h3 id="a-segregated-approach-for-the-front-end"><a name="a-segregated-approach-for-the-front-end" class="plugin-anchor" href="#a-segregated-approach-for-the-front-end"><span class="fa fa-link"></span></a>A Segregated Approach for the Front-End</h3>
 <p>I&apos;ve spent a considerable amount of time covering the back-end approach that I&apos;m migrating to; just <a href="https://edm00se.io/servlet-series/" target="_blank">look at all but the last two-part piece in my series on Java HTTPServlets with XPages</a>. But what if we hire out some work to be done on the front-end; wouldn&apos;t it be nice for that developer to work on <em>only</em> on that front-end, without any need for other setup? I think it would and this ought to outline how this can be achieved fairly quickly.</p>
 <h3 id="a-sample-data-set-of-json"><a name="a-sample-data-set-of-json" class="plugin-anchor" href="#a-sample-data-set-of-json"><span class="fa fa-link"></span></a>A Sample Data Set of JSON</h3>
 <p>Since I&apos;m interacting with my data via a RESTful <em>HTTPServlet</em>, this makes things rather easy for me to create one of the required parts. I need to have a sample set of data, which I can interact with to confirm/deny my interactions are well formed and test with some form of data. In this case, I&apos;m assuming this is for making changes to an existing application, but if it&apos;s a new one, someone would want to sit down and define a sample set of data; this is normal operation for myself and, I expect, most developers. For my use case, I copied the network response from my <em>.../xsp/&lt;collectionName&gt;</em> <code>GET</code> call into a <code>db.json</code> (I&apos;m using <code>housesDB.json</code>, except for my GIFs below, which are another source, but follow the same structure) file. This will need one minor change, and that&apos;s to wrap the data array into a slightly different format, so that <code>json-server</code> can read it correctly (I stripped out my usual <em>request</em> block with any params and the <em>error</em> true/false, for simplicity).</p>
@@ -829,7 +901,7 @@ This topic is so awesome I turned it into <a href="https://edm00se.io/self-promo
 <p><br></p>
 <h5 id="a-note-on-domino-data-service"><a name="a-note-on-domino-data-service" class="plugin-anchor" href="#a-note-on-domino-data-service"><span class="fa fa-link"></span></a>A Note on Domino Data Service</h5>
 <p>As the <em>@unid</em> property won&apos;t register as a valid json object property, you may need to transform that to <em>unid</em>. My <em>HTTPServlet</em> was already using <em>unid</em>, so it works out quite nicely :wink:.</p>
-<h3 id="jsonserver"><a name="jsonserver" class="plugin-anchor" href="#jsonserver"><span class="fa fa-link"></span></a>Json-Server</h3>
+<h3 id="json-server"><a name="json-server" class="plugin-anchor" href="#json-server"><span class="fa fa-link"></span></a>Json-Server</h3>
 <p>So, you may be wondering what <code>json-server</code> is. <a href="https://github.com/typicode/json-server" target="_blank">Json-server</a> describes iteself as:</p>
 <blockquote>
 <p>...a full fake REST API with zero coding in less than 30 seconds (seriously)</p>
@@ -898,25 +970,9 @@ This topic is so awesome I turned it into <a href="https://edm00se.io/self-promo
     <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"addcssjs":{"css":["https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify-emoticons.min.css","https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.css","styles.css"],"js":["https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.js","scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"},"anchors":{},"include":{},"include-codeblock":{},"highlight":{},"livereload":{},"youtube":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"addcssjs":{"css":["css/emojify-emoticons.min.css","css/emojify.min.css","css/styles.css"],"js":["js/emojify.min.js","js/scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"}};
     gitbook.start(config);
 });
 </script>

@@ -1,6 +1,10 @@
 ### TL;DR
 Impatient and want to see the code? Jump down to [my Java class](#handling-the-data).
 
+[Update]
+I really don't recommend people use Domino Access Service (DAS), as originally outlined below, unless you're willing to accept the caveats of needing to abstract your NSF with DAS enabled to be entirely behind any external firewall; aka- not externally visible. This technique can be well used, provided you're not exposing your application to the public Internet, but still carries an element of risk in exposing full CRUD operations for the database component without any further requirements. It's handy and quick, but needs to be understood to be used properly. For the minimal effort it takes to roll an HTTP Servlet, _xe:restService_ control, _xe:jsonRpc_ control, or XAgent to do the same, it's really not worth opening your production environment to that potential security issue.
+[/Update]
+
 ### What and Why?
 Generating custom JSON data is, unless you're on a verison of Domino server previous to 8.5.3 UP1, _virtually_ unnecessary. Everything you see below can be fully replicated via the Domino Data/Access Services. The reason for that is the fact that I made use of a simple NotesView iteration pattern to generate and return the application/json data. The missing piece, the _whole reason why_, is on _your_ **application requirements**. When you need JSON formatted data in a custom format due to formatting preferences or application logic needs, and it can't just be in a View, that's when this comes into play. So if you start doing what I've done, ask yourself first, can it be just in a View?
 

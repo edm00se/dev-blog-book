@@ -8,7 +8,7 @@
         <title>RESTful API Consumption on the Server (Java) | Dev|Blog: The First Year</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.5.1">
+        <meta name="generator" content="GitBook 2.4.3">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -25,15 +25,11 @@
         
     
         
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-image-captions/image-captions.css">
+        
+    
+        
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
         
     
     
@@ -47,15 +43,18 @@
     <link rel="prev" href="../_posts/Supporting.html" />
     
 
-        <script type="text/javascript" src="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.js"></script><script type="text/javascript" src="../scripts.js"></script><link rel="stylesheet" type="text/css" href="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.css"><link rel="stylesheet" type="text/css" href="../styles.css">
+        <script type="text/javascript" src="../js/emojify.min.js"></script><script type="text/javascript" src="../js/scripts.js"></script><link rel="stylesheet" type="text/css" href="../css/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../css/emojify.min.css"><link rel="stylesheet" type="text/css" href="../css/styles.css">
     </head>
     <body>
         
         
-    <div class="book" data-level="2.1" data-chapter-title="RESTful API Consumption on the Server (Java)" data-filepath="_posts/2014-08-18-rest-consumption-server-side.md" data-basepath=".." data-revision="Tue Oct 27 2015 21:11:26 GMT-0500 (CDT)">
+    <div class="book" data-level="2.1" data-basepath=".." data-revision="Fri Nov 06 2015 20:36:46 GMT-0600 (CST)">
     
 
 <div class="book-summary">
+    <div class="book-search" role="search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
     <nav role="navigation">
         <ul class="summary">
             
@@ -635,7 +634,80 @@
         <div class="body-inner">
             <div class="book-header" role="navigation">
     <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
     
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
 
     <!-- Title -->
     <h1>
@@ -653,10 +725,7 @@
                         <h3 id="rest-consumption"><a name="rest-consumption" class="plugin-anchor" href="#rest-consumption"><span class="fa fa-link"></span></a>REST Consumption</h3>
 <p><a href="http://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">RESTful APIs</a> have seen <a href="http://www.dinochiesa.net/?p=259" target="_blank">prolific growth in the last few years</a>. Not only has it made for faster transactions between servers and clients, it&apos;s also become a great standard for server-to-server transmission of data. While many may argue in favor of SOAP or XML-RPC, I&apos;m not going to debate those merits for or against. If you are most comfortable with XML, go for SOAP as 1) it uses XML and 2) is supported (to the 1.1 standard) natively in Domino as native Web Service Providers/Consumers elements. For even more on SOAP in Domino, I recommend checking out <a href="http://www.xpagedeveloper.com/2014/calling-web-services-from-xpages" target="_blank">calling web services from XPages, the missing part</a> by <a href="http://twitter.com/XPageDeveloper" target="_blank">Fredrik Norling</a>; the link to his Notes in 9 video on the topic is on the article page.</p>
 <h3 id="what-makes-rest-good"><a name="what-makes-rest-good" class="plugin-anchor" href="#what-makes-rest-good"><span class="fa fa-link"></span></a>What Makes REST Good</h3>
-<p>RESTful APIs make use of JSON as their data medium; either via application/json or JSONP. As a general rule, I find JSON syntax to be more readable by nature, as </p>
-<p><pre>key: value</pre>
- pairs, comma separated as opposed to the encapsulated method with XML, such as </p>
-<p><pre>&lt;key&gt;value&lt;/key&gt;</pre>. Additionally, JSON compacts a (little) bit better than XML. This makes it well suited in the modern age with mobile devices lurking around every corner. For a more thorough examination of REST vs SOAP, please check out <a href="http://stackoverflow.com/questions/3285704/should-a-netflix-or-twitter-style-web-service-use-rest-or-soap/3285790#3285790" target="_blank">this StackOverflow answer</a> or <a href="http://spf13.com/post/soap-vs-rest" target="_blank">this article</a>. Basically, SOAP (and XML-RPC, its quintessential predecessor) has been around for a while and is used by many major organizations and still performs well, so it&apos;s far from dead. I just believe the same benefits of REST can apply to server consumption.</p>
+<p>RESTful APIs make use of JSON as their data medium; either via application/json or JSONP. As a general rule, I find JSON syntax to be more readable by nature, as <code>key: value</code> pairs, comma separated as opposed to the encapsulated method with XML, such as <code>&lt;key&gt;value&lt;/key&gt;</code>. Additionally, JSON compacts a (little) bit better than XML. This makes it well suited in the modern age with mobile devices lurking around every corner. For a more thorough examination of REST vs SOAP, please check out <a href="http://stackoverflow.com/questions/3285704/should-a-netflix-or-twitter-style-web-service-use-rest-or-soap/3285790#3285790" target="_blank">this StackOverflow answer</a> or <a href="http://spf13.com/post/soap-vs-rest" target="_blank">this article</a>. Basically, SOAP (and XML-RPC, its quintessential predecessor) has been around for a while and is used by many major organizations and still performs well, so it&apos;s far from dead. I just believe the same benefits of REST can apply to server consumption.</p>
 <h3 id="using-rest-in-java"><a name="using-rest-in-java" class="plugin-anchor" href="#using-rest-in-java"><span class="fa fa-link"></span></a>Using REST in Java</h3>
 <p>For the places I make use of server-to-server REST, it&apos;s usually to stitch together some custom joining of data between multiple Domino files. This is not ideal as it makes for additional computations when they (arguably) <em>should</em> exist together already. I do regard myself as a &quot;realist&quot; though, so sometimes I have to acquiesce to the will of my admins and deal with the cards as they are dealt. My example use cases all sound just plain weird out of context of our existing systems, so I&apos;m going to let you all imagine a use case of your own. Ultimately, from the consumer I wish for my call against a parameterized RESTful endpoint to produce the JsonObject (I&apos;m using Google&apos;s GSON library) of the data I&apos;m looking for. An alternate method, to keep the data independent of needing to invoke a Google GSON class would be to return the string-ified version then, if you&apos;re using SSJS, perform the toJson or JSON.parse on the string.</p>
 <h3 id="my-sample-java-consumer"><a name="my-sample-java-consumer" class="plugin-anchor" href="#my-sample-java-consumer"><span class="fa fa-link"></span></a>My Sample Java Consumer</h3>
@@ -831,25 +900,9 @@ return obj.responseData.feed.entries;}]]&gt;</span><span class="hljs-tag">&lt;/<
     <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"addcssjs":{"css":["https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify-emoticons.min.css","https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.css","styles.css"],"js":["https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.js","scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"},"anchors":{},"include":{},"include-codeblock":{},"highlight":{},"livereload":{},"youtube":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"addcssjs":{"css":["css/emojify-emoticons.min.css","css/emojify.min.css","css/styles.css"],"js":["js/emojify.min.js","js/scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"}};
     gitbook.start(config);
 });
 </script>

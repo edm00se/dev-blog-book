@@ -8,7 +8,7 @@
         <title>Servlet Handling Data, A Round House Kick | Dev|Blog: The First Year</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.5.1">
+        <meta name="generator" content="GitBook 2.4.3">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -25,15 +25,11 @@
         
     
         
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-image-captions/image-captions.css">
+        
+    
+        
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
         
     
     
@@ -47,15 +43,18 @@
     <link rel="prev" href="../_posts/2015-03-10-interlude-and-announcement.html" />
     
 
-        <script type="text/javascript" src="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.js"></script><script type="text/javascript" src="../scripts.js"></script><link rel="stylesheet" type="text/css" href="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.css"><link rel="stylesheet" type="text/css" href="../styles.css">
+        <script type="text/javascript" src="../js/emojify.min.js"></script><script type="text/javascript" src="../js/scripts.js"></script><link rel="stylesheet" type="text/css" href="../css/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../css/emojify.min.css"><link rel="stylesheet" type="text/css" href="../css/styles.css">
     </head>
     <body>
         
         
-    <div class="book" data-level="1.6" data-chapter-title="Servlet Handling Data, A Round House Kick" data-filepath="_posts/2015-03-19-servlets-handling-data-round-house-kick.md" data-basepath=".." data-revision="Tue Oct 27 2015 21:11:26 GMT-0500 (CDT)">
+    <div class="book" data-level="1.6" data-basepath=".." data-revision="Fri Nov 06 2015 20:36:46 GMT-0600 (CST)">
     
 
 <div class="book-summary">
+    <div class="book-search" role="search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
     <nav role="navigation">
         <ul class="summary">
             
@@ -635,7 +634,80 @@
         <div class="body-inner">
             <div class="book-header" role="navigation">
     <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
     
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
 
     <!-- Title -->
     <h1>
@@ -650,7 +722,7 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h3 id="a-fastpaced-roundhouse-kick-tour-of-data-interactions"><a name="a-fastpaced-roundhouse-kick-tour-of-data-interactions" class="plugin-anchor" href="#a-fastpaced-roundhouse-kick-tour-of-data-interactions"><span class="fa fa-link"></span></a>A Fast-Paced, Round-House <s>Kick</s> Tour of Data Interactions</h3>
+                        <h3 id="a-fast-paced-round-house-s-kick-s-tour-of-data-interactions"><a name="a-fast-paced-round-house-s-kick-s-tour-of-data-interactions" class="plugin-anchor" href="#a-fast-paced-round-house-s-kick-s-tour-of-data-interactions"><span class="fa fa-link"></span></a>A Fast-Paced, Round-House <s>Kick</s> Tour of Data Interactions</h3>
 <p><a href="https://edm00se.io/xpages-servlets/servlet-handling-requests/" target="_blank">As promised at the end of the last post (in this series)</a>, this post will walk through the entire life cycle of data reception and response handling. This is where my <a href="https://edm00se.io/self-promotion/a-chalk-talk-talk/" target="_blank">ConnectED demo app-that-never-was</a> comes in, we&apos;re going to build part of it. We&apos;re going to create an endpoint which governs the provision of a collection of the houses of note in our fictitious land of Os (it&apos;s out west). I&apos;ll be providing the <em>com.westeros.servlets.HouseServlet</em> class, which is an <em>AbstractXSPServlet</em> (<a href="https://edm00se.io/xpages-servlets/servlet-intro-and-flavors/#flavors-of-servlets" target="_blank">previously demonstrated</a>), to my <em>ServletFactory</em>.</p>
 <p>Note: I&apos;ll be sticking to the same, vanilla Java approach I&apos;ve used previously in <a href="https://edm00se.io/servlet-series" target="_blank">this series</a>. I&apos;ll outright say it though, it&apos;d be great to see how some of the processes involved in the setup can be automated and made easier, be it by <em>@</em> annotation or via other frameworks. I fully invite those more experienced in these methods to show <span data-toggle="tooltip" title="me!">us</span> the way.</p>
 <!-- toc -->
@@ -1118,7 +1190,7 @@ Gson gson = <span class="hljs-keyword">new</span> Gson();
 
 MyBean myBean = (MyBean) gson.fromJson(IOUtils.toString(is), MyBean.class);
 </code></pre>
-<h4 id="my-classs-interpretation"><a name="my-classs-interpretation" class="plugin-anchor" href="#my-classs-interpretation"><span class="fa fa-link"></span></a>My Class&apos;s Interpretation</h4>
+<h4 id="my-class-s-interpretation"><a name="my-class-s-interpretation" class="plugin-anchor" href="#my-class-s-interpretation"><span class="fa fa-link"></span></a>My Class&apos;s Interpretation</h4>
 <p>As mentioned above, here&apos;s how I&apos;m reading my values into a <em>HashMap</em> and then filling my object with the <em>setValue</em> methods.</p>
 <pre><code class="lang-java">String reqStr = IOUtils.toString(is);
 Gson g = <span class="hljs-keyword">new</span> Gson();
@@ -1209,25 +1281,9 @@ res.addHeader(<span class="hljs-string">&quot;Location&quot;</span>, <span class
     <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
-    
-
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"addcssjs":{"css":["https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify-emoticons.min.css","https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.css","styles.css"],"js":["https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.js","scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"},"anchors":{},"include":{},"include-codeblock":{},"highlight":{},"livereload":{},"youtube":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"addcssjs":{"css":["css/emojify-emoticons.min.css","css/emojify.min.css","css/styles.css"],"js":["js/emojify.min.js","js/scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"}};
     gitbook.start(config);
 });
 </script>
