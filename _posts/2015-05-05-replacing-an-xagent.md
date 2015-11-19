@@ -1,7 +1,7 @@
 ### For Starters
 ¡Feliz Cinco de Mayo!
 
-:sunny: :tropical_drink: :confetti_ball: :beers: :tada:
+<img src="/images/emoji/sunny.png" alt="sunny" style="height:auto;width:21px;"> <img src="/images/emoji/tropical_drink.png" alt="tropical_drink" style="height:auto;width:21px;"> <img src="/images/emoji/confetti_ball.png" alt="confetti_ball" style="height:auto;width:21px;"> <img src="/images/emoji/beers.png" alt="beers" style="height:auto;width:21px;"> <img src="/images/emoji/tada.png" alt="tada" style="height:auto;width:21px;">
 
 It's been a little longer to get to this installment of my [Saga of Servlets series](//localhost:4000/servlet-series), but I guess that happens when things like the day job pick up with trouble shooting server issues and family life all seem to get in the way.
 
@@ -28,7 +28,7 @@ In lieu of some recorded tests to back this up, I'm going to link you to [a blog
 <span data-toggle="tooltip" title="no seriously, I'll come back to it!">[Insert Data to Back Up Reasoning Here]</span>
 
 ### When to Keep Using an XAgent
-The caveat to using an _HttpServlet_ is the need for reliable _sessionAsSigner_ access. While I believe this is feasible at a conceptual level (especially inside an NSF), it would be lacking in the context of an OSGi plugin, as there would be no actual design element. I've tried to read up on and ask around on this subject, but the most I've found is [an old question on OpenNTF](//www.openntf.org/main.nsf/project.xsp?r=project/XPages%20Extension%20Library/discussions/138D40A90CF008BD862579A50040ABFA) and some confusing talk from Jesse Gallagher about ClassLoaders and the underlying Domino C API. Talking with Jesse about these things make it sound like a really good idea for me to take his word on it :wink:.
+The caveat to using an _HttpServlet_ is the need for reliable _sessionAsSigner_ access. While I believe this is feasible at a conceptual level (especially inside an NSF), it would be lacking in the context of an OSGi plugin, as there would be no actual design element. I've tried to read up on and ask around on this subject, but the most I've found is [an old question on OpenNTF](//www.openntf.org/main.nsf/project.xsp?r=project/XPages%20Extension%20Library/discussions/138D40A90CF008BD862579A50040ABFA) and some confusing talk from Jesse Gallagher about ClassLoaders and the underlying Domino C API. Talking with Jesse about these things make it sound like a really good idea for me to take his word on it <img src="/images/emoji/wink.png" alt="wink" style="height:auto;width:21px;">.
 
 [Update]
 I've had some good success resolving _sessionAsSigner_ via _ExtLibUtil.getCurrentSessionAsSigner()_, which makes my above comment a bit less pressing.

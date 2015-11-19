@@ -14,7 +14,7 @@ I was going to start with a succinct description of [what GitHub is](//github.co
 So, now that we've established that GitHub is a git repository server, which provides additional features (issue tracking, wikis, forking, etc.), let's get into some of the differentiating specifics:
 
 * only hosts git repositories
-* any private repos / enterprise hosting costs :dollar:
+* any private repos / enterprise hosting costs <img src="/images/emoji/dollar.png" alt="dollar" style="height:auto;width:21px;">
 * generally the de facto solution for the Open Source community
 * free static site (or generated via [Jekyll](//jekyllrb.com/)) via GitHub Pages (any _gh-pages_ branch for a GitHub repo will have a space at &lt;user&gt;.github.io/&lt;repoName&gt;), like this one (which uses a custom domain now)
 
@@ -28,7 +28,7 @@ As with GitHub, [Bitbucket](//bitbucket.org/) (from Atlassian) offers repository
 * hosts both Git and Mercurial repositories
 * free accounts get an unlimited number of public or private repositories
 * private repositories with a free account can have up to 5 collaborators
-* additional enterprise hosted options with different products for different aspects of code management (issue tracking with Jira, Stash for self-hosted Bitbucket server, Bamboo for CI, and more); also costing :dollar:
+* additional enterprise hosted options with different products for different aspects of code management (issue tracking with Jira, Stash for self-hosted Bitbucket server, Bamboo for CI, and more); also costing <img src="/images/emoji/dollar.png" alt="dollar" style="height:auto;width:21px;">
 * strong articles and guides (Atlassian blog)
 
 Atlassian is also the creator of SourceTree, a free Mercurial and Git client for Mac and Windows platforms. SourceTree bakes in the Git/Hg-Flow processes, making it easier to implement [feature branching](//www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow) workflows (or others).

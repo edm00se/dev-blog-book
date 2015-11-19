@@ -8,7 +8,7 @@
         <title>Building a Front-End pt.1 Plus a Quick Review | Dev|Blog: The First Year</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.4.3">
+        <meta name="generator" content="GitBook 2.5.1">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -25,11 +25,15 @@
         
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-image-captions/image-captions.css">
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
         
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
         
     
     
@@ -48,13 +52,10 @@
     <body>
         
         
-    <div class="book" data-level="1.7" data-basepath=".." data-revision="Fri Nov 06 2015 20:36:46 GMT-0600 (CST)">
+    <div class="book" data-level="1.7" data-chapter-title="Building a Front-End pt.1 Plus a Quick Review" data-filepath="_posts/2015-06-16-building-a-front-end-pt1-a-quick-review.md" data-basepath=".." data-revision="Wed Nov 18 2015 21:15:56 GMT-0600 (CST)">
     
 
 <div class="book-summary">
-    <div class="book-search" role="search">
-        <input type="text" placeholder="Type to search" class="form-control" />
-    </div>
     <nav role="navigation">
         <ul class="summary">
             
@@ -634,80 +635,7 @@
         <div class="body-inner">
             <div class="book-header" role="navigation">
     <!-- Actions Left -->
-    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
-    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
     
-    <div id="font-settings-wrapper" class="dropdown pull-left">
-        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
-        </a>
-        <div class="dropdown-menu font-settings">
-    <div class="dropdown-caret">
-        <span class="caret-outer"></span>
-        <span class="caret-inner"></span>
-    </div>
-
-    <div class="buttons">
-        <button type="button" id="reduce-font-size" class="button size-2">A</button>
-        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
-    </div>
-
-    <div class="buttons font-family-list">
-        <button type="button" data-font="0" class="button">Serif</button>
-        <button type="button" data-font="1" class="button">Sans</button>
-    </div>
-
-    <div class="buttons color-theme-list">
-        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
-        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
-        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
-    </div>
-</div>
-
-    </div>
-
-    <!-- Actions Right -->
-    
-    <div class="dropdown pull-right">
-        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
-        </a>
-        <div class="dropdown-menu font-settings dropdown-left">
-            <div class="dropdown-caret">
-                <span class="caret-outer"></span>
-                <span class="caret-inner"></span>
-            </div>
-            <div class="buttons">
-                <button type="button" data-sharing="twitter" class="button">
-                    Share on Twitter
-                </button>
-                <button type="button" data-sharing="google-plus" class="button">
-                    Share on Google
-                </button>
-                <button type="button" data-sharing="facebook" class="button">
-                    Share on Facebook
-                </button>
-                <button type="button" data-sharing="weibo" class="button">
-                    Share on Weibo
-                </button>
-                <button type="button" data-sharing="instapaper" class="button">
-                    Share on Instapaper
-                </button>
-            </div>
-        </div>
-    </div>
-    
-
-    
-    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
-    
-    
-    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
-    
-    
-    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
-    
-    
-    
-
 
     <!-- Title -->
     <h1>
@@ -742,15 +670,15 @@
 <li>work entirely independent of any particular client format (while adhering to certain things like authentication and formatted requests)</li>
 </ul>
 <p>There are more that a RESTful API <em>can</em> do or rules that can be applied, but that&apos;s the high level stuff. As you can see, this is part of the core of the segregation of data and primary business logic from the client-layer side of the application.</p>
-<h5 id="-stack-development"><a name="-stack-development" class="plugin-anchor" href="#-stack-development"><span class="fa fa-link"></span></a>&quot;Stack&quot; Development</h5>
+<h5 id="stack-development"><a name="stack-development" class="plugin-anchor" href="#stack-development"><span class="fa fa-link"></span></a>&quot;Stack&quot; Development</h5>
 <p>Part of my crusade in the realm of segregating application development concerns into the front-end and back-end revolves around the concept of these &quot;ends&quot; to the application. Both play an important role, but work best together. By building your back-end to adhere to certain conventions, you can create your front-end with any front-end technology. This is why I&apos;m such a huge fan. At my company, we have a large number of in-house systems, many of which talk to each other. By segregating the primary business logic (governing how we store the data, events that trigger from the server, and steps in workflow) as being a part of how the server components work, then any client playing by the rules can be a valid interface; whether that&apos;s an automated agent which checks for non-interface updates, or the front-end which contains all the user interaction at the UI level. The business logic become much more maintainable and documentable in the process.</p>
 <p>Where XPages fits in as a component in all of this can be a little tricky. Obviously, XPages design elements encompass the application layer, but deciding how that maps to a front-end as opposed to a back-end is a bit trickier (and <a href="https://www.google.com/?gws_rd=ssl#q=site:edm00se.io+spaghetti+code" target="_blank">one I&apos;ve <s>complained about</s> debated before</a>). I don&apos;t mean to beat up on XPages, as it offers us quite a lot of tools and components that help assemble a working app, rapidly; I can and will beat up on poorly implemented XPages application code.</p>
-<h5 id="xpages-full-stack-development"><a name="xpages-full-stack-development" class="plugin-anchor" href="#xpages-full-stack-development"><span class="fa fa-link"></span></a>XPages: Full-Stack Development?</h5>
+<h5 id="xpages-fullstack-development"><a name="xpages-fullstack-development" class="plugin-anchor" href="#xpages-fullstack-development"><span class="fa fa-link"></span></a>XPages: Full-Stack Development?</h5>
 <p>Obviously, certain beginner XPages development approaches (those conducive to SSJS spaghetti code<sup>&#x2122;</sup>) can be quite the antithesis of what the segregated stack approach gives us. This makes our XPages design elements, containing not just the markup and layout of elements (fields, labels, etc.), but also logic, <code>if(status.equals(&quot;certainStep&quot;)){ doSomethingUnique(); }</code>, and actions (since these X conditions are true, send an email to these 12 people). Combine this with the unique, <a href="https://en.wikipedia.org/wiki/NoSQL" target="_blank">NoSQL database</a> handling via the <em>NotesDominoAPI</em>, it&apos;s my belief that XPages development is by default a full-stack application stack; for better or for worse.</p>
 <h6 id="aside-talking-crazy-for-a-moment"><a name="aside-talking-crazy-for-a-moment" class="plugin-anchor" href="#aside-talking-crazy-for-a-moment"><span class="fa fa-link"></span></a>Aside (talking crazy for a moment)</h6>
-<p>Some of these concepts are central to what I&apos;ve seen previewed of the <a href="http://heidloff.net/nh/home.nsf/article.xsp?id=26.01.2015175730NHEMVZ.htm" target="_blank">XPages (XSP) application runtime</a> and <a href="http://ryanjbaxter.com/2014/09/22/using-your-domino-data-in-apps-deployed-to-bluemix/" target="_blank">Domino Data Service</a> on Bluemix. That the data container being forced to be separate from the application layer isn&apos;t just a good idea with Bluemix (which enforces the segregation of concerns as does almost any other application stack, considering that nearly all out there aren&apos;t configured like an NSF), but means that the XPages runtime can hook into any database; something it&apos;s already capable of, but often not done. In fact, segregating the data NSF from the application NSF isn&apos;t a new concept either, but hey, it&apos;s my paragraph :grinning:. I&apos;m also fairly certain that the segregation of the XSP runtime from the other, traditional NSF components may be the gateway for us to get an updated JVM, but maybe I&apos;m just greedy.</p>
+<p>Some of these concepts are central to what I&apos;ve seen previewed of the <a href="http://heidloff.net/nh/home.nsf/article.xsp?id=26.01.2015175730NHEMVZ.htm" target="_blank">XPages (XSP) application runtime</a> and <a href="http://ryanjbaxter.com/2014/09/22/using-your-domino-data-in-apps-deployed-to-bluemix/" target="_blank">Domino Data Service</a> on Bluemix. That the data container being forced to be separate from the application layer isn&apos;t just a good idea with Bluemix (which enforces the segregation of concerns as does almost any other application stack, considering that nearly all out there aren&apos;t configured like an NSF), but means that the XPages runtime can hook into any database; something it&apos;s already capable of, but often not done. In fact, segregating the data NSF from the application NSF isn&apos;t a new concept either, but hey, it&apos;s my paragraph <img src="../images/emoji/grinning.png" alt="grinning" style="height:auto;width:21px;">. I&apos;m also fairly certain that the segregation of the XSP runtime from the other, traditional NSF components may be the gateway for us to get an updated JVM, but maybe I&apos;m just greedy.</p>
 <p>Ultimately, the point I&apos;m trying to make, is that we have a lot of options and decisions we can make with Domino/XPages, but with any ambiguity, there are potential pitfalls. One way this is changing, IMO, is <a href="www.slideshare.net/MartinDonnelly1/connected2015-domino-apps-for-bluemix/9">the bringing of the XSP(XPages) runtime to Bluemix</a>. In case you missed it, <a href="https://edm00se.io/bluemix/bluemix-chalky-soup/" target="_blank">I&apos;ve posted a couple early thoughts on Bluemix</a>, and I&apos;m both impressed and excited for what it can and will bring to the table for my company and I.</p>
-<h3 id="front-end-consumption"><a name="front-end-consumption" class="plugin-anchor" href="#front-end-consumption"><span class="fa fa-link"></span></a>Front-End Consumption</h3>
+<h3 id="frontend-consumption"><a name="frontend-consumption" class="plugin-anchor" href="#frontend-consumption"><span class="fa fa-link"></span></a>Front-End Consumption</h3>
 <p>Having shaped our back-end <a href="https://edm00se.io/xpages-servlets/servlets-handling-data-round-house-kick/" target="_blank">earlier in this series</a> to adhere to a primarily RESTful API format, we can now consume that API by <em>some front-end</em>. In the <a href="https://www.youtube.com/watch?v=stJ3Yc1BOnU&amp;t=32m47s" target="_blank">Notes in 9 173: Getting Started With (HTTP)Servlets</a> video, I demonstrated this principle via the <a href="https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en" target="_blank">Postman REST client</a> (a Chrome extension). There are others out there and you could even <a href="http://www.codingpedia.org/ama/how-to-test-a-rest-api-from-command-line-with-curl/" target="_blank">test from your command line via cURL</a>, if you&apos;re so inclined. What this demonstrates is that virtually <em>any</em> front-end can consume the API, it just comes down to how you expose/provision that API and what you point to it.</p>
 <p>It also shows the method of data transfer. In order for a front-end to work with my RESTful API, it will need to:</p>
 <ul>
@@ -767,7 +695,7 @@
 <p>[Aside]
 There are <a href="http://jqueryui.com/" target="_blank">jQuery UI</a> (<a href="http://jquerymobile.com/" target="_blank">and mobile</a>) and <a href="http://dojotoolkit.org/reference-guide/1.10/dojox/mvc.html" target="_blank">Dojox MVC</a>, but I&apos;m moving on for simplicity&apos;s sake.
 [/Aside]</p>
-<h5 id="mvc-mv-architecture"><a name="mvc-mv-architecture" class="plugin-anchor" href="#mvc-mv-architecture"><span class="fa fa-link"></span></a>MVC/MV* Architecture</h5>
+<h5 id="mvcmv-architecture"><a name="mvcmv-architecture" class="plugin-anchor" href="#mvcmv-architecture"><span class="fa fa-link"></span></a>MVC/MV* Architecture</h5>
 <p>There are a lot of acronyms in framework architecture that get thrown around. Here are a couple to get you started:</p>
 <ul>
 <li>MVC - Model-View-Controller</li>
@@ -806,7 +734,7 @@ There are <a href="http://jqueryui.com/" target="_blank">jQuery UI</a> (<a href=
 
 <p>To add some fuel to the fire, here is a link to the <a href="www.google.com/trends/explore#q=ember.js,+angularjs,+backbone.js&amp;cmpt=q">Google Trends for Angular, Backbone, and Ember</a>. As an side, check out <a href="www.google.com/trends/explore#q=xpages,+coldfusion&amp;cmpt=q">other combinations of search terms</a>, it can be interesting to play with; it only yields results as scraped from Google search, so it&apos;s no absolute indicator, but interesting as it is.</p>
 <p>For another <a href="www.airpair.com/js/javascript-framework-comparison">good comparison between Angular, Backbone, and Ember</a>, this articles does a decent job of breaking down &quot;the good parts&quot; and the &quot;pain points&quot;. The article is hosted on <a href="www.airpair.com/about">airpair.com</a>, a micro-consulting site geared for developer-to-developer support, be it mentoring, code review, and more.</p>
-<p>It&apos;s a sign of one of the other advantages of this form of segregated, &quot;stack&quot; design; outside help that&apos;s not such a closed ecosystem as the one we work in. This may not be a huge deal for those who aren&apos;t customers, but for those who seek to at least stay afloat, it&apos;s a decent leap towards being able to outsource without a huge amount of :dollar:.</p>
+<p>It&apos;s a sign of one of the other advantages of this form of segregated, &quot;stack&quot; design; outside help that&apos;s not such a closed ecosystem as the one we work in. This may not be a huge deal for those who aren&apos;t customers, but for those who seek to at least stay afloat, it&apos;s a decent leap towards being able to outsource without a huge amount of <img src="../images/emoji/dollar.png" alt="dollar" style="height:auto;width:21px;">.</p>
 <h5 id="scary-change-is-scary"><a name="scary-change-is-scary" class="plugin-anchor" href="#scary-change-is-scary"><span class="fa fa-link"></span></a>Scary Change is Scary</h5>
 <p>Recently you may have seen <a href="www.notesin9.com/2015/05/27/thinking-of-angularjs-maybe-its-not-all-that-and-a-bag-of-chips-after-all">David Leedy blog a link</a> and ask for perspective on <a href="medium.com/@mnemon1ck/why-you-should-not-use-angularjs-1df5ddf6fc99">a particular post denouncing AngularJS and all its sins</a>. All I can say is, read the comments along with the post. I personally found the post to be inconsisent with my experiences but, more importantly, ignoring certain facts and updates (which the AngularJS team does provide on a constant basis) for the sake of their argument. Make up your own mind, but be informed.</p>
 <h5 id="a-note-on-version-2"><a name="a-note-on-version-2" class="plugin-anchor" href="#a-note-on-version-2"><span class="fa fa-link"></span></a>A Note on Version 2</h5>
@@ -849,9 +777,25 @@ There are <a href="http://jqueryui.com/" target="_blank">jQuery UI</a> (<a href=
     <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"addcssjs":{"css":["css/emojify-emoticons.min.css","css/emojify.min.css","css/styles.css"],"js":["js/emojify.min.js","js/scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"}};
+    var config = {"addcssjs":{"css":["css/emojify-emoticons.min.css","css/emojify.min.css","css/styles.css"],"js":["js/emojify.min.js","js/scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"},"anchors":{},"include":{},"include-codeblock":{},"highlight":{},"livereload":{},"youtube":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

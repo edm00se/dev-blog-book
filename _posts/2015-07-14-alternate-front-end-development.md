@@ -175,7 +175,7 @@ After your minor transforms, I reocmmend sanity checking your data with a tool l
 <br />
 
 ##### A Note on Domino Data Service
-As the _@unid_ property won't register as a valid json object property, you may need to transform that to _unid_. My _HTTPServlet_ was already using _unid_, so it works out quite nicely :wink:.
+As the _@unid_ property won't register as a valid json object property, you may need to transform that to _unid_. My _HTTPServlet_ was already using _unid_, so it works out quite nicely <img src="/images/emoji/wink.png" alt="wink" style="height:auto;width:21px;">.
 
 ### Json-Server
 So, you may be wondering what `json-server` is. [Json-server](https://github.com/typicode/json-server) describes iteself as:

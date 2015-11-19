@@ -42,7 +42,7 @@ request(options, function (error, response, body) {
                             foundMatch = true;
                             console.log('found a match for '+prop+' in '+file);
                             var nwRe = new RegExp(":"+prop+":","gi");
-                            result = result.replace(nwRe, '<img src="'+'./images/emoji/'+prop+'.png'+'" alt="'+prop+'" style="height:auto;width:21px;">');
+                            result = result.replace(nwRe, '<img src="'+'/images/emoji/'+prop+'.png'+'" alt="'+prop+'" style="height:auto;width:21px;">');
                         }
                     }
                     if(foundMatch){

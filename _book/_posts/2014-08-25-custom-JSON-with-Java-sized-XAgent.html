@@ -8,7 +8,7 @@
         <title>Custom JSON with Java-ized XAgent | Dev|Blog: The First Year</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.4.3">
+        <meta name="generator" content="GitBook 2.5.1">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -25,11 +25,15 @@
         
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-image-captions/image-captions.css">
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
         
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
         
     
     
@@ -48,13 +52,10 @@
     <body>
         
         
-    <div class="book" data-level="2.3" data-basepath=".." data-revision="Fri Nov 06 2015 20:36:46 GMT-0600 (CST)">
+    <div class="book" data-level="2.3" data-chapter-title="Custom JSON with Java-ized XAgent" data-filepath="_posts/2014-08-25-custom-JSON-with-Java-sized-XAgent.md" data-basepath=".." data-revision="Wed Nov 18 2015 21:15:56 GMT-0600 (CST)">
     
 
 <div class="book-summary">
-    <div class="book-search" role="search">
-        <input type="text" placeholder="Type to search" class="form-control" />
-    </div>
     <nav role="navigation">
         <ul class="summary">
             
@@ -634,80 +635,7 @@
         <div class="body-inner">
             <div class="book-header" role="navigation">
     <!-- Actions Left -->
-    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
-    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
     
-    <div id="font-settings-wrapper" class="dropdown pull-left">
-        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
-        </a>
-        <div class="dropdown-menu font-settings">
-    <div class="dropdown-caret">
-        <span class="caret-outer"></span>
-        <span class="caret-inner"></span>
-    </div>
-
-    <div class="buttons">
-        <button type="button" id="reduce-font-size" class="button size-2">A</button>
-        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
-    </div>
-
-    <div class="buttons font-family-list">
-        <button type="button" data-font="0" class="button">Serif</button>
-        <button type="button" data-font="1" class="button">Sans</button>
-    </div>
-
-    <div class="buttons color-theme-list">
-        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
-        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
-        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
-    </div>
-</div>
-
-    </div>
-
-    <!-- Actions Right -->
-    
-    <div class="dropdown pull-right">
-        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
-        </a>
-        <div class="dropdown-menu font-settings dropdown-left">
-            <div class="dropdown-caret">
-                <span class="caret-outer"></span>
-                <span class="caret-inner"></span>
-            </div>
-            <div class="buttons">
-                <button type="button" data-sharing="twitter" class="button">
-                    Share on Twitter
-                </button>
-                <button type="button" data-sharing="google-plus" class="button">
-                    Share on Google
-                </button>
-                <button type="button" data-sharing="facebook" class="button">
-                    Share on Facebook
-                </button>
-                <button type="button" data-sharing="weibo" class="button">
-                    Share on Weibo
-                </button>
-                <button type="button" data-sharing="instapaper" class="button">
-                    Share on Instapaper
-                </button>
-            </div>
-        </div>
-    </div>
-    
-
-    
-    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
-    
-    
-    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
-    
-    
-    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
-    
-    
-    
-
 
     <!-- Title -->
     <h1>
@@ -722,7 +650,7 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h3 id="tl-dr"><a name="tl-dr" class="plugin-anchor" href="#tl-dr"><span class="fa fa-link"></span></a>TL;DR</h3>
+                        <h3 id="tldr"><a name="tldr" class="plugin-anchor" href="#tldr"><span class="fa fa-link"></span></a>TL;DR</h3>
 <p>Impatient and want to see the code? Jump down to <a href="#handling-the-data">my Java class</a>.</p>
 <p>[Update]
 I really don&apos;t recommend people use Domino Access Service (DAS), as originally outlined below, unless you&apos;re willing to accept the caveats of needing to abstract your NSF with DAS enabled to be entirely behind any external firewall; aka- not externally visible. This technique can be well used, provided you&apos;re not exposing your application to the public Internet, but still carries an element of risk in exposing full CRUD operations for the database component without any further requirements. It&apos;s handy and quick, but needs to be understood to be used properly. For the minimal effort it takes to roll an HTTP Servlet, <em>xe:restService</em> control, <em>xe:jsonRpc</em> control, or XAgent to do the same, it&apos;s really not worth opening your production environment to that potential security issue.
@@ -746,7 +674,7 @@ I really don&apos;t recommend people use Domino Access Service (DAS), as origina
 <span class="hljs-tag">&lt;/<span class="hljs-title">xp:view</span>&gt;</span>
 </code></pre>
 <p>Just invoke the fully qualified package.Class.Method() in the afterRenderResponse and you&apos;re ready to go.</p>
-<h3 id="xagent-ize-your-java-method"><a name="xagent-ize-your-java-method" class="plugin-anchor" href="#xagent-ize-your-java-method"><span class="fa fa-link"></span></a>XAgent-ize Your Java Method</h3>
+<h3 id="xagentize-your-java-method"><a name="xagentize-your-java-method" class="plugin-anchor" href="#xagentize-your-java-method"><span class="fa fa-link"></span></a>XAgent-ize Your Java Method</h3>
 <p>Note: I&apos;m assuming you know what they are, what they do, and how to implement them.</p>
 <p>Recommended: separate the JSON data build into a method separate from the handler for the XAgent, which does the grunt work of the FacesContext ineraction. I recommend this as you can then just pass the data without using an XAgent, for consumption via server-side (e.g.- extending into another class for bean or POJO use), as opposed to the client-side application logic I&apos;m assuming. No matter how you slice it, you should know how you want to provide and consume your data.</p>
 <p>As is the usual, we establish our handles on the FacesContext and give ourselves access to the ResponseWriter; the same as <a href="http://openntf.org/XSnippets.nsf/snippet.xsp?id=xagent" target="_blank">any XAgent</a>. This is how we&apos;ll be outputting data. In the ExternalContext response, we set the header information; e.g.- application/json as the content-type, no-cache so as to keep the data from becoming stale, and set the character encoding.</p>
@@ -761,7 +689,7 @@ I really don&apos;t recommend people use Domino Access Service (DAS), as origina
 <p>With the right tools, things get easier. Chrome&apos;s DevTools give a nice Preview tab to individual network requests. When it comes to json data, it lets us drill down nicely or switch over and view the raw response. Like this:
 <a href="https://edm00se.io/images/post_images/GoTchars_ChromePreview.png" data-toggle="tooltip" title="maybe we can have nice things" target="_blank"><img src="https://edm00se.io/images/post_images/GoTchars_ChromePreview.png"></a></p>
 <p>New to Chrome DevTools? Check out <a href="http://discover-devtools.codeschool.com/" target="_blank">this free primer course</a> from codeschool.com.</p>
-<h3 id="a-brief-angularjs-http-angularjs-org-plug"><a name="a-brief-angularjs-http-angularjs-org-plug" class="plugin-anchor" href="#a-brief-angularjs-http-angularjs-org-plug"><span class="fa fa-link"></span></a>A Brief <a href="http://angularjs.org/" target="_blank">AngularJS</a> Plug</h3>
+<h3 id="a-brief-angularjs-plug"><a name="a-brief-angularjs-plug" class="plugin-anchor" href="#a-brief-angularjs-plug"><span class="fa fa-link"></span></a>A Brief <a href="http://angularjs.org/" target="_blank">AngularJS</a> Plug</h3>
 <p>In client-side JavaScript, you can programmatically determine whether to take one path or another, but with AngularJS, this gets much easier with <a href="http://docs.angularjs.org/api/ng/directive/ngShow" target="_blank"><em>ng-show</em></a> and <a href="http://docs.angularjs.org/api/ng/directive/ngHide" target="_blank"><em>ng-hide</em></a>. For those used to computing the visibility property in XPages, similar to</p>
 <pre>&lt;xp:div rendered=&quot;#{javascript:myVariable==true}&quot;&gt;</pre>, this is _mildly_ analagous; as such:
 <pre>&lt;div ng-show=&quot;myData.error == false&quot;&gt;</pre>
@@ -934,9 +862,25 @@ I really don&apos;t recommend people use Domino Access Service (DAS), as origina
     <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"addcssjs":{"css":["css/emojify-emoticons.min.css","css/emojify.min.css","css/styles.css"],"js":["js/emojify.min.js","js/scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"}};
+    var config = {"addcssjs":{"css":["css/emojify-emoticons.min.css","css/emojify.min.css","css/styles.css"],"js":["js/emojify.min.js","js/scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"},"anchors":{},"include":{},"include-codeblock":{},"highlight":{},"livereload":{},"youtube":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>
