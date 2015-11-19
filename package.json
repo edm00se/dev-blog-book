@@ -6,10 +6,13 @@
   "dependencies": {
     "gitbook-plugin-youtube": "^1.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "minimist": "^1.2.0",
+    "request": "^2.65.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"start": "gitbook serve"
+    "start": "gitbook serve"
   },
   "repository": {
     "type": "git",
