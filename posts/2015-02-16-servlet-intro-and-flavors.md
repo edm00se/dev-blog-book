@@ -105,7 +105,7 @@ import com.ibm.xsp.webapp.DesignerFacesServlet;
  * Example servlet showing the use of access to FacesContext.
  * This was originally blogged about by Jesse Gallagher and
  * is a near duplicate class.
- * src: https:http://frostillic.us/blog/posts/159496067A27FD3585257A70005E7BC1
+ * src: https://frostillic.us/blog/posts/159496067A27FD3585257A70005E7BC1
  */
 public class ExampleServlet extends DesignerFacesServlet {
 	private static final long serialVersionUID = 1L;
@@ -113,7 +113,7 @@ public class ExampleServlet extends DesignerFacesServlet {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
-		http:// Set up handy environment variables
+		// Set up handy environment variables
 		HttpServletRequest req = (HttpServletRequest)servletRequest;
 		HttpServletResponse res = (HttpServletResponse)servletResponse;
 		ServletOutputStream out = res.getOutputStream();
@@ -124,22 +124,22 @@ public class ExampleServlet extends DesignerFacesServlet {
 			
 			out.println("start");
 			
-			http:// The sessionScope is available via the ExternalContext. Resolving the variable
-			http://  would work as well
+			// The sessionScope is available via the ExternalContext. Resolving the variable
+			//  would work as well
 			Map<Object, Object> sessionScope = facesContext.getExternalContext().getSessionMap();
-			http:// ... this is showing how we can get facesContext and *scope variables inside the servlet
+			// ... this is showing how we can get facesContext and *scope variables inside the servlet
 			
 			out.println("done");
 			
 		} catch(Exception e) {
-			http:// hit an error, dump out whatever is there
+			// hit an error, dump out whatever is there
 			e.printStackTrace(new PrintStream(out));
 		} finally {
 			out.close();
 			
-			http:// It shouldn't be null if things are going well, but a check never hurt
+			// It shouldn't be null if things are going well, but a check never hurt
 			if(facesContext != null) {
-				http://complete the response and release the handle on the FacesContext instance
+				//complete the response and release the handle on the FacesContext instance
 				facesContext.responseComplete();
 				facesContext.release();
 			}
@@ -185,7 +185,7 @@ if( reqMethod.equals("GET") ) {
 			facesContext.release();
 			out.close();
 		}
-} http://...
+} //...
 ```
 <br />
 
