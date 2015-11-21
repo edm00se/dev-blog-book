@@ -36,7 +36,7 @@
         }
 	},
 	"variables": {
-        "site": "https://edm00se.io",
+        "site": "",
         "username": "edm00se",
         "name": "Eric McCormick",
         "urls.profile": "https://github.com/edm00se",
