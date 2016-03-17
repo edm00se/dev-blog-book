@@ -10,6 +10,8 @@ addons:
     packages:
     - calibre
     - calibre-bin
+before_script:
+  - npm i -g svgexport
 script:
   - gitbook install
   - gitbook build
