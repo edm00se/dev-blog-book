@@ -17,8 +17,8 @@ script:
 after_success: |
   if [ -n "$GITHUB_API_KEY" ]; then
     cd "$TRAVIS_BUILD_DIR"
-    git config user.name='travis'
-    git config user.email='travis'
+    git config user.name "travis"
+    git config user.email "travis"
     cd _book
     git init
     git remote add origin https://$GITHUB_API_KEY@github.com/user/repo
@@ -29,8 +29,8 @@ after_success: |
     # This works because the API key can replace your password.
     cd "$TRAVIS_BUILD_DIR"
     cd build
-    git config user.name='travis'
-    git config user.email='travis'
+    git config user.name "travis"
+    git config user.email "travis"
     cd _book
     git init
     git remote add origin https://$GITHUB_API_KEY@github.com/user/repo
