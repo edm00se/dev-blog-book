@@ -20,17 +20,20 @@ after_success: |
     git config user.name='travis'
     git config user.email='travis'
     cd _book
+    git init
+    git remote add origin https://$GITHUB_API_KEY@github.com/user/repo
     git add .
     git commit -m 'Travis CI Deploying'
     git subtree push -q origin gh-pages
     # Make sure to make the output quiet, or else the API token will leak!
     # This works because the API key can replace your password.
-    # git remote add origin https://$GITHUB_API_KEY@github.com/user/repo
     cd "$TRAVIS_BUILD_DIR"
     cd build
     git config user.name='travis'
     git config user.email='travis'
     cd _book
+    git init
+    git remote add origin https://$GITHUB_API_KEY@github.com/user/repo
     git add .
     git commit -m 'Travis CI Deploying'
     git subtree push -q origin built
