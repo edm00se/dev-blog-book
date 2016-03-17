@@ -1,24 +1,25 @@
 {
   "name": "devblog-book",
   "version": "1.0.0",
-  "description": "a gitbook version of the highlights of the first year of my development blog",
+  "description": "a stand-alone static web and ebook versions of the highlights of the first year-ish of my development blog",
   "main": "",
   "dependencies": {
+    "emoji-transmogrifier": "2.1.0",
+    "gitbook-cli": "2.1.2",
     "gitbook-plugin-youtube": "^1.1.0"
   },
-  "devDependencies": {
-    "minimist": "^1.2.0",
-    "request": "^2.65.0"
-  },
+  "devDependencies": {},
   "scripts": {
+    "emoji-convert": "emoji-transmogrifier zap ./posts/**/*.md",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gitbook serve"
+    "start": "npm run emoji-convert && gitbook serve",
+    "build": "npm run emoji-convert && gitbook build"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/edm00se/dev-blog-book.git"
+    "url": "https://github.com/edm00se/dev-blog-book.git"
   },
   "author": "Eric McCormick",
-  "license": "CC-BY-4.0",
-  "homepage": "https://bitbucket.org/edm00se/dev-blog-book#readme"
+  "license": "MIT",
+  "homepage": "https://github.com/edm00se/dev-blog-book.git"
 }

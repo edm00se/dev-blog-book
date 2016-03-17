@@ -1,0 +1,29 @@
+language: node_js
+node_js:
+  - v4
+# whitelist
+branches:
+  only:
+    - master
+addons:
+  apt:
+    packages:
+    - calibre
+    - calibre-bin
+script:
+  - gitbook install
+  - gitbook build
+  - gitbook pdf . build/DevBlog_Year1.pdf
+  - gitbook mobi . build/DevBlog_Year1.mobi
+  - gitbook epub . build/DevBlog_Year1.epub
+after_success: |
+  if [ -n "$GITHUB_API_KEY" ]; then
+    cd "$TRAVIS_BUILD_DIR"
+    git -c user.name='travis' -c user.email='travis' commit -m 'Travis CI Deploying'
+    # Make sure to make the output quiet, or else the API token will leak!
+    # This works because the API key can replace your password.
+    # git remote add origin https://$GITHUB_API_KEY@github.com/user/repo
+    git subtree push -q --prefix _book origin gh-pages
+    git subtree push -q --prefix build origin built
+    cd "$TRAVIS_BUILD_DIR"
+  fi
