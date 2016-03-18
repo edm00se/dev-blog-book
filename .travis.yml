@@ -16,7 +16,6 @@ script:
   - gitbook epub . build/DevBlog_Year1.epub
 after_success: |
   if [ -n "$GITHUB_API_KEY" ]; then
-    cd "$TRAVIS_BUILD_DIR"
     git config --global user.name "travis"
     git config --global user.email "travis"
     cd _book
@@ -27,7 +26,7 @@ after_success: |
     git subtree push -q origin gh-pages
     # Make sure to make the output quiet, or else the API token will leak!
     # This works because the API key can replace your password.
-    cd "$TRAVIS_BUILD_DIR"
+    cd ..
     cd build
     git init
     git remote add origin https://$GITHUB_API_KEY@github.com/user/repo
@@ -37,5 +36,5 @@ after_success: |
     # Make sure to make the output quiet, or else the API token will leak!
     # This works because the API key can replace your password.
     git push -f -q origin built
-    cd "$TRAVIS_BUILD_DIR"
+    cd ..
   fi
