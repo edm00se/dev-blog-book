@@ -21,25 +21,29 @@ script:
   - gitbook epub . build/DevBlog_Year1.epub
 after_success: |
   if [ -n "$GITHUB_API_KEY" ]; then
+    rm -rf .git
     git config --global user.name "travis"
     git config --global user.email "travis"
     cd _book
     git init
     git remote add origin https://$GITHUB_API_KEY@github.com/user/repo
+    git checkout -b gh-pages
+    git fetch
     git add .
-    git commit -m 'Travis CI Deploying'
-    git subtree push -q origin gh-pages
+    git -c user.name='travis' -c user.email='travis' commit -m 'Travis CI Deploying'
+    git push -f origin gh-pages
     # Make sure to make the output quiet, or else the API token will leak!
     # This works because the API key can replace your password.
     cd ..
     cd build
     git init
     git remote add origin https://$GITHUB_API_KEY@github.com/user/repo
+    git fetch
     git checkout -b built
     git add .
     git -c user.name='travis' -c user.email='travis' commit -m 'Travis CI Deploying'
     # Make sure to make the output quiet, or else the API token will leak!
     # This works because the API key can replace your password.
-    git push -f -q origin built
+    git push -f origin built
     cd ..
   fi
