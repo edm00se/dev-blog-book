@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "emoji-convert": "emoji-transmogrifier zap ./posts/**/*.md",
+    "emoji-convert": "emoji-transmogrifier zap **/*.md",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run emoji-convert && gitbook serve",
     "build": "npm run emoji-convert && gitbook build"
