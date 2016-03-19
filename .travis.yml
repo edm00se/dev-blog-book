@@ -15,7 +15,7 @@ before_script:
   - npm i -g svgexport
   - npm i -g emoji-transmogrifier
 script:
-  - npm run emoji-convert
+  - sudo npm run emoji-convert
   - gitbook install
   - gitbook build
   - gitbook pdf . build/DevBlog_Year1.pdf
