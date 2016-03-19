@@ -20,8 +20,8 @@ before_script:
   - sudo -v && wget -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
   - npm i -g node-gyp && node-gyp clean
   - npm i -g svgexport
-  - sudo chown -R $USER .config
 script:
+  - sudo chown -R $USER ~/
   - ./node_modules/emoji-transmogrifier/src/cli/index.js zap
   - gitbook install
   - gitbook build
