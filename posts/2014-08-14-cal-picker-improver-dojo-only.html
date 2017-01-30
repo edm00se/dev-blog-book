@@ -1,0 +1,748 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>An Dojo Implementation of the Calendar Picker Script | Dev|Blog: The First Year</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-anchors/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../posts/Other.html" />
+    
+    
+    <link rel="prev" href="../posts/2014-09-03-fixing-dojo-161-in-domino-853.html" />
+    
+
+        <script type="text/javascript" src="../js/emojify.min.js"></script><script type="text/javascript" src="../js/scripts.js"></script><link rel="stylesheet" type="text/css" href="../css/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../css/emojify.min.css"><link rel="stylesheet" type="text/css" href="../css/styles.css">
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="6.3"
+        data-chapter-title="An Dojo Implementation of the Calendar Picker Script"
+        data-filepath="posts/2014-08-14-cal-picker-improver-dojo-only.md"
+        data-basepath=".."
+        data-revision="Mon Jan 30 2017 03:59:20 GMT+0000 (UTC)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Intro
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="posts/SagaIntro.html">
+            
+                
+                    <a href="../posts/SagaIntro.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        A Saga of Servlets
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="posts/2015-02-09-a-quick-note-on-JARs.html">
+            
+                
+                    <a href="../posts/2015-02-09-a-quick-note-on-JARs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        A Quick Note on JARs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="posts/2015-02-16-servlet-intro-and-flavors.html">
+            
+                
+                    <a href="../posts/2015-02-16-servlet-intro-and-flavors.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Servlet Intro and Flavors
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="posts/2015-02-19-servlet-implementation.html">
+            
+                
+                    <a href="../posts/2015-02-19-servlet-implementation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Basic Servlet Implementation
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="posts/2015-02-25-servlet-handling-requests.html">
+            
+                
+                    <a href="../posts/2015-02-25-servlet-handling-requests.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        Servlet Handling of Requests
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="posts/2015-03-10-interlude-and-announcement.html">
+            
+                
+                    <a href="../posts/2015-03-10-interlude-and-announcement.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        Interlude and Announcement
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="posts/2015-03-19-servlets-handling-data-round-house-kick.html">
+            
+                
+                    <a href="../posts/2015-03-19-servlets-handling-data-round-house-kick.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Servlet Handling Data, A Round House Kick
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="posts/2015-06-16-building-a-front-end-pt1-a-quick-review.html">
+            
+                
+                    <a href="../posts/2015-06-16-building-a-front-end-pt1-a-quick-review.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        Building a Front-End pt.1 Plus a Quick Review
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="posts/2015-06-17-building-a-front-end-pt2-an-app-with-angular.html">
+            
+                
+                    <a href="../posts/2015-06-17-building-a-front-end-pt2-an-app-with-angular.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        Building a Front-End pt.2: An App with AngularJS
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="posts/2015-06-22-servlet-series-review.html">
+            
+                
+                    <a href="../posts/2015-06-22-servlet-series-review.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.</b>
+                        
+                        Series Review
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="posts/Supporting.html">
+            
+                
+                    <a href="../posts/Supporting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Supporting
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="posts/2014-08-18-rest-consumption-server-side.html">
+            
+                
+                    <a href="../posts/2014-08-18-rest-consumption-server-side.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        RESTful API Consumption on the Server (Java)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="posts/2014-08-19-server-rest-with-authentication.html">
+            
+                
+                    <a href="../posts/2014-08-19-server-rest-with-authentication.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Server REST Consumption with Authentication
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="posts/2014-08-25-custom-JSON-with-Java-sized-XAgent.html">
+            
+                
+                    <a href="../posts/2014-08-25-custom-JSON-with-Java-sized-XAgent.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Custom JSON with Java-ized XAgent
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="posts/2014-10-24-application-logic.html">
+            
+                
+                    <a href="../posts/2014-10-24-application-logic.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Application Logic
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="posts/2014-09-16-unraveling-the-mvc-mysteries.html">
+            
+                
+                    <a href="../posts/2014-09-16-unraveling-the-mvc-mysteries.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Unraveling the M-V-C Mysteries
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="posts/2014-09-18-rest-is-best.html">
+            
+                
+                    <a href="../posts/2014-09-18-rest-is-best.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        REST is Best
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="posts/2015-08-31-something-i-overheard-at-mwlug.html">
+            
+                
+                    <a href="../posts/2015-08-31-something-i-overheard-at-mwlug.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        More on HTTP and AJAX Requests
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="posts/2014-09-29-what-is-an-spa.html">
+            
+                
+                    <a href="../posts/2014-09-29-what-is-an-spa.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        What is a Single Page Application(SPA)?
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="posts/Related.html">
+            
+                
+                    <a href="../posts/Related.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Related
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="posts/2015-05-05-replacing-an-xagent.html">
+            
+                
+                    <a href="../posts/2015-05-05-replacing-an-xagent.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        &quot;Replacing&quot; an XAgent
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="posts/2015-07-14-alternate-front-end-development.html">
+            
+                
+                    <a href="../posts/2015-07-14-alternate-front-end-development.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Alternate Front-End Development: Mocking Your Domino Back-end
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="posts/Java.html">
+            
+                
+                    <a href="../posts/Java.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Java
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="posts/2015-01-09-when-you-need-a-comparator.html">
+            
+                
+                    <a href="../posts/2015-01-09-when-you-need-a-comparator.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        When You Need a Comparator
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="posts/2015-01-23-building-java-objects-from-json.html">
+            
+                
+                    <a href="../posts/2015-01-23-building-java-objects-from-json.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        Building Java Objects from JSON
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="posts/JavaScript.html">
+            
+                
+                    <a href="../posts/JavaScript.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        JavaScript
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="posts/2014-08-12-consistent-multivalue-formatting.html">
+            
+                
+                    <a href="../posts/2014-08-12-consistent-multivalue-formatting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        Consistent Multi-Value Formatting in SSJS for Domino/XPages
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="posts/2014-09-03-fixing-dojo-161-in-domino-853.html">
+            
+                
+                    <a href="../posts/2014-09-03-fixing-dojo-161-in-domino-853.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        Fixing an Older Version of Dojo (1.6.1)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.3" data-path="posts/2014-08-14-cal-picker-improver-dojo-only.html">
+            
+                
+                    <a href="../posts/2014-08-14-cal-picker-improver-dojo-only.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        An Dojo Implementation of the Calendar Picker Script
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="posts/Other.html">
+            
+                
+                    <a href="../posts/Other.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Other
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="posts/2015-03-23-brief-intro-to-nginx.html">
+            
+                
+                    <a href="../posts/2015-03-23-brief-intro-to-nginx.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        A Brief Introduction to Nginx
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="posts/2015-07-07-self-hosting-scm-server.html">
+            
+                
+                    <a href="../posts/2015-07-07-self-hosting-scm-server.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        Self-Hosting SCM Server
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="posts/2014-08-11-redmine-coderay-domino-syntax-highlighting.html">
+            
+                
+                    <a href="../posts/2014-08-11-redmine-coderay-domino-syntax-highlighting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        Domino/XPages Design Element Syntax Highlighting on Redmine
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+    <a href="../GLOSSARY.html" class="btn pull-left" aria-label="Glossary"><i class="fa fa-sort-alpha-asc"></i></a>
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Dev|Blog: The First Year</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h3 id="the-original">The Original</h3>
+<p>The stock <a href="../GLOSSARY.html#xpages" class="glossary-term" title="XPages is a rapid web and mobile application development technology. It allows data from IBM Notes and Relational Databases to be displayed to browser clients on all platforms. The programming model is based on web development languages and standards including JavaScript, Ajax, Java, the Dojo Toolkit, Server-side JavaScript and JavaServer Faces. XPages uses IBM Domino, IBM&apos;s rapid application development platform, including functionality such as the document-oriented database.">XPages</a> date picker control leaves more room for user error than I prefer. Mark Roden <a href="http://xomino.com/2012/03/14/improving-user-interaction-with-xpages-date-picker/" target="_blank">originally came up with this excellent script in jQuery</a>. I love <a href="../GLOSSARY.html#jquery" class="glossary-term" title="jQuery is a cross-platform JavaScript library designed to simplify the client-side scripting of HTML. jQuery is the most popular JavaScript library in use today, with installation on 65% of the top 10 million highest-trafficked sites on the Web. jQuery is free, open-source software licensed under the MIT License.">jQuery</a>, but it&apos;s not the (client-side) JS library I always have available to me in my <a href="../GLOSSARY.html#xpages" class="glossary-term" title="XPages is a rapid web and mobile application development technology. It allows data from IBM Notes and Relational Databases to be displayed to browser clients on all platforms. The programming model is based on web development languages and standards including JavaScript, Ajax, Java, the Dojo Toolkit, Server-side JavaScript and JavaServer Faces. XPages uses IBM Domino, IBM&apos;s rapid application development platform, including functionality such as the document-oriented database.">XPages</a> work, and I&apos;m not about to load yet another library after <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a> in an existing, <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a>-centric application for a comparatively trivial, one-off function. Since the function can be written in vanilla JS, or any decent JS library, I decided to re-write it into <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a>.</p>
+<h3 id="the-dojo-version">The <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a> Version</h3>
+<p>I have this in production on a few applications, and both I and the users love it. So once again, I&apos;m glad to be privy to the fruits of a great community of fellow XPage developers. They&apos;ve made my life easier on so many occasions and I&apos;m hoping I can give back in a small way. Now, since I&apos;m using <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a>, apparently this can be achieved in more-or-less the same way with the <a href="http://dojotoolkit.org/reference-guide/1.6/dijit/form/DateTextBox.html" target="_blank">dijit.form.DateTextBox</a> <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a> module (just set the field&apos;s DojoType after specifying the resource), as <a href="http://xomino.com/2012/03/14/improving-user-interaction-with-xpages-date-picker/#comment-312" target="_blank">highlighted in the comments on Mark Roden&apos;s blog post</a>. While this is certainly functional, it <em>does</em> achieve the picker launch on entering the field, it isn&apos;t consistent with the native <a href="../GLOSSARY.html#xpages" class="glossary-term" title="XPages is a rapid web and mobile application development technology. It allows data from IBM Notes and Relational Databases to be displayed to browser clients on all platforms. The programming model is based on web development languages and standards including JavaScript, Ajax, Java, the Dojo Toolkit, Server-side JavaScript and JavaServer Faces. XPages uses IBM Domino, IBM&apos;s rapid application development platform, including functionality such as the document-oriented database.">XPages</a> date picker control, which is already all over <em>every single XPage&apos;d application in my company</em>. So, for consistency and UX as decided by others in my organization, I rolled this <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a> version of Mark Roden&apos;s script.</p>
+<p>Here&apos;s the code:</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">/*
+ * <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a> version of the improved behavior of the <a href="../GLOSSARY.html#xpages" class="glossary-term" title="XPages is a rapid web and mobile application development technology. It allows data from IBM Notes and Relational Databases to be displayed to browser clients on all platforms. The programming model is based on web development languages and standards including JavaScript, Ajax, Java, the Dojo Toolkit, Server-side JavaScript and JavaServer Faces. XPages uses IBM Domino, IBM&apos;s rapid application development platform, including functionality such as the document-oriented database.">XPages</a> calendar picker.
+ * Adapted from the <a href="../GLOSSARY.html#jquery" class="glossary-term" title="jQuery is a cross-platform JavaScript library designed to simplify the client-side scripting of HTML. jQuery is the most popular JavaScript library in use today, with installation on 65% of the top 10 million highest-trafficked sites on the Web. jQuery is free, open-source software licensed under the MIT License.">jQuery</a> version, originally by Marky Roden.
+ * credit: http://xomino.com/2012/03/14/improving-user-interaction-with-<a href="../GLOSSARY.html#xpages" class="glossary-term" title="XPages is a rapid web and mobile application development technology. It allows data from IBM Notes and Relational Databases to be displayed to browser clients on all platforms. The programming model is based on web development languages and standards including JavaScript, Ajax, Java, the Dojo Toolkit, Server-side JavaScript and JavaServer Faces. XPages uses IBM Domino, IBM&apos;s rapid application development platform, including functionality such as the document-oriented database.">xpages</a>-date-picker/
+ * Adapted by Eric McCormick, @edm00se, http://about.me/EricMcCormick
+ */</span>
+dojo.addOnLoad(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-comment">//id has _Container and is class of xspInputFieldDateTimePicker</span>
+    <span class="hljs-keyword">var</span> myAr = dojo.query(<span class="hljs-string">&quot;[id$=_Container].xspInputFieldDateTimePicker&quot;</span>);
+    <span class="hljs-comment">//iterate over each element to apply affect</span>
+    myAr.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"><a href="../GLOSSARY.html#node" class="glossary-term" title="Node.js is an open-source, cross-platform runtime environment for developing server-side web applications. Node.js applications are written in JavaScript and can be run within the Node.js runtime on OS X, Microsoft Windows, Linux, FreeBSD, NonStop, IBM AIX, IBM System z and IBM i. Its work is hosted and supported by the Node.js Foundation, a collaborative project at Linux Foundation.">node</a>, index, arr</span>)</span>{
+        <span class="hljs-comment">//current root <a href="../GLOSSARY.html#node" class="glossary-term" title="Node.js is an open-source, cross-platform runtime environment for developing server-side web applications. Node.js applications are written in JavaScript and can be run within the Node.js runtime on OS X, Microsoft Windows, Linux, FreeBSD, NonStop, IBM AIX, IBM System z and IBM i. Its work is hosted and supported by the Node.js Foundation, a collaborative project at Linux Foundation.">node</a>, based on id$=_Container</span>
+        <span class="hljs-keyword">var</span> curNode = node;
+        <span class="hljs-comment">//span for the button to fire the picker</span>
+        <span class="hljs-keyword">var</span> myBtn = dojo.query(<span class="hljs-string">&apos;&gt; span &gt; span &gt; span.dijitButtonContents&apos;</span>,curNode)[<span class="hljs-number">0</span>];
+        <span class="hljs-comment">//actual &lt;input&gt; element into which is focused/typed</span>
+        <span class="hljs-keyword">var</span> myInputFld = dojo.query(<span class="hljs-string">&apos;&gt; div &gt; div.dijitInputField &gt; input.dijitInputInner&apos;</span>,curNode)[<span class="hljs-number">0</span>];
+        <span class="hljs-comment">//connect the focus event to the picker click event</span>
+        dojo.connect(myInputFld,<span class="hljs-string">&quot;onfocus&quot;</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{myBtn.click()});
+        <span class="hljs-comment">//provide an onkeypress preventDefault</span>
+        dojo.connect(myInputFld,<span class="hljs-string">&quot;onkeypress&quot;</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">evt</span>)</span>{evt.preventDefault()});
+    });
+});
+</code></pre>
+<h3 id="breaking-it-down">Breaking It Down</h3>
+<p>We <a href="http://en.wikipedia.org/wiki/Bootstrap" target="_blank">bootstrap</a> the function via the <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">dojo</a> <a href="http://dojotoolkit.org/reference-guide/1.6/dojo/addOnLoad.html" target="_blank">addOnLoad</a> call and start by creating an array of the fields with an ID attribute containing &apos;_Container&apos; and the class <em>xspInputFieldDateTimePicker</em>.  We then iterate over these DOM nodes, getting a handle on their button, and connecting the <em>click()</em> event call for that button to the respective field during the <em>onfocus</em> and/or <em>onkeypress</em> events. I&apos;m sure a more advanced user could improve the performance of my version of the function, and I welcome them to post a forked version; after all, why use <a href="../GLOSSARY.html#github" class="glossary-term" title="GitHub is a Web-based Git repository hosting service. It offers all of the distributed revision control and source code management (SCM) functionality of Git as well as adding its own features. Unlike Git, which is strictly a command-line tool, GitHub provides a Web-based graphical interface and desktop as well as mobile integration. It also provides access control and several collaboration features such as bug tracking, feature requests, task management, and wikis for every project.">GitHub</a>/Gist if you don&apos;t want your code improved via the aid of others?</p>
+<p>Note, for this to work in <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a> 1.8, the <em><a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">dojo</a>.connect</em>  and <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">dojo</a>.query calls I establish, which work perfectly fine in 1.6, <strong>must</strong> be converted to <a href="http://dojotoolkit.org/reference-guide/1.8/dojo/query.html#usage" target="_blank"><em><a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">dojo</a>.on</em></a> and <a href="http://dojotoolkit.org/reference-guide/1.8/dojo/on.html#usage" target="_blank"><em>query</em></a> calls, respectively. For more, I do recommend reading the Usage section of the <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a> 1.8 docs.</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../posts/2014-09-03-fixing-dojo-161-in-domino-853.html" class="navigation navigation-prev " aria-label="Previous page: Fixing an Older Version of Dojo (1.6.1)"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../posts/Other.html" class="navigation navigation-next " aria-label="Next page: Other"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-github/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"addcssjs":{"css":["css/emojify-emoticons.min.css","css/emojify.min.css","css/styles.css"],"js":["js/emojify.min.js","js/scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"},"anchors":{},"include":{},"include-codeblock":{},"highlight":{},"livereload":{},"youtube":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

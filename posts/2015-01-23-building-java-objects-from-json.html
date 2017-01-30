@@ -1,0 +1,821 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Building Java Objects from JSON | Dev|Blog: The First Year</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-anchors/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../posts/JavaScript.html" />
+    
+    
+    <link rel="prev" href="../posts/2015-01-09-when-you-need-a-comparator.html" />
+    
+
+        <script type="text/javascript" src="../js/emojify.min.js"></script><script type="text/javascript" src="../js/scripts.js"></script><link rel="stylesheet" type="text/css" href="../css/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../css/emojify.min.css"><link rel="stylesheet" type="text/css" href="../css/styles.css">
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="5.2"
+        data-chapter-title="Building Java Objects from JSON"
+        data-filepath="posts/2015-01-23-building-java-objects-from-json.md"
+        data-basepath=".."
+        data-revision="Mon Jan 30 2017 03:59:20 GMT+0000 (UTC)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Intro
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="posts/SagaIntro.html">
+            
+                
+                    <a href="../posts/SagaIntro.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        A Saga of Servlets
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="posts/2015-02-09-a-quick-note-on-JARs.html">
+            
+                
+                    <a href="../posts/2015-02-09-a-quick-note-on-JARs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        A Quick Note on JARs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="posts/2015-02-16-servlet-intro-and-flavors.html">
+            
+                
+                    <a href="../posts/2015-02-16-servlet-intro-and-flavors.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Servlet Intro and Flavors
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="posts/2015-02-19-servlet-implementation.html">
+            
+                
+                    <a href="../posts/2015-02-19-servlet-implementation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Basic Servlet Implementation
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="posts/2015-02-25-servlet-handling-requests.html">
+            
+                
+                    <a href="../posts/2015-02-25-servlet-handling-requests.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        Servlet Handling of Requests
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="posts/2015-03-10-interlude-and-announcement.html">
+            
+                
+                    <a href="../posts/2015-03-10-interlude-and-announcement.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        Interlude and Announcement
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="posts/2015-03-19-servlets-handling-data-round-house-kick.html">
+            
+                
+                    <a href="../posts/2015-03-19-servlets-handling-data-round-house-kick.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Servlet Handling Data, A Round House Kick
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="posts/2015-06-16-building-a-front-end-pt1-a-quick-review.html">
+            
+                
+                    <a href="../posts/2015-06-16-building-a-front-end-pt1-a-quick-review.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        Building a Front-End pt.1 Plus a Quick Review
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="posts/2015-06-17-building-a-front-end-pt2-an-app-with-angular.html">
+            
+                
+                    <a href="../posts/2015-06-17-building-a-front-end-pt2-an-app-with-angular.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        Building a Front-End pt.2: An App with AngularJS
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="posts/2015-06-22-servlet-series-review.html">
+            
+                
+                    <a href="../posts/2015-06-22-servlet-series-review.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.</b>
+                        
+                        Series Review
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="posts/Supporting.html">
+            
+                
+                    <a href="../posts/Supporting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Supporting
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="posts/2014-08-18-rest-consumption-server-side.html">
+            
+                
+                    <a href="../posts/2014-08-18-rest-consumption-server-side.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        RESTful API Consumption on the Server (Java)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="posts/2014-08-19-server-rest-with-authentication.html">
+            
+                
+                    <a href="../posts/2014-08-19-server-rest-with-authentication.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Server REST Consumption with Authentication
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="posts/2014-08-25-custom-JSON-with-Java-sized-XAgent.html">
+            
+                
+                    <a href="../posts/2014-08-25-custom-JSON-with-Java-sized-XAgent.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Custom JSON with Java-ized XAgent
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="posts/2014-10-24-application-logic.html">
+            
+                
+                    <a href="../posts/2014-10-24-application-logic.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Application Logic
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="posts/2014-09-16-unraveling-the-mvc-mysteries.html">
+            
+                
+                    <a href="../posts/2014-09-16-unraveling-the-mvc-mysteries.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Unraveling the M-V-C Mysteries
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="posts/2014-09-18-rest-is-best.html">
+            
+                
+                    <a href="../posts/2014-09-18-rest-is-best.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        REST is Best
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="posts/2015-08-31-something-i-overheard-at-mwlug.html">
+            
+                
+                    <a href="../posts/2015-08-31-something-i-overheard-at-mwlug.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        More on HTTP and AJAX Requests
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="posts/2014-09-29-what-is-an-spa.html">
+            
+                
+                    <a href="../posts/2014-09-29-what-is-an-spa.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        What is a Single Page Application(SPA)?
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="posts/Related.html">
+            
+                
+                    <a href="../posts/Related.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Related
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="posts/2015-05-05-replacing-an-xagent.html">
+            
+                
+                    <a href="../posts/2015-05-05-replacing-an-xagent.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        &quot;Replacing&quot; an XAgent
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="posts/2015-07-14-alternate-front-end-development.html">
+            
+                
+                    <a href="../posts/2015-07-14-alternate-front-end-development.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Alternate Front-End Development: Mocking Your Domino Back-end
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="posts/Java.html">
+            
+                
+                    <a href="../posts/Java.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Java
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="posts/2015-01-09-when-you-need-a-comparator.html">
+            
+                
+                    <a href="../posts/2015-01-09-when-you-need-a-comparator.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        When You Need a Comparator
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.2" data-path="posts/2015-01-23-building-java-objects-from-json.html">
+            
+                
+                    <a href="../posts/2015-01-23-building-java-objects-from-json.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        Building Java Objects from JSON
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="posts/JavaScript.html">
+            
+                
+                    <a href="../posts/JavaScript.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        JavaScript
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="posts/2014-08-12-consistent-multivalue-formatting.html">
+            
+                
+                    <a href="../posts/2014-08-12-consistent-multivalue-formatting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        Consistent Multi-Value Formatting in SSJS for Domino/XPages
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="posts/2014-09-03-fixing-dojo-161-in-domino-853.html">
+            
+                
+                    <a href="../posts/2014-09-03-fixing-dojo-161-in-domino-853.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        Fixing an Older Version of Dojo (1.6.1)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="posts/2014-08-14-cal-picker-improver-dojo-only.html">
+            
+                
+                    <a href="../posts/2014-08-14-cal-picker-improver-dojo-only.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        An Dojo Implementation of the Calendar Picker Script
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="posts/Other.html">
+            
+                
+                    <a href="../posts/Other.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Other
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="posts/2015-03-23-brief-intro-to-nginx.html">
+            
+                
+                    <a href="../posts/2015-03-23-brief-intro-to-nginx.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        A Brief Introduction to Nginx
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="posts/2015-07-07-self-hosting-scm-server.html">
+            
+                
+                    <a href="../posts/2015-07-07-self-hosting-scm-server.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        Self-Hosting SCM Server
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="posts/2014-08-11-redmine-coderay-domino-syntax-highlighting.html">
+            
+                
+                    <a href="../posts/2014-08-11-redmine-coderay-domino-syntax-highlighting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        Domino/XPages Design Element Syntax Highlighting on Redmine
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+    <a href="../GLOSSARY.html" class="btn pull-left" aria-label="Glossary"><i class="fa fa-sort-alpha-asc"></i></a>
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Dev|Blog: The First Year</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h3 id="intro">Intro</h3>
+<p><span data-toggle="tooltip" title="JavaScript Object Notation"><a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">JSON</a></span>, <a href="json-with-java-in-xpages">as previously mentioned</a>, is a data format which has been exploding in web development since it was <a href="http://en.wikipedia.org/wiki/JSON#History" target="_blank">first introduced in the early 2000s</a>. And whether or not you as a developer prefer <a href="../GLOSSARY.html#xml" class="glossary-term" title="Extensible Markup Language (XML) is a markup language that defines a set of rules for encoding documents in a format which is both human-readable and machine-readable. It is defined by the W3C&apos;s XML 1.0 Specification and by several other related specifications, all of which are free open standards.">XML</a> (it&apos;s okay, they&apos;re just formats), there are some <a href="http://blog.mongolab.com/2011/03/why-is-json-so-popular-developers-want-out-of-the-syntax-business/" target="_blank">good reasons</a> to use <a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">JSON</a> data. Ultimately, I don&apos;t really care about the &quot;<a href="../GLOSSARY.html#xml" class="glossary-term" title="Extensible Markup Language (XML) is a markup language that defines a set of rules for encoding documents in a format which is both human-readable and machine-readable. It is defined by the W3C&apos;s XML 1.0 Specification and by several other related specifications, all of which are free open standards.">XML</a> vs <a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">JSON</a>&quot; <em>debate</em>, because some services use <a href="../GLOSSARY.html#xml" class="glossary-term" title="Extensible Markup Language (XML) is a markup language that defines a set of rules for encoding documents in a format which is both human-readable and machine-readable. It is defined by the W3C&apos;s XML 1.0 Specification and by several other related specifications, all of which are free open standards.">XML</a> and some use <a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">JSON</a>, neither are going away anytime soon, and <a href="../GLOSSARY.html#xml" class="glossary-term" title="Extensible Markup Language (XML) is a markup language that defines a set of rules for encoding documents in a format which is both human-readable and machine-readable. It is defined by the W3C&apos;s XML 1.0 Specification and by several other related specifications, all of which are free open standards.">XML</a> is <a href="https://stackoverflow.com/questions/2673367/how-does-json-compare-to-xml-in-terms-of-file-size-and-serialisation-deserialisa/2677498#2677498" target="_blank">more flexible than most people give it credit for</a>.</p>
+<p><em>Note: I <strong>am</strong> more of a <a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">JSON</a> fan, but that should be immaterial to relevance. The biggest argument I see in favor of <a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">JSON</a> as opposed to <a href="../GLOSSARY.html#xml" class="glossary-term" title="Extensible Markup Language (XML) is a markup language that defines a set of rules for encoding documents in a format which is both human-readable and machine-readable. It is defined by the W3C&apos;s XML 1.0 Specification and by several other related specifications, all of which are free open standards.">XML</a> is <a href="http://bit.ly/1CtEpDS" target="_blank">file size</a>.</em></p>
+<h3 id="json"><a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">JSON</a></h3>
+<p>To date, when I&apos;ve shown examples on this blog of how to build <a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">JSON</a>, I&apos;ve generally used Google&apos;s <a href="../GLOSSARY.html#gson" class="glossary-term" title="Gson (also known as Google Gson) is an open source Java library to serialize and deserialize Java objects to (and from) JSON.">GSON</a> library. I&apos;ve also only shown it in a fashion (for simplicity&apos;s sake) that I refer to as the &quot;old&quot; way (below), because it maps easily to converting to using the <a href="../GLOSSARY.html#ibm" class="glossary-term" title="International Business Machines Corporation (commonly referred to as IBM) is an American multinational technology and consulting corporation, with headquarters in Armonk, New York. IBM manufactures and markets computer hardware, middleware and software, and offers infrastructure, hosting and consulting services in areas ranging from mainframe computers to nanotechnology.">IBM</a> Commons <a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">JSON</a> library (more below). I try to add <a href="../GLOSSARY.html#gson" class="glossary-term" title="Gson (also known as Google Gson) is an open source Java library to serialize and deserialize Java objects to (and from) JSON.">Gson</a> to the server when possible, but often will end up importing the JAR to an NSF, should I not have <span data-toggle="tooltip" title="or be able to get ahold of them">administrator blessing</span>. <a href="../GLOSSARY.html#gson" class="glossary-term" title="Gson (also known as Google Gson) is an open source Java library to serialize and deserialize Java objects to (and from) JSON.">Gson</a> is supported from <a href="../GLOSSARY.html#java" class="glossary-term" title="Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers &quot;write once, run anywhere&quot; (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers.">Java</a> 1.5 through 1.8, according to their <a href="http://search.maven.org/#artifactdetails%7Ccom.google.code.gson%7Cgson%7C2.3.1%7Cjar" target="_blank">pom file</a>.</p>
+<p>This is in contrast to the provided <a href="http://public.dhe.ibm.com/software/dw/lotus/Domino-Designer/JavaDocs/DesignerAPIs/com/ibm/commons/util/io/json/package-summary.html" target="_blank"><em>com.<a href="../GLOSSARY.html#ibm" class="glossary-term" title="International Business Machines Corporation (commonly referred to as IBM) is an American multinational technology and consulting corporation, with headquarters in Armonk, New York. IBM manufactures and markets computer hardware, middleware and software, and offers infrastructure, hosting and consulting services in areas ranging from mainframe computers to nanotechnology.">ibm</a>.commons.util.io.<a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">json</a></em> package</a>, which is included and makes it a convenient option for many/most.</p>
+<p><strong>Be forewarned!</strong> To use <em>com.google.<a href="../GLOSSARY.html#gson" class="glossary-term" title="Gson (also known as Google Gson) is an open source Java library to serialize and deserialize Java objects to (and from) JSON.">gson</a></em>,  you will need to grant permission for it in your <a href="../GLOSSARY.html#java" class="glossary-term" title="Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers &quot;write once, run anywhere&quot; (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers.">java</a>.pol(icy) file; <a href="https://stackoverflow.com/questions/15949887/lotus-domino-java-security-issue-using-google-gson" target="_blank">you can run into trouble if you don&apos;t</a>. This is probably the second best argument against using com.google.<a href="../GLOSSARY.html#gson" class="glossary-term" title="Gson (also known as Google Gson) is an open source Java library to serialize and deserialize Java objects to (and from) JSON.">Gson</a>, but I&apos;m still a fan.</p>
+<h3 id="old-way">&quot;Old&quot; Way</h3>
+<p>Part of the reason <em>com.<a href="../GLOSSARY.html#ibm" class="glossary-term" title="International Business Machines Corporation (commonly referred to as IBM) is an American multinational technology and consulting corporation, with headquarters in Armonk, New York. IBM manufactures and markets computer hardware, middleware and software, and offers infrastructure, hosting and consulting services in areas ranging from mainframe computers to nanotechnology.">ibm</a>.commons.util.io.<a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">json</a></em> is popular (aside that it comes with the server, a big plus) is that it maps well to how we think. Streaming in elements into an object tends to make sense to us, but there&apos;s another way. Here&apos;s what I&apos;ll refer to as the &quot;old&quot; way (it works, it&apos;s valid, but not ideal as I&apos;ll show).</p>
+<pre><code class="lang-java"><span class="hljs-comment">//...</span>
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buildJsonData</span><span class="hljs-params">()</span> </span>{
+    JsonJavaObject myData = <span class="hljs-keyword">new</span> JsonJavaObject();
+    myData.putJsonProperty(<span class="hljs-string">&quot;hello&quot;</span>, <span class="hljs-string">&quot;world&quot;</span>);
+    JsonJavaArray dataAr = <span class="hljs-keyword">new</span> JsonJavaArray();
+        <span class="hljs-keyword">for</span>( <span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">5</span>; i++ ) {
+                JsonJavaObject subObject = <span class="hljs-keyword">new</span> JsonJavaObject();
+                subObject.putJsonProperty(<span class="hljs-string">&quot;_id&quot;</span>,i+<span class="hljs-number">1</span>);
+                subObject.putJsonProperty(<span class="hljs-string">&quot;someOtherKey&quot;</span>, <span class="hljs-string">&quot;someOtherValue&quot;</span>);
+            }
+    myData.putArray(<span class="hljs-string">&quot;data&quot;</span>, dataAr);
+    myData.putJsonProperty(<span class="hljs-string">&quot;error&quot;</span>, <span class="hljs-keyword">false</span>);
+}
+<span class="hljs-comment">//...</span>
+</code></pre>
+<p><br></p>
+<p>This will generate a resulting <a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">JSON</a> string with an object, represented as such:</p>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;hello&quot;</span>: <span class="hljs-string">&quot;world&quot;</span>,
+    <span class="hljs-string">&quot;dataAr&quot;</span>: [
+                { <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&quot;someOtherKey&quot;</span>: <span class="hljs-string">&quot;someOtherValue&quot;</span> },
+                { <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&quot;someOtherKey&quot;</span>: <span class="hljs-string">&quot;someOtherValue&quot;</span> },
+                { <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-number">3</span>, <span class="hljs-string">&quot;someOtherKey&quot;</span>: <span class="hljs-string">&quot;someOtherValue&quot;</span> },
+                { <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-number">4</span>, <span class="hljs-string">&quot;someOtherKey&quot;</span>: <span class="hljs-string">&quot;someOtherValue&quot;</span> },
+                { <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-number">5</span>, <span class="hljs-string">&quot;someOtherKey&quot;</span>: <span class="hljs-string">&quot;someOtherValue&quot;</span> }
+        ],
+    <span class="hljs-string">&quot;error&quot;</span>: <span class="hljs-literal">false</span>
+}
+</code></pre>
+<p><br></p>
+<p>It may not be very exciting, but it sure gets the job done. Here&apos;s what I&apos;m excited about.</p>
+<h3 id="new-way">&quot;New&quot; Way</h3>
+<p>I first saw a technique in which a person used a <a href="../GLOSSARY.html#gson" class="glossary-term" title="Gson (also known as Google Gson) is an open source Java library to serialize and deserialize Java objects to (and from) JSON.">Gson</a> instance to generate, on the fly, <em>application/<a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">json</a></em> by merely calling the  the <a href="https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html#toJson(java.lang.Object" target="_blank"><em><a href="../GLOSSARY.html#gson" class="glossary-term" title="Gson (also known as Google Gson) is an open source Java library to serialize and deserialize Java objects to (and from) JSON.">Gson</a>.toJson</em> method</a>). I thought this was cool, but it made good sense. The <a href="../GLOSSARY.html#java" class="glossary-term" title="Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers &quot;write once, run anywhere&quot; (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers.">Java</a> <span data-toggle="tooltip" title="Object object">object</span> already existed and inherited from a proper class, which can loosely map to the <a href="../GLOSSARY.html#javascript" class="glossary-term" title="JavaScript is a high-level, dynamic, untyped, and interpreted programming language. It has been standardized in the ECMAScript language specification. Alongside HTML and CSS, it is one of the three essential technologies of World Wide Web content production; the majority of websites employ it and it is supported by all modern web browsers without plug-ins. JavaScript is prototype-based with first-class functions, making it a multi-paradigm language, supporting object-oriented, imperative, and functional programming styles. It has an API for working with text, arrays, dates and regular expressions, but does not include any I/O, such as networking, storage or graphics facilities, relying for these upon the host environment in which it is embedded.">JavaScript</a> prototypal elements (string, boolean, array, object, integer, etc.). <a href="../GLOSSARY.html#gson" class="glossary-term" title="Gson (also known as Google Gson) is an open source Java library to serialize and deserialize Java objects to (and from) JSON.">Gson</a> is not unique in this, as the <a href="../GLOSSARY.html#ibm" class="glossary-term" title="International Business Machines Corporation (commonly referred to as IBM) is an American multinational technology and consulting corporation, with headquarters in Armonk, New York. IBM manufactures and markets computer hardware, middleware and software, and offers infrastructure, hosting and consulting services in areas ranging from mainframe computers to nanotechnology.">IBM</a> Commons <a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">JSON</a> library can achieve the same thing, using a <a href="http://public.dhe.ibm.com/software/dw/lotus/Domino-Designer/JavaDocs/DesignerAPIs/com/ibm/commons/util/io/json/JsonGenerator.html#toJson(com.ibm.commons.util.io.json.JsonFactory, java.lang.Object" target="_blank"><strong>JsonGenerator</strong></a>). That&apos;s the easy side of things, the tricky part is going backwards, consuming <a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">JSON</a> into a <a href="../GLOSSARY.html#java" class="glossary-term" title="Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers &quot;write once, run anywhere&quot; (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers.">Java</a> Object (or just creating it from existing <a href="../GLOSSARY.html#java" class="glossary-term" title="Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers &quot;write once, run anywhere&quot; (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers.">Java</a> objects without being so linear in re-iterating properties just to change the format they&apos;re stored in). </p>
+<h4 id="ibm-commons-json"><a href="../GLOSSARY.html#ibm" class="glossary-term" title="International Business Machines Corporation (commonly referred to as IBM) is an American multinational technology and consulting corporation, with headquarters in Armonk, New York. IBM manufactures and markets computer hardware, middleware and software, and offers infrastructure, hosting and consulting services in areas ranging from mainframe computers to nanotechnology.">IBM</a> Commons <a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">JSON</a></h4>
+<p>Using <a href="http://public.dhe.ibm.com/software/dw/lotus/Domino-Designer/JavaDocs/DesignerAPIs/com/ibm/commons/util/io/json/JsonParser.html" target="_blank"><em>JsonParser</em></a>, you can use <a href="http://public.dhe.ibm.com/software/dw/lotus/Domino-Designer/JavaDocs/DesignerAPIs/com/ibm/commons/util/io/json/JsonParser.html#fromJson(com.ibm.commons.util.io.json.JsonFactory, java.lang.String" target="_blank"><em>fromJson</em></a>), which returns a <a href="../GLOSSARY.html#java" class="glossary-term" title="Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers &quot;write once, run anywhere&quot; (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers.">java</a>.lang.Object. In other words, you need to do your tests and transforms to get a handle on its structure. This works, but takes more effort (I would be glad for someone to show me how to map the <a href="../GLOSSARY.html#ibm" class="glossary-term" title="International Business Machines Corporation (commonly referred to as IBM) is an American multinational technology and consulting corporation, with headquarters in Armonk, New York. IBM manufactures and markets computer hardware, middleware and software, and offers infrastructure, hosting and consulting services in areas ranging from mainframe computers to nanotechnology.">IBM</a> Commons library to the approach I&apos;ll show next).</p>
+<h4 id="google-gson">Google <a href="../GLOSSARY.html#gson" class="glossary-term" title="Gson (also known as Google Gson) is an open source Java library to serialize and deserialize Java objects to (and from) JSON.">Gson</a></h4>
+<p>The <a href="../GLOSSARY.html#gson" class="glossary-term" title="Gson (also known as Google Gson) is an open source Java library to serialize and deserialize Java objects to (and from) JSON.">Gson</a> approach is to take in a class definition (or type) as the second parameter in their <a href="https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html#fromJson(com.google.gson.JsonElement, java.lang.Class" target="_blank"><em>fromJson</em></a>) method, immediately mapping your object to a well structured object that you can invoke for its properties. Here&apos;s a quick demonstration.</p>
+<pre><code class="lang-java">...
+  <span class="hljs-comment">/*
+   * the main data object, we&apos;ve read the <a href="../GLOSSARY.html#api" class="glossary-term" title="In computer programming, an application programming interface (API) is a set of routines, protocols, and tools for building software applications. An API expresses a software component in terms of its operations, inputs, outputs, and underlying types. An API defines functionalities that are independent of their respective implementations, which allows definitions and implementations to vary without compromising the interface. A good API makes it easier to develop a program by providing all the building blocks. The programmers then put the blocks together.">API</a> docs and know what to expect ;-)
+   * assuming that the previously output <a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">JSON</a> data is what we&apos;re pulling off of
+   */</span>
+  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SomeNiftyDataObject</span> </span>{
+    <span class="hljs-keyword">private</span> String hello;
+    <span class="hljs-keyword">private</span> List&lt;SomeNiftySubObject&gt; dataAr = <span class="hljs-keyword">new</span> ArrayList&lt;SomeNiftySubObject&gt;();
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> error;
+
+      <span class="hljs-comment">/*
+       * the sub-object, in the dataAr
+       * since we need to define the sub-object&apos;s
+       * structure as well
+       */</span>
+      <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SomeNiftySubObject</span> </span>{
+        <span class="hljs-keyword">private</span> String _id;
+        <span class="hljs-keyword">private</span> String someOtherKey;
+
+        <span class="hljs-comment">/*
+         * Getter / Setter pairs
+         */</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">get_id</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> _id; }
+        <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getSomeOtherKey</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> someOtherKey; }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">set_id</span><span class="hljs-params">( String id )</span> </span>{ <span class="hljs-keyword">this</span>._id = id; }
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setSomeOtherKey</span><span class="hljs-params">( String someOtherKey )</span> </span>{ <span class="hljs-keyword">this</span>.someOtherKey = someOtherKey; }
+      }
+
+    <span class="hljs-comment">/*
+     * Getter / Setter pairs
+     */</span>
+     <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getHello</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> hello; }
+     <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;SomeNiftySubObject&gt; <span class="hljs-title">getDataAr</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> dataAr; }
+     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">getError</span><span class="hljs-params">()</span> </span>{ <span class="hljs-keyword">return</span> error; }
+
+     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setHello</span><span class="hljs-params">( String hello )</span> </span>{ <span class="hljs-keyword">this</span>.hello = hello; }
+     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setDataAr</span><span class="hljs-params">( List&lt;SomeNiftySubObject&gt; dataAr )</span> </span>{ <span class="hljs-keyword">this</span>.dataAr = dataAr; }
+     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setError</span><span class="hljs-params">( <span class="hljs-keyword">boolean</span> error )</span> </span>{ <span class="hljs-keyword">this</span>.error = error; }
+
+  }
+
+...
+  <span class="hljs-comment">/*
+   * we&apos;re building data, from a received set of <a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">JSON</a>, into 
+   * a <a href="../GLOSSARY.html#java" class="glossary-term" title="Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers &quot;write once, run anywhere&quot; (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers.">Java</a> object, so we can do normal <a href="../GLOSSARY.html#java" class="glossary-term" title="Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers &quot;write once, run anywhere&quot; (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers.">Java</a> things with it
+   */</span>
+  <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buildMyNewJsonData</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">// assuming that the <a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">JSON</a> of the data is set in a string called rawData</span>
+    Gson g = <span class="hljs-keyword">new</span> Gson();
+    SomeNiftyDataObject nwData = g.fromJson( rawData, SomeNiftyDataObject.class );
+    <span class="hljs-comment">//SomeNiftyDataObject is now instantiated with the data set according to our class above!</span>
+  }
+...
+</code></pre>
+<p><br></p>
+<h3 id="why-the-new-way">Why The &quot;New&quot; Way?</h3>
+<p>It&apos;s obviously more verbose up front, but done the &quot;old&quot; way, I didn&apos;t show all the type checks and conversions I would have to do to keep things working as expected. The &quot;new&quot; way defines the data format and ensures consistently well-formed objects; they are POJO instances after all (beans, except for the implementing <a href="../GLOSSARY.html#java" class="glossary-term" title="Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers &quot;write once, run anywhere&quot; (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers.">java</a>.util.Serializable bit, as we are using getter/setter methods).</p>
+<p>You&apos;ve defined the format and instantiated data object, meaning that now all you need to do is use the standard <a href="../GLOSSARY.html#el" class="glossary-term" title="Expression Language (EL) provides an important mechanism for enabling the presentation layer (web pages) to communicate with the application logic (managed beans). The EL is used by both JavaServer Faces technology and JavaServer Pages (JSP) technology. The EL represents a union of the expression languages offered by JavaServer Faces technology and JSP technology.">EL</a> get/set<PropertyName> to interact with the data. That&apos;s it, you&apos;re done!</PropertyName></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../posts/2015-01-09-when-you-need-a-comparator.html" class="navigation navigation-prev " aria-label="Previous page: When You Need a Comparator"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../posts/JavaScript.html" class="navigation navigation-next " aria-label="Next page: JavaScript"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-github/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"addcssjs":{"css":["css/emojify-emoticons.min.css","css/emojify.min.css","css/styles.css"],"js":["js/emojify.min.js","js/scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"},"anchors":{},"include":{},"include-codeblock":{},"highlight":{},"livereload":{},"youtube":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

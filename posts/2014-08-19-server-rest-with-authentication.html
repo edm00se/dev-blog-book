@@ -1,0 +1,832 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Server REST Consumption with Authentication | Dev|Blog: The First Year</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-anchors/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../posts/2014-08-25-custom-JSON-with-Java-sized-XAgent.html" />
+    
+    
+    <link rel="prev" href="../posts/2014-08-18-rest-consumption-server-side.html" />
+    
+
+        <script type="text/javascript" src="../js/emojify.min.js"></script><script type="text/javascript" src="../js/scripts.js"></script><link rel="stylesheet" type="text/css" href="../css/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../css/emojify.min.css"><link rel="stylesheet" type="text/css" href="../css/styles.css">
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2.2"
+        data-chapter-title="Server REST Consumption with Authentication"
+        data-filepath="posts/2014-08-19-server-rest-with-authentication.md"
+        data-basepath=".."
+        data-revision="Mon Jan 30 2017 03:59:20 GMT+0000 (UTC)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Intro
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="posts/SagaIntro.html">
+            
+                
+                    <a href="../posts/SagaIntro.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        A Saga of Servlets
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="posts/2015-02-09-a-quick-note-on-JARs.html">
+            
+                
+                    <a href="../posts/2015-02-09-a-quick-note-on-JARs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        A Quick Note on JARs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="posts/2015-02-16-servlet-intro-and-flavors.html">
+            
+                
+                    <a href="../posts/2015-02-16-servlet-intro-and-flavors.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Servlet Intro and Flavors
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="posts/2015-02-19-servlet-implementation.html">
+            
+                
+                    <a href="../posts/2015-02-19-servlet-implementation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Basic Servlet Implementation
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="posts/2015-02-25-servlet-handling-requests.html">
+            
+                
+                    <a href="../posts/2015-02-25-servlet-handling-requests.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        Servlet Handling of Requests
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="posts/2015-03-10-interlude-and-announcement.html">
+            
+                
+                    <a href="../posts/2015-03-10-interlude-and-announcement.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        Interlude and Announcement
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="posts/2015-03-19-servlets-handling-data-round-house-kick.html">
+            
+                
+                    <a href="../posts/2015-03-19-servlets-handling-data-round-house-kick.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Servlet Handling Data, A Round House Kick
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="posts/2015-06-16-building-a-front-end-pt1-a-quick-review.html">
+            
+                
+                    <a href="../posts/2015-06-16-building-a-front-end-pt1-a-quick-review.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        Building a Front-End pt.1 Plus a Quick Review
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="posts/2015-06-17-building-a-front-end-pt2-an-app-with-angular.html">
+            
+                
+                    <a href="../posts/2015-06-17-building-a-front-end-pt2-an-app-with-angular.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        Building a Front-End pt.2: An App with AngularJS
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="posts/2015-06-22-servlet-series-review.html">
+            
+                
+                    <a href="../posts/2015-06-22-servlet-series-review.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.</b>
+                        
+                        Series Review
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="posts/Supporting.html">
+            
+                
+                    <a href="../posts/Supporting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Supporting
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="posts/2014-08-18-rest-consumption-server-side.html">
+            
+                
+                    <a href="../posts/2014-08-18-rest-consumption-server-side.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        RESTful API Consumption on the Server (Java)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="posts/2014-08-19-server-rest-with-authentication.html">
+            
+                
+                    <a href="../posts/2014-08-19-server-rest-with-authentication.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Server REST Consumption with Authentication
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="posts/2014-08-25-custom-JSON-with-Java-sized-XAgent.html">
+            
+                
+                    <a href="../posts/2014-08-25-custom-JSON-with-Java-sized-XAgent.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Custom JSON with Java-ized XAgent
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="posts/2014-10-24-application-logic.html">
+            
+                
+                    <a href="../posts/2014-10-24-application-logic.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Application Logic
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="posts/2014-09-16-unraveling-the-mvc-mysteries.html">
+            
+                
+                    <a href="../posts/2014-09-16-unraveling-the-mvc-mysteries.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Unraveling the M-V-C Mysteries
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="posts/2014-09-18-rest-is-best.html">
+            
+                
+                    <a href="../posts/2014-09-18-rest-is-best.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        REST is Best
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="posts/2015-08-31-something-i-overheard-at-mwlug.html">
+            
+                
+                    <a href="../posts/2015-08-31-something-i-overheard-at-mwlug.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        More on HTTP and AJAX Requests
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="posts/2014-09-29-what-is-an-spa.html">
+            
+                
+                    <a href="../posts/2014-09-29-what-is-an-spa.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        What is a Single Page Application(SPA)?
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="posts/Related.html">
+            
+                
+                    <a href="../posts/Related.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Related
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="posts/2015-05-05-replacing-an-xagent.html">
+            
+                
+                    <a href="../posts/2015-05-05-replacing-an-xagent.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        &quot;Replacing&quot; an XAgent
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="posts/2015-07-14-alternate-front-end-development.html">
+            
+                
+                    <a href="../posts/2015-07-14-alternate-front-end-development.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Alternate Front-End Development: Mocking Your Domino Back-end
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="posts/Java.html">
+            
+                
+                    <a href="../posts/Java.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Java
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="posts/2015-01-09-when-you-need-a-comparator.html">
+            
+                
+                    <a href="../posts/2015-01-09-when-you-need-a-comparator.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        When You Need a Comparator
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="posts/2015-01-23-building-java-objects-from-json.html">
+            
+                
+                    <a href="../posts/2015-01-23-building-java-objects-from-json.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        Building Java Objects from JSON
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="posts/JavaScript.html">
+            
+                
+                    <a href="../posts/JavaScript.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        JavaScript
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="posts/2014-08-12-consistent-multivalue-formatting.html">
+            
+                
+                    <a href="../posts/2014-08-12-consistent-multivalue-formatting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        Consistent Multi-Value Formatting in SSJS for Domino/XPages
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="posts/2014-09-03-fixing-dojo-161-in-domino-853.html">
+            
+                
+                    <a href="../posts/2014-09-03-fixing-dojo-161-in-domino-853.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        Fixing an Older Version of Dojo (1.6.1)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="posts/2014-08-14-cal-picker-improver-dojo-only.html">
+            
+                
+                    <a href="../posts/2014-08-14-cal-picker-improver-dojo-only.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        An Dojo Implementation of the Calendar Picker Script
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="posts/Other.html">
+            
+                
+                    <a href="../posts/Other.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Other
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="posts/2015-03-23-brief-intro-to-nginx.html">
+            
+                
+                    <a href="../posts/2015-03-23-brief-intro-to-nginx.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        A Brief Introduction to Nginx
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="posts/2015-07-07-self-hosting-scm-server.html">
+            
+                
+                    <a href="../posts/2015-07-07-self-hosting-scm-server.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        Self-Hosting SCM Server
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="posts/2014-08-11-redmine-coderay-domino-syntax-highlighting.html">
+            
+                
+                    <a href="../posts/2014-08-11-redmine-coderay-domino-syntax-highlighting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        Domino/XPages Design Element Syntax Highlighting on Redmine
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+    <a href="../GLOSSARY.html" class="btn pull-left" aria-label="Glossary"><i class="fa fa-sort-alpha-asc"></i></a>
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Dev|Blog: The First Year</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h3 id="for-starters">For Starters</h3>
+<p>This post <a href="xpages/rest-consumption-server-side">relies on the previous one</a>, which covers the use of a <a href="../GLOSSARY.html#java" class="glossary-term" title="Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers &quot;write once, run anywhere&quot; (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers.">Java</a> class to consume RESTful data. By implementing this, we were able to pull data and assign it, in the example via a viewScope variable, into an xp:dataTable element. This post is basic, but shows how powerful this can be. Some implied aspects are:</p>
+<ol>
+<li>URL building to contain<ul>
+<li>the appropriate <a href="../GLOSSARY.html#endpoint" class="glossary-term" title="Endpoint, the entry point to a service, a process, or a queue or topic destination in service-oriented architecture">endpoint</a></li>
+<li>URL query parameters</li>
+</ul>
+</li>
+<li>authentication via<ul>
+<li>same domain</li>
+<li>trusted domain (or public)</li>
+<li>or authentication via <a href="http://en.wikipedia.org/wiki/Basic_access_authentication" target="_blank">basic auth</a> or otherwise</li>
+</ul>
+</li>
+<li>that you can properly handle the retrieved data</li>
+</ol>
+<h3 id="handling-the-data">Handling the Data</h3>
+<p>Consistent formatting is key, which is why this <em>may</em> be an argument in favor of <a href="../GLOSSARY.html#soap" class="glossary-term" title="SOAP, originally an acronym for Simple Object Access Protocol, is a protocol specification for exchanging structured information in the implementation of web services in computer networks. It uses XML Information Set for its message format, and relies on other application layer protocols, most notably Hypertext Transfer Protocol (HTTP) or Simple Mail Transfer Protocol (SMTP), for message negotiation and transmission.">SOAP</a>; the <a href="../GLOSSARY.html#wsdl" class="glossary-term" title="The Web Services Description Language (WSDL) is an XML-based interface definition language that is used for describing the functionality offered by a web service. The acronym is also used for any specific WSDL description of a web service (also referred to as a WSDL file), which provides a machine-readable description of how the service can be called, what parameters it expects, and what data structures it returns. It thus serves a purpose that corresponds roughly to that of a method signature in a programming language.">WSDL</a> provides action and format definition before you even execute the GET(/etc). It also highlights the importance of having your <a href="../GLOSSARY.html#restful_api" class="glossary-term" title="An API which provides access via RESTful principles, as in HATEOAS.">RESTful API</a> properly documented. A case in point is the <a href="../GLOSSARY.html#notes" class="glossary-term" title="IBM Notes (formerly Lotus Notes) is a client of a collaborative client-server software platform sold by IBM.">Notes</a> View from <a href="../GLOSSARY.html#domino" class="glossary-term" title="IBM Domino (formerly Lotus Domino) is the server of a collaborative client-server software platform sold by IBM.">Domino</a> Data/Access Services. If you want to repeat the response of a categorized set of data from a View, did you remember to account for the <em>@category: true</em> entry? Remember, DAS will basically just expose the <em>NotesViewEntry</em> contents, and category entries are valid and expected.</p>
+<p>Also, especially in <a href="../GLOSSARY.html#xpages" class="glossary-term" title="XPages is a rapid web and mobile application development technology. It allows data from IBM Notes and Relational Databases to be displayed to browser clients on all platforms. The programming model is based on web development languages and standards including JavaScript, Ajax, Java, the Dojo Toolkit, Server-side JavaScript and JavaServer Faces. XPages uses IBM Domino, IBM&apos;s rapid application development platform, including functionality such as the document-oriented database.">XPages</a>, it helps to format/reformat your data. Since an xp:repeat control doesn&apos;t inherently know how to iterate a com.google.<a href="../GLOSSARY.html#gson" class="glossary-term" title="Gson (also known as Google Gson) is an open source Java library to serialize and deserialize Java objects to (and from) JSON.">gson</a>.JsonObject, we need to account for that. My post on the basics had to have its gist updated in the sample XPage to reformat the JsonObject into a format that the <a href="../GLOSSARY.html#domino" class="glossary-term" title="IBM Domino (formerly Lotus Domino) is the server of a collaborative client-server software platform sold by IBM.">Domino</a> flavor of <a href="../GLOSSARY.html#ssjs" class="glossary-term" title="Server-Side JavaScript (SSJS) is an implementation of JavaScript which executes on the server and has access to certain server-side APIs. XPages includes an SSJS as a scriptable language, parse inside `#{javascript: &lt;code here&gt;}` or `${javascript: &lt;code here&gt;}` blocks and in SSJS script libraries, making its implementation quite convenient as it plugs in equivalently to Expression Language (with an interpretation prefix).">SSJS</a> could understand. I used <a href="http://dontpanic82.blogspot.com/2010/09/xpages-ssjs-code-snippet-that-lets-you.html" target="_blank">the fromJson method</a>, which is handy and a part of <a href="../GLOSSARY.html#xpages" class="glossary-term" title="XPages is a rapid web and mobile application development technology. It allows data from IBM Notes and Relational Databases to be displayed to browser clients on all platforms. The programming model is based on web development languages and standards including JavaScript, Ajax, Java, the Dojo Toolkit, Server-side JavaScript and JavaServer Faces. XPages uses IBM Domino, IBM&apos;s rapid application development platform, including functionality such as the document-oriented database.">XPages</a> out of the box, but <a href="http://dontpanic82.blogspot.com/2010/10/xpages-bug-in-fromjson-with-fix.html" target="_blank">as as noted by Tommy Valand</a> and others, needs a quick fix before you use it. For some time, I&apos;ve been using using <a href="http://github.com/douglascrockford/JSON-js/blob/master/json2.js" target="_blank">Douglas Crockford&apos;s JSON2 library</a> as an <a href="../GLOSSARY.html#ssjs" class="glossary-term" title="Server-Side JavaScript (SSJS) is an implementation of JavaScript which executes on the server and has access to certain server-side APIs. XPages includes an SSJS as a scriptable language, parse inside `#{javascript: &lt;code here&gt;}` or `${javascript: &lt;code here&gt;}` blocks and in SSJS script libraries, making its implementation quite convenient as it plugs in equivalently to Expression Language (with an interpretation prefix).">SSJS</a> library, which achieves the same thing. So pick your poison and stick with it for consistency&apos;s sake.</p>
+<h3 id="authentication">Authentication</h3>
+<p>My example below uses basic HTTP authentication. This was the easiest to roll and really just comes into play if you&apos;re interacting with another server, outside of a trusted domain (or when your admins don&apos;t want to do much with existing network topology). You&apos;ll notice that I&apos;m once again using an Apache Commons library for the Base64 encoding; isn&apos;t open source great? To get it, you&apos;ll need the <a href="http://commons.apache.org/proper/commons-codec/" target="_blank">Apache Commons Codec jar</a>; I&apos;m using version 1.9.</p>
+<h3 id="url-computation">URL Computation</h3>
+<p>As you&apos;ve probably caught on by now, a similar private method could/should be used for computing the URL which your <a href="../GLOSSARY.html#rest" class="glossary-term" title="In computing, Representational State Transfer (REST) is the software architectural style of the World Wide Web. REST gives a coordinated set of constraints to the design of components in a distributed hypermedia system that can lead to a higher-performing and more maintainable architecture. To the extent that systems conform to the constraints of REST they can be called RESTful. RESTful systems typically, but not always, communicate over HTTP with the same HTTP verbs (GET, POST, PUT, DELETE, etc.) which web browsers use to retrieve web pages and to send data to remote servers. REST interfaces with external systems using resources identified by URI, for example /people/tom, which can be operated upon using standard verbs, such as DELETE /people/tom.">REST</a> consumer will interact with.</p>
+<h3 id="my-sample-java-consumer-with-basic-http-authentication">My Sample <a href="../GLOSSARY.html#java" class="glossary-term" title="Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers &quot;write once, run anywhere&quot; (WORA), meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture. As of 2015, Java is one of the most popular programming languages in use, particularly for client-server web applications, with a reported 9 million developers.">Java</a> Consumer with Basic HTTP Authentication</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.eric.restful;
+
+<span class="hljs-keyword">import</span> java.net.URL;
+<span class="hljs-keyword">import</span> java.net.URLConnection;
+<span class="hljs-keyword">import</span> java.io.BufferedReader;
+<span class="hljs-keyword">import</span> org.apache.commons.codec.binary.Base64;
+<span class="hljs-keyword">import</span> com.google.gson.*;
+<span class="hljs-keyword">import</span> java.io.InputStream;
+<span class="hljs-keyword">import</span> java.io.InputStreamReader;
+<span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.net.MalformedURLException;
+
+<span class="hljs-comment">/**
+ * Class with a single, public, static method to provide a  <a href="../GLOSSARY.html#rest" class="glossary-term" title="In computing, Representational State Transfer (REST) is the software architectural style of the World Wide Web. REST gives a coordinated set of constraints to the design of components in a distributed hypermedia system that can lead to a higher-performing and more maintainable architecture. To the extent that systems conform to the constraints of REST they can be called RESTful. RESTful systems typically, but not always, communicate over HTTP with the same HTTP verbs (GET, POST, PUT, DELETE, etc.) which web browsers use to retrieve web pages and to send data to remote servers. REST interfaces with external systems using resources identified by URI, for example /people/tom, which can be operated upon using standard verbs, such as DELETE /people/tom.">REST</a> consumer
+ * which returns data as a JsonObject, with authentication.
+ * 
+ * <span class="hljs-doctag">@author</span> Eric McCormick, <span class="hljs-doctag">@edm</span>00se
+ * 
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span>  <span class="hljs-title">MyDataConsumer</span> </span>{
+
+    <span class="hljs-comment">/**
+     * Modified copy of co.3edesign.eric.restful CustRestConsumer GetMyData
+     * method. This one requires provides basic authentication with Base64
+     * encoding.
+     * 
+     * <span class="hljs-doctag">@param</span> myUrlStr URL of the <a href="../GLOSSARY.html#rest" class="glossary-term" title="In computing, Representational State Transfer (REST) is the software architectural style of the World Wide Web. REST gives a coordinated set of constraints to the design of components in a distributed hypermedia system that can lead to a higher-performing and more maintainable architecture. To the extent that systems conform to the constraints of REST they can be called RESTful. RESTful systems typically, but not always, communicate over HTTP with the same HTTP verbs (GET, POST, PUT, DELETE, etc.) which web browsers use to retrieve web pages and to send data to remote servers. REST interfaces with external systems using resources identified by URI, for example /people/tom, which can be operated upon using standard verbs, such as DELETE /people/tom.">REST</a> <a href="../GLOSSARY.html#endpoint" class="glossary-term" title="Endpoint, the entry point to a service, a process, or a queue or topic destination in service-oriented architecture">endpoint</a>
+     * <span class="hljs-doctag">@return</span> JsonObject of the <a href="../GLOSSARY.html#rest" class="glossary-term" title="In computing, Representational State Transfer (REST) is the software architectural style of the World Wide Web. REST gives a coordinated set of constraints to the design of components in a distributed hypermedia system that can lead to a higher-performing and more maintainable architecture. To the extent that systems conform to the constraints of REST they can be called RESTful. RESTful systems typically, but not always, communicate over HTTP with the same HTTP verbs (GET, POST, PUT, DELETE, etc.) which web browsers use to retrieve web pages and to send data to remote servers. REST interfaces with external systems using resources identified by URI, for example /people/tom, which can be operated upon using standard verbs, such as DELETE /people/tom.">REST</a> data
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> JsonObject <span class="hljs-title">GetMyAuthenticatedRestData</span><span class="hljs-params">( String myUrlStr )</span> </span>{
+        JsonObject myRestData = <span class="hljs-keyword">new</span> JsonObject();
+        <span class="hljs-keyword">try</span>{
+            URL myUrl = <span class="hljs-keyword">new</span> URL(myUrlStr);
+            URLConnection urlCon = myUrl.openConnection();
+            urlCon.setRequestProperty(<span class="hljs-string">&quot;Method&quot;</span>, <span class="hljs-string">&quot;GET&quot;</span>);
+            urlCon.setRequestProperty(<span class="hljs-string">&quot;Accept&quot;</span>, <span class="hljs-string">&quot;application/<a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">json</a>&quot;</span>);
+            urlCon.setConnectTimeout(<span class="hljs-number">5000</span>);
+            <span class="hljs-comment">//set the basic auth of the hashed value of the user to connect</span>
+            urlCon.addRequestProperty(<span class="hljs-string">&quot;Authorization&quot;</span>, GetMyCredentials() );
+            InputStream is = urlCon.getInputStream();
+            InputStreamReader isR = <span class="hljs-keyword">new</span> InputStreamReader(is);
+            BufferedReader reader = <span class="hljs-keyword">new</span> BufferedReader(isR);
+            StringBuffer buffer = <span class="hljs-keyword">new</span> StringBuffer();
+            String line = <span class="hljs-string">&quot;&quot;</span>;
+            <span class="hljs-keyword">while</span>( (line = reader.readLine()) != <span class="hljs-keyword">null</span> ){
+                buffer.append(line);
+            }
+            reader.close();
+            JsonParser parser = <span class="hljs-keyword">new</span> JsonParser();
+            myRestData = (JsonObject) parser.parse(buffer.toString());
+
+            <span class="hljs-keyword">return</span> myRestData;
+
+        }<span class="hljs-keyword">catch</span>( MalformedURLException e ){
+            e.printStackTrace();
+            myRestData.addProperty(<span class="hljs-string">&quot;error&quot;</span>, e.toString());
+            <span class="hljs-keyword">return</span> myRestData;
+        }<span class="hljs-keyword">catch</span>( IOException e ){
+            e.printStackTrace();
+            myRestData.addProperty(<span class="hljs-string">&quot;error&quot;</span>, e.toString());
+            <span class="hljs-keyword">return</span> myRestData;
+        }
+    }
+
+    <span class="hljs-comment">/**
+     * Uses the Apache Commons codec binary Base64 package for encoding 
+     * of credentials, so none transmit &apos;in the open&apos;.
+     * 
+     * <span class="hljs-doctag">@return</span> String of credentials for use with authenticated <a href="../GLOSSARY.html#rest" class="glossary-term" title="In computing, Representational State Transfer (REST) is the software architectural style of the World Wide Web. REST gives a coordinated set of constraints to the design of components in a distributed hypermedia system that can lead to a higher-performing and more maintainable architecture. To the extent that systems conform to the constraints of REST they can be called RESTful. RESTful systems typically, but not always, communicate over HTTP with the same HTTP verbs (GET, POST, PUT, DELETE, etc.) which web browsers use to retrieve web pages and to send data to remote servers. REST interfaces with external systems using resources identified by URI, for example /people/tom, which can be operated upon using standard verbs, such as DELETE /people/tom.">REST</a> source
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> String <span class="hljs-title">GetMyCredentials</span> <span class="hljs-params">()</span> </span>{
+        String rawUser = <span class="hljs-string">&quot;SomeUsername&quot;</span>;
+        String rawPass = <span class="hljs-string">&quot;SomePassword12345&quot;</span>;
+        String rawCred = rawUser+<span class="hljs-string">&quot;:&quot;</span>+rawPass;
+        String myCred = Base64.encodeBase64String(rawCred.getBytes());
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Basic &quot;</span>+myCred;
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@param</span> some parameters from which you build your URL source
+     * <span class="hljs-doctag">@return</span> String of the properly built URL of the source <a href="../GLOSSARY.html#rest" class="glossary-term" title="In computing, Representational State Transfer (REST) is the software architectural style of the World Wide Web. REST gives a coordinated set of constraints to the design of components in a distributed hypermedia system that can lead to a higher-performing and more maintainable architecture. To the extent that systems conform to the constraints of REST they can be called RESTful. RESTful systems typically, but not always, communicate over HTTP with the same HTTP verbs (GET, POST, PUT, DELETE, etc.) which web browsers use to retrieve web pages and to send data to remote servers. REST interfaces with external systems using resources identified by URI, for example /people/tom, which can be operated upon using standard verbs, such as DELETE /people/tom.">REST</a> data
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> String <span class="hljs-title">BuildMyURL</span><span class="hljs-params">( String param )</span> </span>{
+        <span class="hljs-comment">//the string this returns is </span>
+        String base = <span class="hljs-string">&quot;https://&quot;</span>;
+        String srv = <span class="hljs-string">&quot;my.company.com&quot;</span>;
+        <span class="hljs-comment">//String port = &quot;:443&quot;;</span>
+        String pth = <span class="hljs-string">&quot;/<a href="../GLOSSARY.html#api" class="glossary-term" title="In computer programming, an application programming interface (API) is a set of routines, protocols, and tools for building software applications. An API expresses a software component in terms of its operations, inputs, outputs, and underlying types. An API defines functionalities that are independent of their respective implementations, which allows definitions and implementations to vary without compromising the interface. A good API makes it easier to develop a program by providing all the building blocks. The programmers then put the blocks together.">api</a>/data/collections/name/ViewName&quot;</span>;
+        <span class="hljs-keyword">return</span> base+srv+pth+<span class="hljs-string">&quot;?&quot;</span>+param;
+    }
+}
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../posts/2014-08-18-rest-consumption-server-side.html" class="navigation navigation-prev " aria-label="Previous page: RESTful API Consumption on the Server (Java)"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../posts/2014-08-25-custom-JSON-with-Java-sized-XAgent.html" class="navigation navigation-next " aria-label="Next page: Custom JSON with Java-ized XAgent"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-github/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"addcssjs":{"css":["css/emojify-emoticons.min.css","css/emojify.min.css","css/styles.css"],"js":["js/emojify.min.js","js/scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"},"anchors":{},"include":{},"include-codeblock":{},"highlight":{},"livereload":{},"youtube":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

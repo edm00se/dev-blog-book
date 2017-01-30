@@ -1,0 +1,59 @@
+language: node_js
+sudo: required
+dist: trusty
+node_js:
+  - v4
+cache:
+  directories:
+    - node_modules
+# whitelist
+branches:
+  only:
+    - master
+    - /^greenkeeper/.*$/
+before_script:
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq libyajl-dev libxml2-dev libxqilla-dev
+  - if [ "$CXX" = "clang++" ]; then sudo apt-get install -qq libstdc++-4.8-dev; fi
+  - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.8; fi
+  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
+  - sudo -v && wget -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
+  - npm i -g node-gyp && node-gyp clean
+  - npm i -g svgexport
+script:
+  - sudo chown -R $USER ~/
+  - ./node_modules/emoji-transmogrifier/src/cli/index.js zap
+  - gitbook install
+  - gitbook build
+  - gitbook pdf . build/DevBlog_Year1.pdf
+  - gitbook mobi . build/DevBlog_Year1.mobi
+  - gitbook epub . build/DevBlog_Year1.epub
+after_success: |
+  if [ -n "$GITHUB_API_KEY" ]; then
+    rm -rf .git
+    git config --global user.name "travis"
+    git config --global user.email "travis"
+    cd _book
+    git init
+    git remote add origin https://$GITHUB_API_KEY@github.com/edm00se/dev-blog-book
+    git checkout -b gh-pages
+    git fetch
+    git add .
+    git -c user.name='travis' -c user.email='travis' commit -m 'Travis CI Deploying'
+    git push -f origin gh-pages
+    # Make sure to make the output quiet, or else the API token will leak!
+    # This works because the API key can replace your password.
+    cd ..
+    cd build
+    git init
+    git remote add origin https://$GITHUB_API_KEY@github.com/edm00se/dev-blog-book
+    git fetch
+    git checkout -b built
+    git add .
+    git -c user.name='travis' -c user.email='travis' commit -m 'Travis CI Deploying'
+    # Make sure to make the output quiet, or else the API token will leak!
+    # This works because the API key can replace your password.
+    git push -f origin built
+    cd ..
+  fi

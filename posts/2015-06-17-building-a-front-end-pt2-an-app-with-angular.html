@@ -1,0 +1,1205 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Building a Front-End pt.2: An App with AngularJS | Dev|Blog: The First Year</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-anchors/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../posts/2015-06-22-servlet-series-review.html" />
+    
+    
+    <link rel="prev" href="../posts/2015-06-16-building-a-front-end-pt1-a-quick-review.html" />
+    
+
+        <script type="text/javascript" src="../js/emojify.min.js"></script><script type="text/javascript" src="../js/scripts.js"></script><link rel="stylesheet" type="text/css" href="../css/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../css/emojify.min.css"><link rel="stylesheet" type="text/css" href="../css/styles.css">
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="1.8"
+        data-chapter-title="Building a Front-End pt.2: An App with AngularJS"
+        data-filepath="posts/2015-06-17-building-a-front-end-pt2-an-app-with-angular.md"
+        data-basepath=".."
+        data-revision="Mon Jan 30 2017 03:59:20 GMT+0000 (UTC)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Intro
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="posts/SagaIntro.html">
+            
+                
+                    <a href="../posts/SagaIntro.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        A Saga of Servlets
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="posts/2015-02-09-a-quick-note-on-JARs.html">
+            
+                
+                    <a href="../posts/2015-02-09-a-quick-note-on-JARs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        A Quick Note on JARs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="posts/2015-02-16-servlet-intro-and-flavors.html">
+            
+                
+                    <a href="../posts/2015-02-16-servlet-intro-and-flavors.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Servlet Intro and Flavors
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="posts/2015-02-19-servlet-implementation.html">
+            
+                
+                    <a href="../posts/2015-02-19-servlet-implementation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Basic Servlet Implementation
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="posts/2015-02-25-servlet-handling-requests.html">
+            
+                
+                    <a href="../posts/2015-02-25-servlet-handling-requests.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        Servlet Handling of Requests
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="posts/2015-03-10-interlude-and-announcement.html">
+            
+                
+                    <a href="../posts/2015-03-10-interlude-and-announcement.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        Interlude and Announcement
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="posts/2015-03-19-servlets-handling-data-round-house-kick.html">
+            
+                
+                    <a href="../posts/2015-03-19-servlets-handling-data-round-house-kick.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Servlet Handling Data, A Round House Kick
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="posts/2015-06-16-building-a-front-end-pt1-a-quick-review.html">
+            
+                
+                    <a href="../posts/2015-06-16-building-a-front-end-pt1-a-quick-review.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        Building a Front-End pt.1 Plus a Quick Review
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8" data-path="posts/2015-06-17-building-a-front-end-pt2-an-app-with-angular.html">
+            
+                
+                    <a href="../posts/2015-06-17-building-a-front-end-pt2-an-app-with-angular.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        Building a Front-End pt.2: An App with AngularJS
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="posts/2015-06-22-servlet-series-review.html">
+            
+                
+                    <a href="../posts/2015-06-22-servlet-series-review.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.</b>
+                        
+                        Series Review
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="posts/Supporting.html">
+            
+                
+                    <a href="../posts/Supporting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Supporting
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="posts/2014-08-18-rest-consumption-server-side.html">
+            
+                
+                    <a href="../posts/2014-08-18-rest-consumption-server-side.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        RESTful API Consumption on the Server (Java)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="posts/2014-08-19-server-rest-with-authentication.html">
+            
+                
+                    <a href="../posts/2014-08-19-server-rest-with-authentication.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Server REST Consumption with Authentication
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="posts/2014-08-25-custom-JSON-with-Java-sized-XAgent.html">
+            
+                
+                    <a href="../posts/2014-08-25-custom-JSON-with-Java-sized-XAgent.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Custom JSON with Java-ized XAgent
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="posts/2014-10-24-application-logic.html">
+            
+                
+                    <a href="../posts/2014-10-24-application-logic.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Application Logic
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="posts/2014-09-16-unraveling-the-mvc-mysteries.html">
+            
+                
+                    <a href="../posts/2014-09-16-unraveling-the-mvc-mysteries.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Unraveling the M-V-C Mysteries
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="posts/2014-09-18-rest-is-best.html">
+            
+                
+                    <a href="../posts/2014-09-18-rest-is-best.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        REST is Best
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="posts/2015-08-31-something-i-overheard-at-mwlug.html">
+            
+                
+                    <a href="../posts/2015-08-31-something-i-overheard-at-mwlug.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        More on HTTP and AJAX Requests
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="posts/2014-09-29-what-is-an-spa.html">
+            
+                
+                    <a href="../posts/2014-09-29-what-is-an-spa.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        What is a Single Page Application(SPA)?
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="posts/Related.html">
+            
+                
+                    <a href="../posts/Related.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Related
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="posts/2015-05-05-replacing-an-xagent.html">
+            
+                
+                    <a href="../posts/2015-05-05-replacing-an-xagent.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        &quot;Replacing&quot; an XAgent
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="posts/2015-07-14-alternate-front-end-development.html">
+            
+                
+                    <a href="../posts/2015-07-14-alternate-front-end-development.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Alternate Front-End Development: Mocking Your Domino Back-end
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="posts/Java.html">
+            
+                
+                    <a href="../posts/Java.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Java
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="posts/2015-01-09-when-you-need-a-comparator.html">
+            
+                
+                    <a href="../posts/2015-01-09-when-you-need-a-comparator.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        When You Need a Comparator
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="posts/2015-01-23-building-java-objects-from-json.html">
+            
+                
+                    <a href="../posts/2015-01-23-building-java-objects-from-json.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        Building Java Objects from JSON
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="posts/JavaScript.html">
+            
+                
+                    <a href="../posts/JavaScript.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        JavaScript
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="posts/2014-08-12-consistent-multivalue-formatting.html">
+            
+                
+                    <a href="../posts/2014-08-12-consistent-multivalue-formatting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        Consistent Multi-Value Formatting in SSJS for Domino/XPages
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="posts/2014-09-03-fixing-dojo-161-in-domino-853.html">
+            
+                
+                    <a href="../posts/2014-09-03-fixing-dojo-161-in-domino-853.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        Fixing an Older Version of Dojo (1.6.1)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="posts/2014-08-14-cal-picker-improver-dojo-only.html">
+            
+                
+                    <a href="../posts/2014-08-14-cal-picker-improver-dojo-only.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        An Dojo Implementation of the Calendar Picker Script
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="posts/Other.html">
+            
+                
+                    <a href="../posts/Other.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Other
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="posts/2015-03-23-brief-intro-to-nginx.html">
+            
+                
+                    <a href="../posts/2015-03-23-brief-intro-to-nginx.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        A Brief Introduction to Nginx
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="posts/2015-07-07-self-hosting-scm-server.html">
+            
+                
+                    <a href="../posts/2015-07-07-self-hosting-scm-server.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        Self-Hosting SCM Server
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="posts/2014-08-11-redmine-coderay-domino-syntax-highlighting.html">
+            
+                
+                    <a href="../posts/2014-08-11-redmine-coderay-domino-syntax-highlighting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        Domino/XPages Design Element Syntax Highlighting on Redmine
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+    <a href="../GLOSSARY.html" class="btn pull-left" aria-label="Glossary"><i class="fa fa-sort-alpha-asc"></i></a>
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Dev|Blog: The First Year</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h3 id="ever-onward">Ever Onward</h3>
+<p>For as much theory and verbiage as yesterday&apos;s post was, today&apos;s will be primarily code-driven; something I hope you&apos;re ready for. I&apos;ll run through this all and hopefully I can illustrate succinctly as we go.</p>
+<!-- toc -->
+<ul>
+<li><a href="#html-templating">HTML Templating</a></li>
+<li><a href="#angularjs-app">AngularJS App</a></li>
+<li><a href="#bring-it-home">Bring It Home</a></li>
+</ul>
+<!-- toc stop -->
+<h3 id="html-templating">HTML Templating</h3>
+<p>HTML templating is useful because it frames out the structure of a page, in its components parts, and, possibly the most useful attribute, it can be cached by the browser. This is highly useful for a lot of traffic and saves on the overhead of transporting markup with your data in every update of data. It&apos;s one of the topics Marky Roden talked about during his <a href="http://www.youtube.com/watch?v=k5bDvZg4Gbg" target="_blank">5 Questions with Marky Roden</a> video for SocialBizUG.org.</p>
+<p>The initial page for the Houses of AnAppOfIceAndFire (<em>index.html</em>) is laid out like almost anyone would expect an <em>index.html</em> file that implements Bootstrap. I&apos;ve snipped out everything but the &lt;body&gt; tag contents for space.</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- ...head contents... --&gt;</span>
+
+<span class="hljs-comment">&lt;!-- defining where to inject our app definition, using the body tag --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">ng-app</span>=<span class="hljs-value">&quot;houseApp&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;navbar navbar-default navbar-fixed-top&quot;</span> <span class="hljs-attribute">role</span>=<span class="hljs-value">&quot;navigation&quot;</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- ...navbar contents... --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- the magic! --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">ui-view</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+    <span class="hljs-comment"><!-- CDN driven resources for Bootstrap and <a href='../GLOSSARY.html#angularjs' class='glossary-term' title='AngularJS (commonly referred to as &quot;Angular&quot; or &quot;Angular.js&quot;) is an open-source web application framework mainly maintained by Google and by a community of individual developers and corporations to address many of the challenges encountered in developing single-page applications. It aims to simplify both the development and the testing of such applications by providing a framework for client-side model–view–controller (MVC) and model–view–viewmodel (MVVM) architectures, along with components commonly used in rich Internet applications.'>AngularJS</a> JS resource files --></span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text/<a href="../GLOSSARY.html#javascript" class="glossary-term" title="JavaScript is a high-level, dynamic, untyped, and interpreted programming language. It has been standardized in the ECMAScript language specification. Alongside HTML and CSS, it is one of the three essential technologies of World Wide Web content production; the majority of websites employ it and it is supported by all modern web browsers without plug-ins. JavaScript is prototype-based with first-class functions, making it a multi-paradigm language, supporting object-oriented, imperative, and functional programming styles. It has an API for working with text, arrays, dates and regular expressions, but does not include any I/O, such as networking, storage or graphics facilities, relying for these upon the host environment in which it is embedded.">javascript</a>&quot;</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;js/houseApp.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- ... --&gt;</span>
+</code></pre>
+<p><br></p>
+<p>The &quot;magic happens&quot; part is where my application code structures in the HTML partials, which I route in, based on my config. We&apos;ll get there in a minute, for now, have a look at the two partial HTML files I&apos;m using, one for the collection list and one for the individual house. You may notice that I&apos;m also nesting my House Record inside the House Collection partial, this is one of the nifty features I like about ui-router.</p>
+<p><strong>House Collection</strong></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;uiContainer&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;container&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;row&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-4&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;panel panel-default&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;panel-heading&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;panel-title&quot;</span>&gt;</span>Houses of the Seven Kingdoms of Westeros<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;list-group list-group-striped&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;list-group-item&quot;</span>
+                        <span class="hljs-attribute">ng-repeat</span>=<span class="hljs-value">&quot;house in housesOfWesteros | startFrom : curPage*pageQty | limitTo:pageQty&quot;</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">ng-href</span>=<span class="hljs-value">&quot;#/houses/{{ house.unid }}&quot;</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">&quot;{{ house.unid }}&quot;</span>&gt;</span>{{house.name}}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;#&quot;</span>
+                            <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn btn-danger pull-right&quot;</span>
+                            <span class="hljs-attribute">ng-really-message</span>=<span class="hljs-value">&quot;Are you sure you want to delete this house from Westeros?&quot;</span>
+                            <span class="hljs-attribute">ng-really-click</span>=<span class="hljs-value">&quot;removeHouse(house.unid)&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-lg fa-trash-o&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>{{house.words}}
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;panel-footer col-xs-12&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">nav</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;pager&quot;</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;previous&quot;</span> <span class="hljs-attribute">ng-class</span>=<span class="hljs-value">&quot;{&apos;disabled&apos;: curPage == 0}&quot;</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">ng-click</span>=<span class="hljs-value">&quot;curPage = curPage - 1&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>&amp;larr;<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> Previous<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">ng-bind</span>=<span class="hljs-value">&quot;(curPage+1) + &apos;/&apos; + numberOfPages()&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;next&quot;</span> <span class="hljs-attribute">ng-class</span>=<span class="hljs-value">&quot;{&apos;disabled&apos;: curPage &gt;= housesOfWesteros.length/pageQty-1}&quot;</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">ng-click</span>=<span class="hljs-value">&quot;curPage = curPage + 1&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;&quot;</span>&gt;</span>Next <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">aria-hidden</span>=<span class="hljs-value">&quot;true&quot;</span>&gt;</span>&amp;rarr;<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- single house content --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">ui-view</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;col-md-6 col-md-offset-2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p><br></p>
+<p><strong>House Record</strong>
+For obvious reasons, much more like a form.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;panel panel-default&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;panel-heading&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;panel-title&quot;</span>&gt;</span>House Details<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;panel-body&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;houseForm&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">label</span>
+                    <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;houseName&quot;</span>&gt;</span>
+                    Name<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">input</span>
+                    <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>
+                    <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control&quot;</span>
+                    <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;houseName&quot;</span>
+                    <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;name&quot;</span>
+                    <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">&quot;myHouse.name&quot;</span>
+                    <span class="hljs-attribute">ng-disabled</span>=<span class="hljs-value">&quot;!editForm&quot;</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">label</span>
+                    <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;houseDescription&quot;</span>&gt;</span>
+                    Description<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">textarea</span>
+                    <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control&quot;</span>
+                    <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;houseDescription&quot;</span>
+                    <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;description&quot;</span>
+                    <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">&quot;myHouse.description&quot;</span>
+                    <span class="hljs-attribute">rows</span>=<span class="hljs-value">&quot;3&quot;</span>
+                    <span class="hljs-attribute">ng-disabled</span>=<span class="hljs-value">&quot;!editForm&quot;</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">label</span>
+                    <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;coatOfArms&quot;</span>&gt;</span>
+                    Coat of Arms<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">input</span>
+                    <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>
+                    <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control&quot;</span>
+                    <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;coatOfArms&quot;</span>
+                    <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;coatOfArms&quot;</span>
+                    <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">&quot;myHouse.coatOfArms&quot;</span>
+                    <span class="hljs-attribute">ng-disabled</span>=<span class="hljs-value">&quot;!editForm&quot;</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">label</span>
+                    <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;houseWords&quot;</span>&gt;</span>
+                    Words<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">input</span>
+                    <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>
+                    <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control&quot;</span>
+                    <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;houseWords&quot;</span>
+                    <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;words&quot;</span>
+                    <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">&quot;myHouse.words&quot;</span>
+                    <span class="hljs-attribute">ng-disabled</span>=<span class="hljs-value">&quot;!editForm&quot;</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">label</span>
+                    <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;houseSeat&quot;</span>&gt;</span>
+                    Seat<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">input</span>
+                    <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>
+                    <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control&quot;</span>
+                    <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;houseSeat&quot;</span>
+                    <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;seat&quot;</span>
+                    <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">&quot;myHouse.seat&quot;</span>
+                    <span class="hljs-attribute">ng-disabled</span>=<span class="hljs-value">&quot;!editForm&quot;</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">label</span>
+                    <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;houseCurrentLord&quot;</span>&gt;</span>
+                    Current Lord<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">input</span>
+                    <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>
+                    <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control&quot;</span>
+                    <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;houseCurrentLord&quot;</span>
+                    <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;currentLord&quot;</span>
+                    <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">&quot;myHouse.currentLord&quot;</span>
+                    <span class="hljs-attribute">ng-disabled</span>=<span class="hljs-value">&quot;!editForm&quot;</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">label</span>
+                    <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;houseRegion&quot;</span>&gt;</span>
+                    Region<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">input</span>
+                    <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>
+                    <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control&quot;</span>
+                    <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;houseRegion&quot;</span>
+                    <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;region&quot;</span>
+                    <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">&quot;myHouse.region&quot;</span>
+                    <span class="hljs-attribute">ng-disabled</span>=<span class="hljs-value">&quot;!editForm&quot;</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">label</span>
+                    <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;houseTitle&quot;</span>&gt;</span>
+                    Title<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">input</span>
+                    <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>
+                    <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control&quot;</span>
+                    <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;houseTitle&quot;</span>
+                    <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;title&quot;</span>
+                    <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">&quot;myHouse.title&quot;</span>
+                    <span class="hljs-attribute">ng-disabled</span>=<span class="hljs-value">&quot;!editForm&quot;</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">label</span>
+                    <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;houseHeir&quot;</span>&gt;</span>
+                    Heir<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">input</span>
+                    <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>
+                    <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control&quot;</span>
+                    <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;houseHeir&quot;</span>
+                    <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;heir&quot;</span>
+                    <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">&quot;myHouse.heir&quot;</span>
+                    <span class="hljs-attribute">ng-disabled</span>=<span class="hljs-value">&quot;!editForm&quot;</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-group&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">label</span>
+                    <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;houseOverlord&quot;</span>&gt;</span>
+                    Overlord<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">input</span>
+                    <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span>
+                    <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;form-control&quot;</span>
+                    <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;houseOverlord&quot;</span>
+                    <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;overlord&quot;</span>
+                    <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">&quot;myHouse.overlord&quot;</span>
+                    <span class="hljs-attribute">ng-disabled</span>=<span class="hljs-value">&quot;!editForm&quot;</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn-list pull-right&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">button</span>
+                    <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn-default btn&quot;</span>
+                    <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;button&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;buttonCancelGotHouse&quot;</span>
+                    <span class="hljs-attribute">ng-really-message</span>=<span class="hljs-value">&quot;Are you sure?&quot;</span>
+                    <span class="hljs-attribute">ng-really-click</span>=<span class="hljs-value">&quot;clearCancelForm()&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-lg fa-pencil&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span> Cancel<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">button</span>
+                    <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn-success btn&quot;</span>
+                    <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;button&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;buttonSaveGotHouse&quot;</span>
+                    <span class="hljs-attribute">ng-show</span>=<span class="hljs-value">&quot;editForm&quot;</span>
+                    <span class="hljs-attribute">ng-click</span>=<span class="hljs-value">&quot;saveHouseForm()&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-lg fa-save&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span> Save<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">button</span>
+                    <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;btn-primary btn&quot;</span>
+                    <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;button&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;buttonEditGotHouse&quot;</span>
+                    <span class="hljs-attribute">ng-disabled</span>=<span class="hljs-value">&quot;!canEditForm&quot;</span>
+                    <span class="hljs-attribute">ng-show</span>=<span class="hljs-value">&quot;!editForm&quot;</span>
+                    <span class="hljs-attribute">ng-click</span>=<span class="hljs-value">&quot;setFormEditable()&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">i</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;fa fa-lg fa-pencil&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">i</span>&gt;</span> Edit<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- &lt;div class=&quot;panel-footer col-xs-12&quot;&gt;&lt;/div&gt; --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p><br></p>
+<h3 id="angularjs-app"><a href="../GLOSSARY.html#angularjs" class="glossary-term" title="AngularJS (commonly referred to as &quot;Angular&quot; or &quot;Angular.js&quot;) is an open-source web application framework mainly maintained by Google and by a community of individual developers and corporations to address many of the challenges encountered in developing single-page applications. It aims to simplify both the development and the testing of such applications by providing a framework for client-side model&#x2013;view&#x2013;controller (MVC) and model&#x2013;view&#x2013;viewmodel (MVVM) architectures, along with components commonly used in rich Internet applications.">AngularJS</a> App</h3>
+<h5 id="0--structure">0 - Structure</h5>
+<p>My app will consist of a few parts. I&apos;ve broken them apart here into sections, for ease of reading. I&apos;ve also taken the approach for my app.js of chain-loading each section off the main module definition, decreasing the number of handles for the same object.</p>
+<h5 id="1--config">1 - Config</h5>
+<p>I&apos;ll first need to configure any routing rules for my HTML partials and resolving URL route parameters as their respective variables; this will happen <a href="docs.angularjs.org/guide/module">in the config</a>; the definition is for an <a href="../GLOSSARY.html#angular" class="glossary-term" title="AngularJS (commonly referred to as &quot;Angular&quot; or &quot;Angular.js&quot;) is an open-source web application framework mainly maintained by Google and by a community of individual developers and corporations to address many of the challenges encountered in developing single-page applications. It aims to simplify both the development and the testing of such applications by providing a framework for client-side model&#x2013;view&#x2013;controller (MVC) and model&#x2013;view&#x2013;viewmodel (MVVM) architectures, along with components commonly used in rich Internet applications.">Angular</a> &quot;module&quot;. Any 3rd party assets get plugged in here, as part of the dependency injection, such as <a href="github.com/angular-ui/ui-router">ui-router</a>.</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// a self-invoking, anonymouse function to keep application code variables scoped anonymously</span>
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+
+    <span class="hljs-comment">//defines the <a href="../GLOSSARY.html#angularjs" class="glossary-term" title="AngularJS (commonly referred to as &quot;Angular&quot; or &quot;Angular.js&quot;) is an open-source web application framework mainly maintained by Google and by a community of individual developers and corporations to address many of the challenges encountered in developing single-page applications. It aims to simplify both the development and the testing of such applications by providing a framework for client-side model&#x2013;view&#x2013;controller (MVC) and model&#x2013;view&#x2013;viewmodel (MVVM) architectures, along with components commonly used in rich Internet applications.">AngularJS</a> app as a module</span>
+    angular.module(<span class="hljs-string">&apos;houseApp&apos;</span>, [<span class="hljs-string">&apos;ui.router&apos;</span>]) <span class="hljs-comment">//&apos;ngAnimate&apos;</span>
+
+    <span class="hljs-comment">//ui-router config</span>
+    .config(
+        <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">$stateProvider, $urlRouterProvider</span>)</span>{
+
+            $urlRouterProvider.otherwise(<span class="hljs-string">&apos;/houses&apos;</span>);
+
+            $stateProvider
+                .state(<span class="hljs-string">&apos;houses&apos;</span>, {
+                    url: <span class="hljs-string">&apos;/houses&apos;</span>,
+                    templateUrl: <span class="hljs-string">&apos;partials/houseList.html&apos;</span>,
+                    controller: <span class="hljs-string">&apos;HouseListCtrl&apos;</span>
+                })
+                .state(<span class="hljs-string">&apos;houses.item&apos;</span>, {
+                    url: <span class="hljs-string">&apos;/:item&apos;</span>,
+                    templateUrl: <span class="hljs-string">&apos;partials/house.html&apos;</span>,
+                    controller: <span class="hljs-string">&apos;OneHouseCtrl&apos;</span>
+                });
+    })
+
+    <span class="hljs-comment">// ... services/factories, controllers, filters, directives</span>
+
+})();
+</code></pre>
+<p><br></p>
+<h5 id="2--servicesfactories">2 - Services/Factories</h5>
+<p>Any <a href="docs.angularjs.org/guide/services">services or factories (or providers)</a> get defined here.</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">//...config...</span>
+<span class="hljs-comment">/*
+ *    Factories
+ */</span>
+
+<span class="hljs-comment">//defines the $HTTP factory, one of the 3 service types</span>
+.factory(<span class="hljs-string">&apos;houseCollectionFactory&apos;</span>, [ <span class="hljs-string">&apos;$http&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">$http</span>) </span>{
+    <span class="hljs-keyword">return</span> $http( {
+        method : <span class="hljs-string">&apos;GET&apos;</span>,
+        url : <span class="hljs-string">&apos;houses&apos;</span>
+    });
+} ])
+
+.factory(<span class="hljs-string">&apos;houseFactory&apos;</span>, [ <span class="hljs-string">&apos;$http&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">$http</span>)</span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">id</span>)</span>{
+        <span class="hljs-keyword">return</span> $http( {
+            method : <span class="hljs-string">&apos;GET&apos;</span>,
+            url : <span class="hljs-string">&apos;houses/&apos;</span>+id
+        });
+    }
+}])
+<span class="hljs-comment">//...controllers,filters,directives...</span>
+</code></pre>
+<p><br></p>
+<h5 id="3--controllers">3 - Controllers</h5>
+<p><a href="docs.angularjs.org/guide/controller">Controllers</a> are a binding of functional behavior to sections of the HTML. I have two controllers, each with different scopes. Mine are for my navigation handling and the primary application regarding houses.</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">//...config,factories...</span>
+<span class="hljs-comment">/*
+ *    Controllers
+ */</span>
+
+<span class="hljs-comment">//navigation controller</span>
+.controller(<span class="hljs-string">&apos;NavCtrl&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">$scope, $location</span>)</span>{
+    $scope.isActive = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">route</span>) </span>{
+        <span class="hljs-keyword">return</span> route === $location.path();
+    }
+})
+
+<span class="hljs-comment">//provies the controller to the app, which handles the interaction of data (model) with the view (a la MVC)</span>
+.controller(<span class="hljs-string">&apos;HouseListCtrl&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">$scope, $state, $http, $filter, houseCollectionFactory</span>) </span>{
+
+    <span class="hljs-comment">//defines filter/search/etc. vars</span>
+    $scope.pageQty = <span class="hljs-number">5</span>; <span class="hljs-comment">//detectPhone() ? 10 : 30;</span>
+    $scope.curPage = <span class="hljs-number">0</span>;
+
+    <span class="hljs-comment">//calculates the number of results</span>
+    $scope.numberOfPages = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.ceil($scope.housesOfWesteros.length / $scope.pageQty) || <span class="hljs-number">0</span>;
+    }
+
+    <span class="hljs-comment">//defines a boolean var</span>
+    $scope.showSearch = <span class="hljs-literal">false</span>;
+
+    $scope.housesOfWesteros = [];
+    <span class="hljs-comment">//the factory is returning the promise of the $http, so handle success/error here</span>
+    houseCollectionFactory
+        .success( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data, status, headers, config</span>) </span>{
+            $scope.housesOfWesteros = data;
+            <span class="hljs-comment">//$scope.predicate = &quot;JobNum&quot;;</span>
+            <span class="hljs-comment">//$scope.reverse = false;</span>
+        }).error( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data, status, headers, config</span>) </span>{
+            $scope.housesOfWesteros = <span class="hljs-literal">null</span>;
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;data: &quot;</span> + data);
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;status: &quot;</span> + status);
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;headers: &quot;</span> + headers);
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;config: &quot;</span> + <span class="hljs-built_in"><a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">JSON</a></span>.parse(config));
+        })
+         .then( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+            <span class="hljs-comment">//<a href="../GLOSSARY.html#angular" class="glossary-term" title="AngularJS (commonly referred to as &quot;Angular&quot; or &quot;Angular.js&quot;) is an open-source web application framework mainly maintained by Google and by a community of individual developers and corporations to address many of the challenges encountered in developing single-page applications. It aims to simplify both the development and the testing of such applications by providing a framework for client-side model&#x2013;view&#x2013;controller (MVC) and model&#x2013;view&#x2013;viewmodel (MVVM) architectures, along with components commonly used in rich Internet applications.">angular</a>.element(&apos;div.screenMask&apos;).css(&apos;visibility&apos;,&apos;hidden&apos;);</span>
+        });
+
+    $scope.removeHouse = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">unid</span>)</span>{
+        $http( {
+            method : <span class="hljs-string">&apos;DELETE&apos;</span>,
+            url : <span class="hljs-string">&apos;houses/&apos;</span>+unid
+        })
+        .success( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data, status, headers, config</span>)</span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;successfully deleted house with id: &quot;</span>+unid);
+        })
+        .error( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data, status, headers, config</span>)</span>{
+            <span class="hljs-comment">//might as well say something</span>
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;poop&quot;</span>);
+        })
+        .then( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+            $state.go(<span class="hljs-string">&apos;houses&apos;</span>,{reload: <span class="hljs-literal">true</span>});
+        });
+    };
+
+})
+
+.controller(<span class="hljs-string">&apos;OneHouseCtrl&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">$scope, $state, $stateParams, $http, houseFactory</span>)</span>{
+    <span class="hljs-comment">// check for empty ID</span>
+    <span class="hljs-keyword">var</span> tmpItm = $stateParams.item;
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;unid: &quot;</span>+tmpItm);
+    <span class="hljs-keyword">var</span> re = <span class="hljs-regexp">/^[0-9A-Za-z]{32}$/</span>;
+    <span class="hljs-comment">//var re = /\d/;</span>
+    <span class="hljs-keyword">if</span>( tmpItm == <span class="hljs-literal">null</span> || tmpItm == <span class="hljs-literal">undefined</span> || (!tmpItm || !tmpItm.trim()) || !re.test(tmpItm) ){
+        $state.go(<span class="hljs-string">&apos;houses&apos;</span>);
+    }
+
+    $scope.editForm = <span class="hljs-literal">false</span>;
+    $scope.canEditForm = <span class="hljs-literal">false</span>;
+    $scope.myHouse = {};
+    <span class="hljs-keyword">var</span> fieldNames = [];
+    houseFactory($stateParams.item)
+        .success(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data, status, headers, config</span>) </span>{
+            $scope.myHouse = data;
+            $scope.canEditForm = <span class="hljs-literal">true</span>;
+            angular.forEach($scope.myHouse,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value,key</span>)</span>{
+                <span class="hljs-keyword">if</span>( key!=<span class="hljs-string">&quot;unid&quot;</span> ){
+                    fieldNames.push(key);
+                }
+            });
+        })
+        .error(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data, status, headers, config</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;status: &quot;</span>+status);
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;data: &quot;</span>+data);
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;headers: &quot;</span>+headers);
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;config: &quot;</span>+<span class="hljs-built_in"><a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">JSON</a></span>.parse(config));
+        });
+    $scope.setFormEditable = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">if</span>( $scope.canEditForm == <span class="hljs-literal">true</span> ){
+            $scope.editForm = <span class="hljs-literal">true</span>;
+        }
+    }
+    $scope.clearCancelForm = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        $state.go(<span class="hljs-string">&apos;houses&apos;</span>);
+    }
+
+    $scope.saveHouseForm = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-keyword">var</span> tmpOb = { <span class="hljs-string">&quot;unid&quot;</span>: $scope.myHouse.unid };
+        <span class="hljs-comment">//console.log(&quot;checking field names: &quot;+fieldNames.toString());</span>
+        angular.forEach(fieldNames, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">fldNm</span>)</span>{
+            <span class="hljs-keyword">if</span>( $scope.houseForm[fldNm].$dirty === <span class="hljs-literal">true</span> ){
+                <span class="hljs-keyword">var</span> tmpVal = $scope.myHouse[fldNm];
+                <span class="hljs-comment">//console.log(&quot;updated field: &quot;+fldNm+&quot; with value: &quot;+tmpVal);</span>
+                tmpOb[fldNm] = tmpVal;
+            }
+        });
+
+        $http( {
+            method : <span class="hljs-string">&apos;PUT&apos;</span>,
+            url : <span class="hljs-string">&apos;houses/&apos;</span>+$scope.myHouse.unid,
+            data: <span class="hljs-built_in"><a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">JSON</a></span>.stringify(tmpOb)
+        })
+            .success( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data, status, headers, config</span>)</span>{
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;successfully updated house with unid: &quot;</span>+$scope.myHouse.unid);
+            })
+            .error( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data, status, headers, config</span>)</span>{
+                <span class="hljs-comment">//might as well say something</span>
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;poop&quot;</span>);
+            })
+            .then( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+                $state.go(<span class="hljs-string">&apos;houses&apos;</span>,{reload: <span class="hljs-literal">true</span>});
+            });
+
+        <span class="hljs-comment">//console.log(&quot;Simulated PUT complete with object to send: &quot;+<a href="../GLOSSARY.html#json" class="glossary-term" title="JSON (JavaScript Object Notation) is an open standard format that uses human-readable text to transmit data objects consisting of attribute&#x2013;value pairs. It is the primary data format used for asynchronous browser/server communication, largely replacing XML (used by AJAX).">JSON</a>.stringify(tmpOb));</span>
+    }
+
+})
+<span class="hljs-comment">//...filters,directives...</span>
+</code></pre>
+<p><br></p>
+<h5 id="4--filters">4 - Filters</h5>
+<p>Everyone tends to like directives in <a href="../GLOSSARY.html#angularjs" class="glossary-term" title="AngularJS (commonly referred to as &quot;Angular&quot; or &quot;Angular.js&quot;) is an open-source web application framework mainly maintained by Google and by a community of individual developers and corporations to address many of the challenges encountered in developing single-page applications. It aims to simplify both the development and the testing of such applications by providing a framework for client-side model&#x2013;view&#x2013;controller (MVC) and model&#x2013;view&#x2013;viewmodel (MVVM) architectures, along with components commonly used in rich Internet applications.">AngularJS</a> (I do too), but one of my favorite aspects of <a href="../GLOSSARY.html#angularjs" class="glossary-term" title="AngularJS (commonly referred to as &quot;Angular&quot; or &quot;Angular.js&quot;) is an open-source web application framework mainly maintained by Google and by a community of individual developers and corporations to address many of the challenges encountered in developing single-page applications. It aims to simplify both the development and the testing of such applications by providing a framework for client-side model&#x2013;view&#x2013;controller (MVC) and model&#x2013;view&#x2013;viewmodel (MVVM) architectures, along with components commonly used in rich Internet applications.">AngularJS</a> is the <a href="docs.angularjs.org/guide/filter">out-of-the-box Filters</a> that we get for free. This is an entire subject on its own IMO, but for now, you can see my &quot;startFrom&quot; custom filter; part of my custom paging mechanism for the House Collection.</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">//...config,factories,controllers...</span>
+<span class="hljs-comment">/*
+ *    Filters
+ */</span>
+
+<span class="hljs-comment">// we already use the limitTo filter built-in to <a href="../GLOSSARY.html#angularjs" class="glossary-term" title="AngularJS (commonly referred to as &quot;Angular&quot; or &quot;Angular.js&quot;) is an open-source web application framework mainly maintained by Google and by a community of individual developers and corporations to address many of the challenges encountered in developing single-page applications. It aims to simplify both the development and the testing of such applications by providing a framework for client-side model&#x2013;view&#x2013;controller (MVC) and model&#x2013;view&#x2013;viewmodel (MVVM) architectures, along with components commonly used in rich Internet applications.">AngularJS</a>,</span>
+<span class="hljs-comment">// this is a custom filter for startFrom</span>
+.filter(<span class="hljs-string">&apos;startFrom&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">input, start</span>) </span>{
+        start = +start; <span class="hljs-comment">//parse to int</span>
+        <span class="hljs-keyword">return</span> input.slice(start);
+    }
+})
+<span class="hljs-comment">//...directives...</span>
+</code></pre>
+<p><br></p>
+<h5 id="5--directives">5 - Directives</h5>
+<p><a href="docs.angularjs.org/guide/directive">Directives</a> are the higher level &quot;do something&quot; definitions. Most of the <a href="../GLOSSARY.html#angularjs" class="glossary-term" title="AngularJS (commonly referred to as &quot;Angular&quot; or &quot;Angular.js&quot;) is an open-source web application framework mainly maintained by Google and by a community of individual developers and corporations to address many of the challenges encountered in developing single-page applications. It aims to simplify both the development and the testing of such applications by providing a framework for client-side model&#x2013;view&#x2013;controller (MVC) and model&#x2013;view&#x2013;viewmodel (MVVM) architectures, along with components commonly used in rich Internet applications.">AngularJS</a> attributes or tags you write into HTML are directives. As with Filters, you can write your own Directives all you like, but some of the most useful ones come <span data-toggle="tooltip" title="out-of-the-box">OoB</span>.</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">//...config,factories,controllers,filters</span>
+<span class="hljs-comment">/*
+ *    Directives
+ */</span>
+
+<span class="hljs-comment">//This directive allows us to pass a function in on an enter key to do what we want.</span>
+.directive(<span class="hljs-string">&apos;ngEnter&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">scope, element, attrs</span>) </span>{
+        element.bind(<span class="hljs-string">&quot;keydown keypress&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+            <span class="hljs-keyword">if</span>(event.which === <span class="hljs-number">13</span>) {
+                scope.$apply(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>)</span>{
+                    scope.$<span class="hljs-built_in">eval</span>(attrs.ngEnter);
+                });
+                event.preventDefault();
+            }
+        });
+    };
+})
+
+<span class="hljs-comment">/**
+ * A generic confirmation for risky actions.
+ * Usage: Add attributes: ng-really-message=&quot;Are you sure&quot;? ng-really-click=&quot;takeAction()&quot; function
+ */</span>
+.directive(<span class="hljs-string">&apos;ngReallyClick&apos;</span>, [<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> {
+        restrict: <span class="hljs-string">&apos;A&apos;</span>,
+        link: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">scope, element, attrs</span>) </span>{
+            element.bind(<span class="hljs-string">&apos;click&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+                <span class="hljs-keyword">var</span> message = attrs.ngReallyMessage;
+                <span class="hljs-keyword">if</span> (message &amp;&amp; confirm(message)) {
+                    scope.$apply(attrs.ngReallyClick);
+                }
+            });
+        }
+    }
+}]);
+<span class="hljs-comment">//...nothing, just close the parenthesis to make the JS object complete then invoke with another set of paren</span>
+</code></pre>
+<p><br></p>
+<h3 id="bring-it-home">Bring It Home</h3>
+<p>That&apos;s basically it. I find that once you isolate what elements of work you have, the pieces don&apos;t have to be ugly or scary. In fact, the craziest part of my whole app was defining my clear/cancel and save functions in my House Record Controller, and that was fairly easy.</p>
+<p>You can clone my <a href="../GLOSSARY.html#git" class="glossary-term" title="Git is a widely used version control system for software development. It is a distributed revision control system with an emphasis on speed,[6] data integrity, and support for distributed, non-linear workflows. Git was initially designed and developed by Linus Torvalds for Linux kernel development in 2005.">Git</a> repository and play around with it yourself, if you like. <span data-toggle="tooltip" title="why wouldn&apos;t I recommend that?">I recommend following the build instructions in the ReadMe included there</span>. Until next time, <img src="../images/emoji/beer.png" alt="beer" style="height:auto;width:21px;">.</p>
+<iframe src="https://ghbtns.com/github-btn.html?user=edm00se&amp;repo=AnAppOfIceAndFire&amp;type=star&amp;count=true&amp;size=large&amp;v=2" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+
+<iframe src="https://ghbtns.com/github-btn.html?user=edm00se&amp;repo=AnAppOfIceAndFire&amp;type=fork&amp;count=true&amp;size=large&amp;v=2" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../posts/2015-06-16-building-a-front-end-pt1-a-quick-review.html" class="navigation navigation-prev " aria-label="Previous page: Building a Front-End pt.1 Plus a Quick Review"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../posts/2015-06-22-servlet-series-review.html" class="navigation navigation-next " aria-label="Next page: Series Review"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-github/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"addcssjs":{"css":["css/emojify-emoticons.min.css","css/emojify.min.css","css/styles.css"],"js":["js/emojify.min.js","js/scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"},"anchors":{},"include":{},"include-codeblock":{},"highlight":{},"livereload":{},"youtube":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

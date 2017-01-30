@@ -1,0 +1,753 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Fixing an Older Version of Dojo (1.6.1) | Dev|Blog: The First Year</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-anchors/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../posts/2014-08-14-cal-picker-improver-dojo-only.html" />
+    
+    
+    <link rel="prev" href="../posts/2014-08-12-consistent-multivalue-formatting.html" />
+    
+
+        <script type="text/javascript" src="../js/emojify.min.js"></script><script type="text/javascript" src="../js/scripts.js"></script><link rel="stylesheet" type="text/css" href="../css/emojify-emoticons.min.css"><link rel="stylesheet" type="text/css" href="../css/emojify.min.css"><link rel="stylesheet" type="text/css" href="../css/styles.css">
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="6.2"
+        data-chapter-title="Fixing an Older Version of Dojo (1.6.1)"
+        data-filepath="posts/2014-09-03-fixing-dojo-161-in-domino-853.md"
+        data-basepath=".."
+        data-revision="Mon Jan 30 2017 03:59:20 GMT+0000 (UTC)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Intro
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="posts/SagaIntro.html">
+            
+                
+                    <a href="../posts/SagaIntro.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        A Saga of Servlets
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="posts/2015-02-09-a-quick-note-on-JARs.html">
+            
+                
+                    <a href="../posts/2015-02-09-a-quick-note-on-JARs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        A Quick Note on JARs
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="posts/2015-02-16-servlet-intro-and-flavors.html">
+            
+                
+                    <a href="../posts/2015-02-16-servlet-intro-and-flavors.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Servlet Intro and Flavors
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="posts/2015-02-19-servlet-implementation.html">
+            
+                
+                    <a href="../posts/2015-02-19-servlet-implementation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Basic Servlet Implementation
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="posts/2015-02-25-servlet-handling-requests.html">
+            
+                
+                    <a href="../posts/2015-02-25-servlet-handling-requests.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        Servlet Handling of Requests
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="posts/2015-03-10-interlude-and-announcement.html">
+            
+                
+                    <a href="../posts/2015-03-10-interlude-and-announcement.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        Interlude and Announcement
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="posts/2015-03-19-servlets-handling-data-round-house-kick.html">
+            
+                
+                    <a href="../posts/2015-03-19-servlets-handling-data-round-house-kick.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Servlet Handling Data, A Round House Kick
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="posts/2015-06-16-building-a-front-end-pt1-a-quick-review.html">
+            
+                
+                    <a href="../posts/2015-06-16-building-a-front-end-pt1-a-quick-review.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        Building a Front-End pt.1 Plus a Quick Review
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="posts/2015-06-17-building-a-front-end-pt2-an-app-with-angular.html">
+            
+                
+                    <a href="../posts/2015-06-17-building-a-front-end-pt2-an-app-with-angular.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        Building a Front-End pt.2: An App with AngularJS
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="posts/2015-06-22-servlet-series-review.html">
+            
+                
+                    <a href="../posts/2015-06-22-servlet-series-review.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.</b>
+                        
+                        Series Review
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="posts/Supporting.html">
+            
+                
+                    <a href="../posts/Supporting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Supporting
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="posts/2014-08-18-rest-consumption-server-side.html">
+            
+                
+                    <a href="../posts/2014-08-18-rest-consumption-server-side.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        RESTful API Consumption on the Server (Java)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="posts/2014-08-19-server-rest-with-authentication.html">
+            
+                
+                    <a href="../posts/2014-08-19-server-rest-with-authentication.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Server REST Consumption with Authentication
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="posts/2014-08-25-custom-JSON-with-Java-sized-XAgent.html">
+            
+                
+                    <a href="../posts/2014-08-25-custom-JSON-with-Java-sized-XAgent.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Custom JSON with Java-ized XAgent
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="posts/2014-10-24-application-logic.html">
+            
+                
+                    <a href="../posts/2014-10-24-application-logic.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Application Logic
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="posts/2014-09-16-unraveling-the-mvc-mysteries.html">
+            
+                
+                    <a href="../posts/2014-09-16-unraveling-the-mvc-mysteries.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Unraveling the M-V-C Mysteries
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="posts/2014-09-18-rest-is-best.html">
+            
+                
+                    <a href="../posts/2014-09-18-rest-is-best.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        REST is Best
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="posts/2015-08-31-something-i-overheard-at-mwlug.html">
+            
+                
+                    <a href="../posts/2015-08-31-something-i-overheard-at-mwlug.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        More on HTTP and AJAX Requests
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="posts/2014-09-29-what-is-an-spa.html">
+            
+                
+                    <a href="../posts/2014-09-29-what-is-an-spa.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        What is a Single Page Application(SPA)?
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="posts/Related.html">
+            
+                
+                    <a href="../posts/Related.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Related
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="posts/2015-05-05-replacing-an-xagent.html">
+            
+                
+                    <a href="../posts/2015-05-05-replacing-an-xagent.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        &quot;Replacing&quot; an XAgent
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="posts/2015-07-14-alternate-front-end-development.html">
+            
+                
+                    <a href="../posts/2015-07-14-alternate-front-end-development.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Alternate Front-End Development: Mocking Your Domino Back-end
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="posts/Java.html">
+            
+                
+                    <a href="../posts/Java.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Java
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="posts/2015-01-09-when-you-need-a-comparator.html">
+            
+                
+                    <a href="../posts/2015-01-09-when-you-need-a-comparator.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        When You Need a Comparator
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="posts/2015-01-23-building-java-objects-from-json.html">
+            
+                
+                    <a href="../posts/2015-01-23-building-java-objects-from-json.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        Building Java Objects from JSON
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="posts/JavaScript.html">
+            
+                
+                    <a href="../posts/JavaScript.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        JavaScript
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="posts/2014-08-12-consistent-multivalue-formatting.html">
+            
+                
+                    <a href="../posts/2014-08-12-consistent-multivalue-formatting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        Consistent Multi-Value Formatting in SSJS for Domino/XPages
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.2" data-path="posts/2014-09-03-fixing-dojo-161-in-domino-853.html">
+            
+                
+                    <a href="../posts/2014-09-03-fixing-dojo-161-in-domino-853.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        Fixing an Older Version of Dojo (1.6.1)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="posts/2014-08-14-cal-picker-improver-dojo-only.html">
+            
+                
+                    <a href="../posts/2014-08-14-cal-picker-improver-dojo-only.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        An Dojo Implementation of the Calendar Picker Script
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="posts/Other.html">
+            
+                
+                    <a href="../posts/Other.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Other
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="posts/2015-03-23-brief-intro-to-nginx.html">
+            
+                
+                    <a href="../posts/2015-03-23-brief-intro-to-nginx.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        A Brief Introduction to Nginx
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="posts/2015-07-07-self-hosting-scm-server.html">
+            
+                
+                    <a href="../posts/2015-07-07-self-hosting-scm-server.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        Self-Hosting SCM Server
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="posts/2014-08-11-redmine-coderay-domino-syntax-highlighting.html">
+            
+                
+                    <a href="../posts/2014-08-11-redmine-coderay-domino-syntax-highlighting.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        Domino/XPages Design Element Syntax Highlighting on Redmine
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+    <a href="../GLOSSARY.html" class="btn pull-left" aria-label="Glossary"><i class="fa fa-sort-alpha-asc"></i></a>
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Dev|Blog: The First Year</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h4 id="clarification">CLARIFICATION</h4>
+<p>This all stems form an issue with <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a> less than 1.6.2 in Chrome 29 and any browser that used the same child <a href="../GLOSSARY.html#node" class="glossary-term" title="Node.js is an open-source, cross-platform runtime environment for developing server-side web applications. Node.js applications are written in JavaScript and can be run within the Node.js runtime on OS X, Microsoft Windows, Linux, FreeBSD, NonStop, IBM AIX, IBM System z and IBM i. Its work is hosted and supported by the Node.js Foundation, a collaborative project at Linux Foundation.">node</a> reference. This post specifically covers how to fix this (as it occurs with <a href="../GLOSSARY.html#domino" class="glossary-term" title="IBM Domino (formerly Lotus Domino) is the server of a collaborative client-server software platform sold by IBM.">Domino</a> 8.5.3) and get one of the most popular web standards compliant browsers back in the game with <a href="../GLOSSARY.html#domino" class="glossary-term" title="IBM Domino (formerly Lotus Domino) is the server of a collaborative client-server software platform sold by IBM.">Domino</a> and the ExtLib/UP1 controls.</p>
+<h3 id="fixing-dojo-161-in-domino-853">Fixing <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a> 1.6.1 in <a href="../GLOSSARY.html#domino" class="glossary-term" title="IBM Domino (formerly Lotus Domino) is the server of a collaborative client-server software platform sold by IBM.">Domino</a> 8.5.3</h3>
+<p>I ran into a situation recently that required a bit of determination to fix. The BLUF: my implementation of the <a href="http://xcellerant.net/2013/05/01/dojo-data-grid-part-14-enhanced-filtering-with-no-coding/comment-page-1/#comment-2498" target="_blank">Dojo Enhanced DataGrid was breaking when applying the dojox.grid.enhanced.plugins.Filter</a> due to an issue with the <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a> queries <a href="http://dojotoolkit.org/reference-guide/1.6/dojo/query.html#queries-rooted-at-a-given-element" target="_blank">of elements rooted at the specified element</a>. For example:</p>
+<p><pre><code> dojo.query(&apos;&gt; *&apos;, dojo.byId(&apos;container&apos;)) </code></pre>
+Thankfully, that <a href="http://xcellerant.net/2013/05/01/dojo-data-grid-part-14-enhanced-filtering-with-no-coding/comment-page-1/#comment-6210" target="_blank">doesn&apos;t keep a good developer down</a>.</p>
+<h3 id="domino-9-853-up1-and-my-woes"><a href="../GLOSSARY.html#domino" class="glossary-term" title="IBM Domino (formerly Lotus Domino) is the server of a collaborative client-server software platform sold by IBM.">Domino</a> 9, 8.5.3 UP1, and my Woes</h3>
+<p><a href="../GLOSSARY.html#ibm" class="glossary-term" title="International Business Machines Corporation (commonly referred to as IBM) is an American multinational technology and consulting corporation, with headquarters in Armonk, New York. IBM manufactures and markets computer hardware, middleware and software, and offers infrastructure, hosting and consulting services in areas ranging from mainframe computers to nanotechnology.">IBM</a> <a href="../GLOSSARY.html#domino" class="glossary-term" title="IBM Domino (formerly Lotus Domino) is the server of a collaborative client-server software platform sold by IBM.">Domino</a> 9 brings a great many changes to the <a href="../GLOSSARY.html#domino" class="glossary-term" title="IBM Domino (formerly Lotus Domino) is the server of a collaborative client-server software platform sold by IBM.">Domino</a> server and has been fairly well received. Stuck, for now, with 8.5.3, I was at least able to get Upgrade Pack 1 applied, giving me the basic level of the majority of the same new controls.</p>
+<p>That being said, I still had the controls I wanted to play with, so I still tried the &quot;play at home&quot; version of <a href="http://twitter.com/Balassaitis" target="_blank">Brad Balassaitis</a>&apos; excellent series on <a href="http://xcellerant.net/dojo-grids-in-xpages/" target="_blank">Dojo Grids in XPages</a>. When I hit <a href="http://xcellerant.net/dojo-data-grid-part-14-enhanced-filtering-with-no-coding" target="_blank">Part 14: Enhanced Filtering with No Coding</a>, I found that the Filtering plugin would cause my control to break in a rather unexpected fashion.</p>
+<h3 id="dojo-161"><a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a> 1.6.1</h3>
+<p><a href="../GLOSSARY.html#domino" class="glossary-term" title="IBM Domino (formerly Lotus Domino) is the server of a collaborative client-server software platform sold by IBM.">Domino</a> 8.5.3 has <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a> 1.6.1. The culprit in question, as I found out from attempting to use Chrome with the Enhanced Grid, the issue was with the child selector call.
+<a href="images/post_images/dojoBeastInLair.png" data-toggle="tooltip" title="the beast in its lair"><img src="../images/post_images/dojoBeastInLair.png"></a></p>
+<p>After finding what the issue was, followed by some intense Google searching, I had found <a href="http://github.com/dojo/dojo/commit/fc262d0d589c490cdd671791f1546a4665ed69c6#commitcomment-3954783" target="_blank">the fix for this in Dojo 1.6.2</a>. The fix was small enough, I thought, &quot;why can&apos;t I implement this?&quot; So I did.</p>
+<h3 id="doing-something-about-it">Doing Something About It</h3>
+<h4 id="1-extract-the-source-dojo-from-the-jar">1. Extract the Source <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a> from the JAR</h4>
+<p>Starting about <a href="../GLOSSARY.html#domino" class="glossary-term" title="IBM Domino (formerly Lotus Domino) is the server of a collaborative client-server software platform sold by IBM.">Domino</a> 8.5.3, the <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a> library inclusion migrated from the usual source path in <Domino>\data\<a href="../GLOSSARY.html#domino" class="glossary-term" title="IBM Domino (formerly Lotus Domino) is the server of a collaborative client-server software platform sold by IBM.">domino</a>\js\<a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">dojo</a>-1.x.x folder structure on the file system to a JAR deployment. The 1.6.1 source can be found in <Domino program="">\osgi\shared\eclipse\plugins\com.<a href="../GLOSSARY.html#ibm" class="glossary-term" title="International Business Machines Corporation (commonly referred to as IBM) is an American multinational technology and consulting corporation, with headquarters in Armonk, New York. IBM manufactures and markets computer hardware, middleware and software, and offers infrastructure, hosting and consulting services in areas ranging from mainframe computers to nanotechnology.">ibm</a>.xsp.dojo_8.5.3.20131121-1400.jar. To begin, we need to extract the 1.6.1 source files out of the JAR, I recommend using 7zip, though any method of un-zipping the JAR will suffice. The folder structure is in the resources\<a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">dojo</a>-version directory. Extract that to the older format js directory in the <a href="../GLOSSARY.html#domino" class="glossary-term" title="IBM Domino (formerly Lotus Domino) is the server of a collaborative client-server software platform sold by IBM.">Domino</a>\data path and you now have a working version of the 1.6.1 <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a> library. I recommend giving your extract <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a> library a better name than my very boring 1.6.1.source; like .modified ;-)</Domino></Domino></p>
+<h4 id="2-apply-the-fix">2. Apply the Fix</h4>
+<p>Per the relevant commit in <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a> 1.6.2, which addressed this issue, we need to make our change to the <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">dojo</a>.js file in two locations. I recommend making a backup copy of:</p>
+<ul>
+<li><a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">dojo</a>.js</li>
+<li><a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">dojo</a>.js.gz</li>
+<li><a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">dojo</a>.js.uncompressed.js</li>
+</ul>
+<p>You can see there are actually three files, one minified, one minified and gzip&apos;d, and one un-minified. Per the description in the <a href="http://github.com/dojo/dojo/commit/fc262d0d589c490cdd671791f1546a4665ed69c6#commitcomment-3954783" target="_blank">commit message</a>, we need to find the <em>root[childNodesName]</em> references and replace them with <em>root.children || root.childNodes</em>, found in two locations. They specified two line numbers, but mine turned out to be lines 8644 and 8925. I&apos;m chalking up the variance to our 1.6.1 version coming to us via <a href="../GLOSSARY.html#ibm" class="glossary-term" title="International Business Machines Corporation (commonly referred to as IBM) is an American multinational technology and consulting corporation, with headquarters in Armonk, New York. IBM manufactures and markets computer hardware, middleware and software, and offers infrastructure, hosting and consulting services in areas ranging from mainframe computers to nanotechnology.">IBM</a> (I&apos;m guessing comments). Since the lines we change are those directly dealing with our issue, the child dependency handling, I know we&apos;re good. Save your file over the <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">dojo</a>.js.uncompressed.js file.</p>
+<h4 id="3-apply-again">3. Apply Again</h4>
+<p>Now that the original, un-compressed version has its updates, it&apos;s time for those minified and minified and gzip&apos;d versions. If you&apos;re using an editor like <a href="http://notepad-plus-plus.org/" target="_blank">Notepad++</a>, you can use a plugin such as JSTool to perform the JSMin operation.
+<a href="images/post_images/npppJSmin.png" data-toggle="tooltip" title="minifying with JSTool in Notepad++"><img src="../images/post_images/npppJSmin.png"></a></p>
+<p>Save that file over the <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">dojo</a>.js file. Now for the gzip&apos;d version. With 7zip, you can perform a right-click on the <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">dojo</a>.js file and select 7zip &gt; Add to Archive. For the settings, select the correct archive format, ensuring the .gz extension gets applied and overwrite the existing <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">dojo</a>.js.gz file.
+<a href="images/post_images/gzipWith7zip.png" data-toggle="tooltip" title="gzip-ing with 7zip"><img src="../images/post_images/gzipWith7zip.png"></a></p>
+<h4 id="4-restart-and-use">4. Restart and Use</h4>
+<p>Now you only need to restart the <a href="../GLOSSARY.html#domino" class="glossary-term" title="IBM Domino (formerly Lotus Domino) is the server of a collaborative client-server software platform sold by IBM.">Domino</a> server and you can start using it. Just restarting the http task doesn&apos;t quite do it, as <a href="../GLOSSARY.html#domino" class="glossary-term" title="IBM Domino (formerly Lotus Domino) is the server of a collaborative client-server software platform sold by IBM.">Domino</a> needs to fully re-register all its known libraries (not just re-initialize the handling of http connections). If you don&apos;t, but you set the library in the Xsp Properties, you will not be able to load your new version, as the selected library will return a runtime error, as the server hasn&apos;t registered it yet.
+<a href="images/post_images/noDiceOnNewDojoLibraryYet.png" data-toggle="tooltip" title="no dice yet, restart the server"><img src="../images/post_images/noDiceOnNewDojoLibraryYet.png"></a></p>
+<p>To use it in an NSF, open the Xsp Properties file and specify your modified name in the <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a> version field. If you prefer the source, it&apos;s applied by <em>xsp.client.script.<a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">dojo</a>.version=1.6.1.modified</em> (or .source, whichever you call it). Note to leave off the <em><a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">dojo</a>-</em> prefix.
+<a href="images/post_images/useNewDojoLibraryInXspProperties.png" data-toggle="tooltip" title="specify the new dojo library in Xsp Properties"><img src="../images/post_images/useNewDojoLibraryInXspProperties.png"></a></p>
+<h3 id="rejoice">Rejoice</h3>
+<p>You are now able to use the <a href="../GLOSSARY.html#dojo" class="glossary-term" title="Dojo Toolkit (stylized as d&#x14D;j&#x14D; toolkit) is an open source modular JavaScript library (or more specifically JavaScript toolkit) designed to ease the rapid development of cross-platform, JavaScript/Ajax-based applications and web sites.">Dojo</a> Enhanced DataGrid with the <em>dojox.grid.enhanced.plugins.Filter</em>!
+<a href="images/post_images/dojoEnhancedGridFilteredResults.png" data-toggle="tooltip" title="winter is coming"><img src="../images/post_images/dojoEnhancedGridFilteredResults.png"></a></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../posts/2014-08-12-consistent-multivalue-formatting.html" class="navigation navigation-prev " aria-label="Previous page: Consistent Multi-Value Formatting in SSJS for Domino/XPages"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../posts/2014-08-14-cal-picker-improver-dojo-only.html" class="navigation navigation-next " aria-label="Next page: An Dojo Implementation of the Calendar Picker Script"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-github/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"addcssjs":{"css":["css/emojify-emoticons.min.css","css/emojify.min.css","css/styles.css"],"js":["js/emojify.min.js","js/scripts.js"]},"github":{"url":"https://github.com/edm00se"},"toc":{"addClass":true,"className":"toc"},"anchors":{},"include":{},"include-codeblock":{},"highlight":{},"livereload":{},"youtube":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
