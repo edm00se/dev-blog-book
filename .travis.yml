@@ -3,10 +3,11 @@ sudo: required
 dist: trusty
 node_js:
   - lts/*
+notifications:
+  email: false
 cache:
   directories:
     - node_modules
-# whitelist
 branches:
   only: master
 before_script:
