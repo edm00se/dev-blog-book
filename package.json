@@ -1,10 +1,11 @@
 {
-  "name": "devblog-book",
+  "name": "dev-blog-book",
   "version": "1.0.0",
   "description": "a stand-alone static web and ebook versions of the highlights of the first year-ish of my development blog",
   "main": "",
   "dependencies": {
     "emoji-transmogrifier": "^3.0.0",
+    "gh-pages": "^2.0.0",
     "gitbook-cli": "^2.3.2",
     "gitbook-plugin-youtube": "^2.0.0"
   },
@@ -13,7 +14,8 @@
     "emoji-convert": "emoji-transmogrifier zap **/*.md",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run emoji-convert && gitbook serve",
-    "build": "npm run emoji-convert && gitbook build"
+    "build": "npm run emoji-convert && gitbook build",
+    "deploy:travis": "npm run build && npm run build:gh-files && gh-pages --repo https://$GITHUB_API_KEY@github.com/edm00se/dev-blog-book.git -d _book -t"
   },
   "repository": {
     "type": "git",
