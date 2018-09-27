@@ -14,9 +14,11 @@ before_script:
   - sudo apt-get install -qq calibre libyajl-dev libxml2-dev libxqilla-dev
   - npm i -g node-gyp && node-gyp clean
   - npm i -g svgexport
+  - npm i -g gitbook-cli
 script:
   - sudo chown -R $USER ~/
   - ./node_modules/emoji-transmogrifier/src/cli/index.js zap
+  - gitbook fetch
   - gitbook init
   - gitbook build
   - gitbook pdf . build/DevBlog_Year1.pdf
