@@ -13,8 +13,6 @@ branches:
 before_script:
   - sudo apt-get update -qq
   - sudo apt-get install -qq calibre libyajl-dev libxml2-dev libxqilla-dev
-  - npm i -g node-gyp && node-gyp clean
-  - npm i -g svgexport
   - npm i -g gitbook-cli gitbook-plugin-youtube
 script:
   - sudo chown -R $USER ~/
