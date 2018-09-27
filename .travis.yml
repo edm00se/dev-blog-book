@@ -14,7 +14,7 @@ before_script:
   - sudo apt-get install -qq calibre libyajl-dev libxml2-dev libxqilla-dev
   - npm i -g node-gyp && node-gyp clean
   - npm i -g svgexport
-  - npm i -g gitbook-cli
+  - npm i -g gitbook-cli gitbook-plugin-youtube
 script:
   - sudo chown -R $USER ~/
   - ./node_modules/emoji-transmogrifier/src/cli/index.js zap
