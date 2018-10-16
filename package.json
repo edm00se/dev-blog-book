@@ -4,7 +4,7 @@
   "description": "a stand-alone static web and ebook versions of the highlights of the first year-ish of my development blog",
   "main": "",
   "dependencies": {
-    "emoji-transmogrifier": "3.0.1",
+    "emoji-transmogrifier": "^3.1.1",
     "gh-pages": "2.0.0",
     "gitbook-cli": "2.3.2",
     "gitbook-plugin-youtube": "2.0.0"
