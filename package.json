@@ -15,7 +15,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run emoji-convert && gitbook serve",
     "build": "npm run emoji-convert && gitbook build",
-    "deploy:travis": "npm run build && npm run build && gh-pages --repo https://$GITHUB_API_KEY@github.com/edm00se/dev-blog-book.git -d _book -t"
+    "deploy:travis": "npm run build && gh-pages --repo https://$GITHUB_API_KEY@github.com/edm00se/dev-blog-book.git -d _book -t"
   },
   "repository": {
     "type": "git",
